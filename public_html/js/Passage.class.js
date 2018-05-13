@@ -67,7 +67,7 @@ Passage.prototype = {
 	},
 
 	show: function () {
-		var desc = game.txt(this.text);
+		var desc = ui.txt(this.text);
 		var div = 'div';
 		if (this.class) {
 			div += ' class="' + this.class + '"';
