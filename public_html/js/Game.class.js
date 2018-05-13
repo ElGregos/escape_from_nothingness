@@ -13,7 +13,7 @@ var game = {
 			passages: passages,
 			passage: new Passage()
 		};
-		floaters.init();
+//		floaters.init();
 	},
 
 	languageSet: function (lang) {
@@ -28,7 +28,7 @@ var game = {
 	launch: function () {
 		this.load();
 		this.init();
-		this.story.passage.get('birth');
+		this.story.passage.get('touched');
 		this.story.passage.show();
 		requestAnimationFrame(refresh);
 	},

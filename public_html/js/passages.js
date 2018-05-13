@@ -16,7 +16,7 @@ var passages = [
 			fr: "Pour une meilleure expérience de ce jeu, il est recommandé d'utiliser un casque audio et d'atténuer les lumières."
 		},
 		buttons: [
-			{id: 'later', href: 'wk8'},
+			{id: 'wait', href: 'wk8'},
 		]
 	},
 	{
@@ -26,13 +26,13 @@ var passages = [
 		}
 	},
 	{
-		id: 'storyStart',
+		id: 'start',
 		text: {
 			en: "You... wake... up...",
 			fr: "Vous...<br>vous...<br><br>réveillez...?"
 		},
 		buttons: [
-			{id: 'later', href: 'wk9'}
+			{id: 'wait', href: 'wk9'}
 		]
 	},
 	{
@@ -42,7 +42,7 @@ var passages = [
 			fr: "Vous vous<br><br>réveillez quelque<br>chose<br><br>pensées."
 		},
 		buttons: [
-			{id: 'later', href: 'wk10'}
+			{id: 'wait', href: 'wk10'}
 		]
 	},
 	{
@@ -53,7 +53,7 @@ var passages = [
 			fr_f: "Vous vous réveillez.<br><br>Où êtes-vous ?<br><br><br>Comment êtes-vous arrivée ici ?",
 		},
 		buttons: [
-			{id: 'later', href: 'wk11'}
+			{id: 'wait', href: 'wk11'}
 		]
 	},
 	{
@@ -69,7 +69,7 @@ var passages = [
 			fr: "Vous vous réveillez.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose avait déjà eu lieu avant."
 		},
 		buttons: [
-			{id: 'later', href: 'wk11_2'}
+			{id: 'wait', href: 'wk11_2'}
 		]
 	},
 	{
@@ -78,7 +78,7 @@ var passages = [
 			en: "You wake up.<br>This looks familiar. You think you already did that before.<br>Yes. You're almost sure of that."
 		},
 		buttons: [
-			{id: 'later', href: 'wk11_3'}
+			{id: 'wait', href: 'wk11_3'}
 		]
 	},
 	{
@@ -93,13 +93,42 @@ var passages = [
 			en: "Something pushed you. It was faint, but real."
 		},
 	},
+
+	//The cord
 	{
-		id: '',
+		id: 'touched',
 		text: {
 			en: "Something touched you! "
 		},
-		objects: {cord: 'It touched me.'}
+		buttons: [
+			{id: 'pick', href: 'grabCord'},
+			{id: 'ignore', href: 'grabCord'},
+		]
 	},
+	{
+		id: 'grabCord',
+		text: {
+			en: "You manage to grab the thing. It's not very thick. It's warm, soft but firm. It's kind of pulsating, but as it doesn't seem to have any will of its own, you can't decide whether it's alive or not.<br><br>At least you see no danger in this for now, and feel appeased. Maybe you can use it to get out."
+		},
+		buttons: [
+			{id: 'wait'},
+			{id: 'explore'},
+		]
+	},
+	//1st vision
+	//1st sound
+	//The wall touched me!
+	//Wall getting closer. Kicking the wall
+	//Music
+	//Dream
+	//Skin is slippy (vernix)
+	//Cord is a friend
+	//Remember the taste has changed
+	//The wall is a light
+	//Wall too close, need for upside down
+	//Urge to go out
+
+	//Birth
 	{
 		id: 'birth',
 		phase: 'birth',
@@ -107,8 +136,7 @@ var passages = [
 			en: "You're pushed forward."
 		},
 		buttons: [
-			{id: 'later', href: 'birth2'},
-//			{id: 'later', href: 'birth2'}
+			{id: 'wait', href: 'birth2'},
 		]
 	},
 	{
@@ -118,7 +146,7 @@ var passages = [
 			en: "You're pushed forward 2."
 		},
 		buttons: [
-			{id: 'later', href: 'birth3'}
+			{id: 'wait', href: 'birth3'}
 		]
 	},
 	{
@@ -128,7 +156,7 @@ var passages = [
 			en: "You're pushed forward 3."
 		},
 		buttons: [
-			{id: 'later', href: 'birth4'}
+			{id: 'wait', href: 'birth4'}
 		]
 	},
 	{
@@ -138,7 +166,7 @@ var passages = [
 			en: "You're pushed forward 4."
 		},
 		buttons: [
-			{id: 'later', href: 'postBirth'}
+			{id: 'wait', href: 'postBirth'}
 		]
 	},
 	{

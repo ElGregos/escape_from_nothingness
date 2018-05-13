@@ -1,6 +1,5 @@
 var floaters = {
 	init: function () {
-		this.floaters = [];
 		for (fln = 0; fln < 200; fln++) {
 			var data = {
 				x: rnd(100), y: rnd(100), radius: 5 + rnd(3), color: rnd(1),

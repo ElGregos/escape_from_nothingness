@@ -13,9 +13,12 @@ function Button(btn) {
 Button.prototype = {
 	init: function () {
 		this.defaults = {
-			ok: {text: {en: 'Ok', fr: "D'accord"}},
-			later: {text: {en: 'Wait', fr: "Attendre"}},
-			next: {text: {en: 'Next', fr: "Suivant"}}
+			explore:{text:{en:"Explore",fr:"Examiner"}},
+			ignore:{text:{en:"Ignore",fr:"Ignorer"}},
+			next: {text: {en: "Next", fr: "Suivant"}},
+			ok: {text: {en: "Ok", fr: "D'accord"}},
+			pick: {text: {en: "Pick", fr: "Attraper"}},
+			wait: {text: {en: "Wait", fr: "Attendre"}},
 		};
 
 	},
