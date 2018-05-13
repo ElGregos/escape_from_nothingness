@@ -1,0 +1,100 @@
+/* Tags first */
+body{
+	margin: 0;
+	height: 100%;
+}
+
+html{
+	height: 100%;
+	font-family: 'Quicksand';
+	font-size: 1.3em;
+	background: black;
+	color: white;
+	cursor: default;
+}
+
+
+
+
+
+/* IDS first */
+#background{
+	 position: absolute;
+	 overflow: hidden;
+	 height: 100%;
+	 width: 100%;
+}
+
+#container{
+	position: relative;
+	width: 80%;
+	max-width: 1200px;
+	margin: auto;
+	height: 100%
+}
+
+#description{
+	/*background: hsla(347,46%,32%,.3);*/
+	/*background: #38364c;*/
+	background: rgba(70, 66, 117, 0.3);
+	color: white;
+	padding: 3%;
+	margin-top: 5%;
+	font-size: 1.5em;
+	/*min-height: 30%;*/
+	/*box-shadow: 0 0 10px 5px hsla(347,46%,32%,.3);*/
+}
+
+#gameButtons{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 2%;
+	text-align: center;
+	background: teal;
+}
+#gameButtons li{
+	float: left;
+	clear: left;
+	margin-top: 1%;
+	padding: .5% 2%;
+	/*background: hsla(2, 60%, 42%, .4);*/
+	/*background: #596dc5;*/
+	background: hsla(229, 48%, 56%, .5);
+	border-radius: 10px;
+}
+#gameButtons li:hover{
+	cursor: pointer;
+	/*background: hsla(2, 60%, 42%, 1);*/
+	background: hsla(229, 48%, 56%, 1);
+}
+
+#language{
+	text-align: right;
+	padding: .5%;
+	color: #67594f;
+	background: hsla(0,0%,0%,.1);
+}
+#language span{
+	padding: 0 .5%;
+}
+#language span:hover{
+	font-weight: bold;
+}
+#language span.selected{
+	background: hsla(27,7%,52%,.5);
+	color: hsla(0,0%,100%,.6);
+}
+
+
+
+
+
+/* Classes first */
+.button{
+	cursor: pointer;
+}
+.floater{
+	position: absolute;
+	border-radius: 50%;
+}
