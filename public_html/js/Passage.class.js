@@ -12,10 +12,8 @@ Passage.prototype = {
 
 	change: function (id) {
 		var _this = this;
-		var durFadeOut = 500;
-		$('#gameButtons').animate({opacity: 0}, {duration: durFadeOut});
-		$('#description').animate({opacity: 0}, {
-			duration: durFadeOut,
+		$('#story').animate({opacity: 0}, {
+			duration: _this.fadeout,
 			complete: function () {
 				_this.get(id);
 				_this.show();
@@ -65,12 +63,17 @@ Passage.prototype = {
 				break;
 			}
 		}
+		this.fadein = this.fadein || 500;
+		this.fadeout = this.fadeout || 500;
+		console.log(this);
 	},
 
 	show: function () {
 		switch (this.id) {
 			
 			case 'setup':
+				$('#story').hide();
+				$('#setup').show();
 				break;
 				
 			default:
@@ -79,8 +82,10 @@ Passage.prototype = {
 				if (this.class) {
 					div += ' class="' + this.class + '"';
 				}
-				$('#description').html('<' + div + '>' + desc + '</div>');
+				$('#story .maintext').html('<' + div + '>' + desc + '</div>');
 				this.buttonsShow();
+				$('#story').show();
+				$('#setup').hide();
 		}
 	}
 };

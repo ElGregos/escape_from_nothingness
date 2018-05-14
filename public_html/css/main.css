@@ -15,7 +15,7 @@ html{
 
 input[type=text]{
 	font-family: 'Arvo';
-	font-size: 1em;
+	/*font-size: 1em;*/
 	margin-top: 1%;
 	padding: .5% 2%;
 	background: white;
@@ -46,13 +46,7 @@ input[type=text]{
 
 #description{
 	background: hsla(245, 40%, 56%, 0.4);
-	color: white;
-	padding: 3%;
-	margin-top: 5%;
-	font-size: 1.5em;
-	min-height: 30%;
 	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
-	border-radius: 2px;
 }
 
 #gameButtons{
@@ -97,6 +91,14 @@ input[type=text]{
 	color: hsla(0,0%,100%,.6);
 }
 
+#setup{
+	height: 100%;
+}
+
+#story{
+	height: 100%;
+}
+
 
 
 
@@ -105,7 +107,19 @@ input[type=text]{
 .button{
 	cursor: pointer;
 }
+
 .floater{
 	position: absolute;
 	border-radius: 50%;
+}
+
+.maintext{
+	background: hsla(245, 40%, 56%, 0.4);
+	color: white;
+	padding: 3%;
+	margin-top: 5%;
+	font-size: 1.5em;
+	min-height: 30%;
+	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
+	border-radius: 2px;
 }

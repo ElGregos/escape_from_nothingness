@@ -9,7 +9,7 @@ var ui = {
     },
 
     fadein: function () {
-        $('#description').add('#gameButtons').animate({opacity: 1}, {duration: 1000});
+        $('#story').animate({opacity: 1}, {duration: game.story.passage.fadein});
     },
 
     txt: function (txt) {

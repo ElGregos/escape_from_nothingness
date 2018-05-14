@@ -109,7 +109,7 @@ var passages = [
 		buttons: [
 			{text: {en: "Try to catch it", fr: "Essayer de l'attraper"}, href: 'cordGrab'},
 			{text: 'ignore', href: 'cordGrab'},
-		]
+		],
 	},
 	{
 		id: 'cordGrab',
@@ -117,8 +117,8 @@ var passages = [
 			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out."
 		},
 		buttons: [
-			{text: {en: "For now, I should give it a name.", fr: "Je devrais lui donner un nom"}, href: 'cordInert'},
-		]
+			{text: {en: "I should give it a name.", fr: "Je devrais lui donner un nom"}, href: 'cordInert'},
+		],
 	},
 	{
 		id: 'cordInert',
