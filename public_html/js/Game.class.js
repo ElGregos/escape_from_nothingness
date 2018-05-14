@@ -28,7 +28,9 @@ var game = {
 	launch: function () {
 		this.load();
 		this.init();
-		this.story.passage.get('touched');
+        var start = 'touched';
+//        var start = 'birth';
+		this.story.passage.get( start);
 		this.story.passage.show();
 		requestAnimationFrame(refresh);
 	},

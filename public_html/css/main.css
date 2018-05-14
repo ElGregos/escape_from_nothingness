@@ -34,9 +34,8 @@ html{
 }
 
 #description{
-	/*background: hsla(347,46%,32%,.3);*/
-	/*background: #38364c;*/
-	background: rgba(70, 66, 117, 0.4);
+	/*background: hsla(245, 28%, 36%, 0.4);*/
+	background: hsla(245, 40%, 56%, 0.4);
 	color: white;
 	padding: 3%;
 	margin-top: 5%;
@@ -59,9 +58,10 @@ html{
 	clear: left;
 	margin-top: 1%;
 	padding: .5% 2%;
-	/*background: hsla(2, 60%, 42%, .4);*/
-	/*background: #596dc5;*/
+    min-width: 96%;
+    text-align: left;
 	background: hsla(229, 48%, 56%, .5);
+	background: hsla(229, 100%, 72%, 0.5);
 	border-radius: 10px;
 }
 #gameButtons li:hover{

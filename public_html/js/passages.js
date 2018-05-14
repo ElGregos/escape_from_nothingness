@@ -16,7 +16,7 @@ var passages = [
 			fr: "Pour une meilleure expérience de ce jeu, il est recommandé d'utiliser un casque audio et d'atténuer les lumières."
 		},
 		buttons: [
-			{id: 'wait', href: 'wk8'},
+			{text: 'wait', href: 'wk8'},
 		]
 	},
 	{
@@ -32,7 +32,7 @@ var passages = [
 			fr: "Vous...<br>vous...<br><br>réveillez...?"
 		},
 		buttons: [
-			{id: 'wait', href: 'wk9'}
+			{text: 'wait', href: 'wk9'}
 		]
 	},
 	{
@@ -42,7 +42,7 @@ var passages = [
 			fr: "Vous vous<br><br>réveillez quelque<br>chose<br><br>pensées."
 		},
 		buttons: [
-			{id: 'wait', href: 'wk10'}
+			{text: 'wait', href: 'wk10'}
 		]
 	},
 	{
@@ -53,7 +53,7 @@ var passages = [
 			fr_f: "Vous vous réveillez.<br><br>Où êtes-vous ?<br><br><br>Comment êtes-vous arrivée ici ?",
 		},
 		buttons: [
-			{id: 'wait', href: 'wk11'}
+			{text: 'wait', href: 'wk11'}
 		]
 	},
 	{
@@ -69,7 +69,7 @@ var passages = [
 			fr: "Vous vous réveillez.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose avait déjà eu lieu avant."
 		},
 		buttons: [
-			{id: 'wait', href: 'wk11_2'}
+			{text: 'wait', href: 'wk11_2'}
 		]
 	},
 	{
@@ -78,7 +78,7 @@ var passages = [
 			en: "You wake up.<br>This looks familiar. You think you already did that before.<br>Yes. You're almost sure of that."
 		},
 		buttons: [
-			{id: 'wait', href: 'wk11_3'}
+			{text: 'wait', href: 'wk11_3'}
 		]
 	},
 	{
@@ -101,18 +101,18 @@ var passages = [
 			en: "Something touched you! "
 		},
 		buttons: [
-			{id: 'pick', href: 'grabCord'},
-			{id: 'ignore', href: 'grabCord'},
+			{text:{en:"Try to catch it", fr:"Essayer de l'attraper"},href: 'grabCord'},
+			{text: 'ignore', href: 'grabCord'},
 		]
 	},
 	{
 		id: 'grabCord',
 		text: {
-			en: "You manage to grab the thing. It's not very thick. It's warm, soft but firm. It's kind of pulsating, but as it doesn't seem to have any will of its own, you can't decide whether it's alive or not.<br><br>At least you see no danger in this for now, and feel appeased. Maybe you can use it to get out."
+			en: "You manage to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating, but as it doesn't seem to have any will of its own, you can't decide whether it's alive or not.<br><br>At least you see no danger in this for now, and feel appeased. Maybe you can use it to get out."
 		},
 		buttons: [
-			{id: 'wait'},
-			{id: 'explore'},
+			{text: 'wait'},
+			{text: 'explore'},
 		]
 	},
 	//1st vision
@@ -136,7 +136,7 @@ var passages = [
 			en: "You're pushed forward."
 		},
 		buttons: [
-			{id: 'wait', href: 'birth2'},
+			{text: 'wait', href: 'birth2'},
 		]
 	},
 	{
@@ -146,7 +146,7 @@ var passages = [
 			en: "You're pushed forward 2."
 		},
 		buttons: [
-			{id: 'wait', href: 'birth3'}
+			{text: 'wait', href: 'birth3'}
 		]
 	},
 	{
@@ -156,7 +156,7 @@ var passages = [
 			en: "You're pushed forward 3."
 		},
 		buttons: [
-			{id: 'wait', href: 'birth4'}
+			{text: 'wait', href: 'birth4'}
 		]
 	},
 	{
@@ -166,7 +166,7 @@ var passages = [
 			en: "You're pushed forward 4."
 		},
 		buttons: [
-			{id: 'wait', href: 'postBirth'}
+			{text: 'wait', href: 'postBirth'}
 		]
 	},
 	{
