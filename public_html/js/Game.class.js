@@ -30,6 +30,7 @@ var game = {
 		this.init();
         var start = 'touched';
 //        var start = 'birth';
+        var start = 'setup';
 		this.story.passage.get( start);
 		this.story.passage.show();
 		requestAnimationFrame(refresh);

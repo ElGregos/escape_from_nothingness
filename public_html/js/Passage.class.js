@@ -12,9 +12,10 @@ Passage.prototype = {
 
 	change: function (id) {
 		var _this = this;
-		$('#gameButtons').animate({opacity: 0}, {duration: 1000});
+		var durFadeOut = 500;
+		$('#gameButtons').animate({opacity: 0}, {duration: durFadeOut});
 		$('#description').animate({opacity: 0}, {
-			duration: 1000,
+			duration: durFadeOut,
 			complete: function () {
 				_this.get(id);
 				_this.show();
@@ -67,12 +68,19 @@ Passage.prototype = {
 	},
 
 	show: function () {
-		var desc = ui.txt(this.text);
-		var div = 'div';
-		if (this.class) {
-			div += ' class="' + this.class + '"';
+		switch (this.id) {
+			
+			case 'setup':
+				break;
+				
+			default:
+				var desc = ui.txt(this.text);
+				var div = 'div';
+				if (this.class) {
+					div += ' class="' + this.class + '"';
+				}
+				$('#description').html('<' + div + '>' + desc + '</div>');
+				this.buttonsShow();
 		}
-		$('#description').html('<' + div + '>' + desc + '</div>');
-		this.buttonsShow();
 	}
 };

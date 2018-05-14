@@ -38,11 +38,13 @@ Floater.prototype = {
 	add: function () {
 		var floater = newEl('div');
 		floater.className = 'floater';
+		var color = 'hsla(' + (308 + rnd(40) - 20) + ',27%,' + (8 + this.color * 10) + '%,.5)';
 		var style = '';
 //		style += 'position: absolute; border-radius: 50%;';
 		style += 'width:' + (this.radius * 3) + 'px;';
 		style += 'height:' + (this.radius * 3) + 'px;';
-		style += 'background-color: hsla(' + (308 + rnd(40) - 20) + ',27%,' + (2 + this.color * 10) + '%,.5);';
+		style += 'background-color: ' + color + ';';
+//		style += 'box-shadow: 0 0 10px 5px ' + color + ';';
 		style += 'left: ' + (this.x) + '%;';
 		style += 'top: ' + (this.y) + '%;';
 		floater.style = style;
