@@ -68,17 +68,12 @@ input[type=text]{
 }
 
 #setup{
-	height: 100%;
-	width: 80%;
+	height: inherit;
+	width: 60%;
 	margin: auto;
 }
 #setup .maintext{
 	background: hsla(17, 29%, 32%, 1);
-}
-
-#setup .gameButtons li{
-	width: auto;
-	background: hsla(229, 100%, 72%, 0.5);
 }
 
 #story{
@@ -101,33 +96,6 @@ input[type=text]{
 	border-radius: 50%;
 }
 
-.gameButtons{
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	/*margin-top: 2%;*/
-	text-align: left;
-	font-family: 'Arvo';
-/*	background: teal;
-	height: 100px;*/
-}
-.gameButtons li{
-/*	float: left;
-	clear: left;*/
-	display: inline-block;
-	margin-top: 1%;
-	margin-right: 2%;
-	padding: .5% 2%;
-    width: 96%;
-    text-align: left;
-	background: hsla(229, 100%, 72%, 0.5);
-	border-radius: 10px;
-}
-.gameButtons li:hover{
-	cursor: pointer;
-	background: hsla(229, 48%, 56%, 1);
-}
-
 .maintext{
 	color: white;
 	padding: 3%;
@@ -136,4 +104,49 @@ input[type=text]{
 	min-height: 30%;
 	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
 	border-radius: 2px;
+}
+
+
+
+
+
+/* Game buttons */
+.gameButtons{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-family: 'Arvo';
+}
+.gameButtons li{
+	/*	float: left;
+		clear: left;*/
+	display: inline-block;
+	margin-top: 1%;
+	padding: .5% 2%;
+    text-align: left;
+	border-radius: 10px;
+}
+.gameButtons li:hover{
+	cursor: pointer;
+}
+
+#setup .gameButtons{
+	text-align: right;
+}
+#setup .gameButtons li{
+	/*width: auto;*/
+	background: hsla(32, 12%, 51%, .5);
+}
+#setup .gameButtons li:hover{
+	background: hsla(32, 12%, 51%, 1);
+}
+
+#story .gameButtons li{
+    width: 96%;
+	margin-right: 2%;
+	background: hsla(229, 100%, 72%, 0.5);
+/*	text-align: right;*/
+}
+#story .gameButtons li:hover{
+	background: hsla(229, 48%, 56%, 1);
 }
