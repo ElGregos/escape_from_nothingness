@@ -3,7 +3,7 @@ function Passage() {
 
 Passage.prototype = {
 	buttonsShow: function () {
-		$('#gameButtons').empty();
+		$('.gameButtons').empty();
 		for (var buttonId in this.buttons) {
 			var btn = new Button(this.buttons[buttonId]);
 			btn.add();
@@ -65,24 +65,20 @@ Passage.prototype = {
 		}
 		this.fadein = this.fadein || 500;
 		this.fadeout = this.fadeout || 500;
-		console.log(this);
 	},
 
 	show: function () {
 		switch (this.id) {
 			
 			case 'setup':
+				$('#setup .maintext').html('<div>' + ui.txt(this.text) + '</div>');
+				this.buttonsShow();
 				$('#story').hide();
 				$('#setup').show();
 				break;
 				
 			default:
-				var desc = ui.txt(this.text);
-				var div = 'div';
-				if (this.class) {
-					div += ' class="' + this.class + '"';
-				}
-				$('#story .maintext').html('<' + div + '>' + desc + '</div>');
+				$('#story .maintext').html('<div>' + ui.txt(this.text) + '</div>');
 				this.buttonsShow();
 				$('#story').show();
 				$('#setup').hide();

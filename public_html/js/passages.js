@@ -21,10 +21,12 @@ var passages = [
 	},
 	{
 		id: 'setup',
-		text: {en: "Your character will be", fr: "Votre personnage sera"},
+		text: {
+			en: 'My character will be',
+			fr: 'Mon personnage sera<div><input type="button"></div><br>et son prénom sera <input type="text" maxlength="50"/>'
+		},
 		buttons: [
-			{text: {en: "A man", fr: "Un homme"}},
-			{text: {en: "A woman", fr: "Une femme"}}
+			{text: {en: "My adventure begins", fr: "Mon aventure commence"}},
 		]
 	},
 	{

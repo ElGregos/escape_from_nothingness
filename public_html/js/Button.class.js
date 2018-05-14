@@ -14,6 +14,10 @@ Button.prototype = {
 			game.story.passage.change(href);
 //			document.getElementById('audio').play();
 		};
-		$('#gameButtons').append(btn);
+		if( game.story.passage.id === 'setup'){
+			$('#setup .gameButtons').append(btn);
+		}else{
+			$('#story .gameButtons').append(btn);
+		}
 	}
 };
