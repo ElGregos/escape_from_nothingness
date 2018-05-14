@@ -22,11 +22,11 @@ var passages = [
 	{
 		id: 'setup',
 		text: {
-			en: 'My character will be',
-			fr: 'Mon personnage sera<div><input type="button"></div><br>et son prénom sera <input type="text" maxlength="50"/>'
+			en: 'My character is<br><input type="button" value="A man" data-key="gender" data-value="h"> <input type="button" value="A woman" data-key="gender" data-value="f"><br><br>whom first name is<br><input name="firstname" type="text" maxlength="50"/>',
+			fr: 'Mon personnage est<br><input type="button" value="Un homme" data-key="gender" data-value="h"> <input type="button" value="Une femme" data-key="gender" data-value="f"><br><br>dont le prénom est<br><input name="firstname" type="text" maxlength="50"/>'
 		},
 		buttons: [
-			{text: {en: "My adventure begins", fr: "Mon aventure commence"}},
+			{text: {en: "and my adventure begins", fr: "et mon aventure commence"}, href:'startGame'}
 		]
 	},
 	{
@@ -43,7 +43,8 @@ var passages = [
 		},
 		buttons: [
 			{text: 'wait', href: 'wk9'}
-		]
+		],
+		fadein: 2000
 	},
 	{
 		id: 'wk9',

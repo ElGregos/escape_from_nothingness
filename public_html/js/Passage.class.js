@@ -12,7 +12,7 @@ Passage.prototype = {
 
 	change: function (id) {
 		var _this = this;
-		$('#story').animate({opacity: 0}, {
+		$('.main').animate({opacity: 0}, {
 			duration: _this.fadeout,
 			complete: function () {
 				_this.get(id);
