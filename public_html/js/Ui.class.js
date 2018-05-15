@@ -16,7 +16,7 @@ var ui = {
         if (typeof (txt) !== 'object') {
             txt = this.defaultTexts[txt].text;
         }
-        if (game.language === 'fr' && game.player.gender === 'f' && txt[game.language + '_f']) {
+        if (game.language === 'fr' && game.vars.gender === 'f' && txt[game.language + '_f']) {
             return txt[game.language + '_f'];
         }
         return (txt[game.language] ? txt[game.language] : txt.en);

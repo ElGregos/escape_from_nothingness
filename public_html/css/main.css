@@ -13,18 +13,32 @@ html{
 	cursor: default;
 }
 
-input[type=text]{
+input{
 	font-family: 'Arvo';
-	/*font-size: 1em;*/
-	margin-top: 1%;
-	padding: .5% 2%;
-	background: white;
-	color: hsla(229, 100%, 72%, 1);
-	border-radius: 10px;
+	padding: .5% 5%;
+	font-size: 0.8em;
+	margin-top: 2%;
+	border-radius: 100px;
 	border: none;
+    outline: none;
 }
 
+input[type=text]{
+	background: white;
+	/*color: hsla(229, 100%, 72%, 1);*/
+	color: hsl(11, 56%, 51%);
+}
 
+input[type=button]{
+	/*background: hsl(36, 56%, 51%);*/
+	background: hsl(11, 56%, 51%);
+	color: white;
+    cursor: pointer;
+}
+
+input[type=button].selected{
+    border: solid 3px white;
+}
 
 
 

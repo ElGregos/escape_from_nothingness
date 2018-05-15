@@ -1,5 +1,5 @@
 var game = {
-	player: {gender: 'f', name: 'Personnage'},
+	vars: {gender: '', firstname: ''},
 	birth: 0,
 	birthFrames: [
 		{floater: {speed: 1, l: .05}, bgcolor: 'hsl(262, 41%, 8%)', },
