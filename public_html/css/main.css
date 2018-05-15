@@ -17,30 +17,39 @@ input{
 	font-family: 'Arvo';
 	padding: .5% 5%;
 	font-size: 0.8em;
-	/*margin-top: 2%;*/
+	margin-top: .4em;
 	border-radius: 100px;
 	border: none;
     outline: none;
 }
 
 input[type=text]{
+	/*background: hsla(11, 56%, 100%, .5);*/
 	background: white;
-	/*color: hsla(229, 100%, 72%, 1);*/
+	opacity: .5;
 	color: hsl(11, 56%, 51%);
+}
+input[type=text]:hover{
+	/*background: hsla(11, 56%, 100%, 1);*/
+	opacity: 1;
 }
 
 input[type=button]{
 	/*background: hsl(36, 56%, 51%);*/
-	background: hsl(11, 56%, 51%);
+	background: hsla(11, 56%, 51%, .5);
 	color: white;
     cursor: pointer;
 	/*border: solid 4px hsla(0,0%,0%,0);*/
-	margin: 4px;
+	margin: .2em;
+	margin-top: .2em;
 }
-
+input[type=button]:hover{
+	background: hsla(11, 56%, 51%, 1);
+}
 input[type=button].selected{
 	margin: 0;
-    border: solid 4px white;
+	margin-top: .2em;
+    border: solid .2em white;
 }
 
 
@@ -69,19 +78,21 @@ input[type=button].selected{
 #language{
 	text-align: right;
 	padding: .5%;
-	color: #67594f;
 	background: hsla(0,0%,0%,.1);
 	/*font-family: 'Arvo';*/
 }
 #language span{
 	padding: 0 .5%;
+	color: hsl(25, 18%, 63%);
+	opacity: .5;
 }
 #language span:hover{
-	font-weight: bold;
+	/*font-weight: bold;*/
+	opacity: 1;
 }
 #language span.selected{
 	background: hsla(27,7%,52%,.5);
-	color: hsla(0,0%,100%,.6);
+	color: white;
 }
 
 #setup{
