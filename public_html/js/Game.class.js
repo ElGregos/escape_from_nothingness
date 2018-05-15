@@ -1,5 +1,6 @@
 var game = {
 	start: 'wallTouched',
+	start: 'setup',
 	vars: {gender: 'm', firstname: '',
 //		akas: {
 //			'cord': {en: "the thing", fr: "la chose"}
