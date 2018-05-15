@@ -17,7 +17,7 @@ input{
 	font-family: 'Arvo';
 	padding: .5% 5%;
 	font-size: 0.8em;
-	margin-top: 2%;
+	/*margin-top: 2%;*/
 	border-radius: 100px;
 	border: none;
     outline: none;
@@ -34,10 +34,13 @@ input[type=button]{
 	background: hsl(11, 56%, 51%);
 	color: white;
     cursor: pointer;
+	/*border: solid 4px hsla(0,0%,0%,0);*/
+	margin: 4px;
 }
 
 input[type=button].selected{
-    border: solid 3px white;
+	margin: 0;
+    border: solid 4px white;
 }
 
 
@@ -161,7 +164,7 @@ input[type=button].selected{
     width: 96%;
 	margin-right: 2%;
 	background: hsla(229, 100%, 72%, 0.5);
-/*	text-align: right;*/
+	/*	text-align: right;*/
 }
 #story .choices li:hover{
 	background: hsla(229, 48%, 56%, 1);

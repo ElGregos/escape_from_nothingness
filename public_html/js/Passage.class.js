@@ -50,45 +50,6 @@ Passage.prototype = {
         }
     },
 	
-    formUpdate: function () {
-        //Init inputs so they reflect game.vars.
-        $('#setup .maintext input').each(function () {
-            var key = this.getAttribute('data-key');
-            var value = this.getAttribute('data-value');
-            var gameValue = game.vars[key];
-            switch (this.getAttribute('type')) {
-                case 'button':
-                    if (value == gameValue) {
-                        $(this).addClass('selected');
-                    }
-                    this.onclick = function () {
-                        var key = this.getAttribute('data-key');
-                        var value = this.getAttribute('data-value');
-                        game.vars[key] = value;
-                        ($('input[type=button][data-key=' + this.getAttribute('data-key') + ']')).each(function () {
-                            if (this.getAttribute('data-value') == value) {
-                                $(this).addClass('selected');
-                            } else {
-                                $(this).removeClass('selected');
-                            }
-                        });
-                    };
-                    break;
-                case 'text':
-                    if (typeof (gameValue) !== 'undefined') {
-                        this.value = gameValue;
-                    }
-                    this.oninput = function () {
-                        var name = this.value;
-//                        game.vars[key] = name.charAt(0).toUpperCase() + name.slice(1);
-                        game.vars[key] = name;
-                    };
-                    break;
-            }
-        });
-        //Add events.
-    },
-
     get: function (id) {
         for (var prop in this) {
             delete this[prop];
@@ -111,7 +72,7 @@ Passage.prototype = {
 
             case 'setup':
                 $('#setup .maintext').html('<div>' + ui.txt(this.text) + '</div>');
-                this.formUpdate();
+                ui.formUpdate();
                 this.choicesShow();
 				$('html').css('background','hsl(18, 20%, 27%)');
                 $('#story').hide();
