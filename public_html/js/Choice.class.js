@@ -1,10 +1,10 @@
-function Button(btn) {
+function Choice(btn) {
 	for (var prop in btn) {
 		this[prop] = btn[prop];
 	}
 }
 
-Button.prototype = {
+Choice.prototype = {
 	add: function () {
 		var btn = newEl('li');
 		btn.setAttribute('data-href', this.href);
@@ -15,9 +15,9 @@ Button.prototype = {
 //			document.getElementById('audio').play();
 		};
 		if( game.story.passage.id === 'setup'){
-			$('#setup .gameButtons').append(btn);
+			$('#setup .choices').append(btn);
 		}else{
-			$('#story .gameButtons').append(btn);
+			$('#story .choices').append(btn);
 		}
 	}
 };

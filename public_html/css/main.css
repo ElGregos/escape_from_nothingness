@@ -85,6 +85,7 @@ input[type=button].selected{
 	height: inherit;
 	width: 60%;
 	margin: auto;
+	display: none;
 }
 #setup .maintext{
 	background: hsla(17, 29%, 32%, 1);
@@ -92,6 +93,7 @@ input[type=button].selected{
 
 #story{
 	height: inherit;
+	display: none;
 }
 #story .maintext{
 	background: hsla(245, 40%, 56%, 0.4);
@@ -124,14 +126,14 @@ input[type=button].selected{
 
 
 
-/* Game buttons */
-.gameButtons{
+/* Choices */
+.choices{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 	font-family: 'Arvo';
 }
-.gameButtons li{
+.choices li{
 	/*	float: left;
 		clear: left;*/
 	display: inline-block;
@@ -140,27 +142,27 @@ input[type=button].selected{
     text-align: left;
 	border-radius: 10px;
 }
-.gameButtons li:hover{
+.choices li:hover{
 	cursor: pointer;
 }
 
-#setup .gameButtons{
+#setup .choices{
 	text-align: right;
 }
-#setup .gameButtons li{
+#setup .choices li{
 	/*width: auto;*/
 	background: hsla(32, 12%, 51%, .5);
 }
-#setup .gameButtons li:hover{
+#setup .choices li:hover{
 	background: hsla(32, 12%, 51%, 1);
 }
 
-#story .gameButtons li{
+#story .choices li{
     width: 96%;
 	margin-right: 2%;
 	background: hsla(229, 100%, 72%, 0.5);
 /*	text-align: right;*/
 }
-#story .gameButtons li:hover{
+#story .choices li:hover{
 	background: hsla(229, 48%, 56%, 1);
 }
