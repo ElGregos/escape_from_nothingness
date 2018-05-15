@@ -1,5 +1,10 @@
 var game = {
-	vars: {gender: 'm', firstname: ''},
+	start: 'wallTouched',
+	vars: {gender: 'm', firstname: '',
+//		akas: {
+//			'cord': {en: "the thing", fr: "la chose"}
+//		}
+	},
 	birth: 0,
 	birthFrames: [
 		{floater: {speed: 1, l: .05}, bgcolor: 'hsl(262, 41%, 8%)', },
@@ -28,12 +33,14 @@ var game = {
 	launch: function () {
 		this.load();
 		this.init();
-        var start = 'touched';
-//        var start = 'birth';
-        var start = 'setup';
-		this.story.passage.get( start);
+		var url = window.location.hash.substr(1).trim();
+		this.story.passage.get(url);
 		this.story.passage.show();
 		requestAnimationFrame(refresh);
+//		var str = 'The _cord_ is long. _Cord_ is thin.';
+//		str = str.replace(/_cord_/g, 'ombilic');
+//		str = str.replace(/_Cord_/g, 'Ombilic');
+//		console.log(str);
 	},
 
 	load: function () {

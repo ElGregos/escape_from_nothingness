@@ -83,7 +83,7 @@ input[type=button].selected{
 }
 #language span{
 	padding: 0 .5%;
-	color: hsl(25, 18%, 63%);
+	color: hsl(27, 7%, 56%);
 	opacity: .5;
 }
 #language span:hover{
@@ -91,18 +91,20 @@ input[type=button].selected{
 	opacity: 1;
 }
 #language span.selected{
-	background: hsla(27,7%,52%,.5);
+	background: hsla(27, 7%, 56%, .5);
 	color: white;
 }
 
 #setup{
 	height: inherit;
 	width: 60%;
+	height: auto;
 	margin: auto;
 	display: none;
 }
 #setup .maintext{
 	background: hsla(17, 29%, 32%, 1);
+	padding: 8% 10% 12% 10%;
 }
 
 #story{

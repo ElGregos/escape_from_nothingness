@@ -23,6 +23,17 @@ var passages = [
 		id: 'setup',
 		interface: 'setup',
 		text: {
+			en: 'I will play as<br><input type="button" value="A man" data-key="gender" data-value="m"> <input type="button" value="A woman" data-key="gender" data-value="f"><br><br>whom first name will be<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
+			fr: 'Je jouerai<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom sera<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>'
+		},
+		choices: [
+			{text: {en: "and my adventure may begin", fr: "et mon aventure peut commencer"}, href: 'startGame'}
+		]
+	},
+	{
+		id: 'setup2',
+		interface: 'setup',
+		text: {
 			en: 'My character is<br><input type="button" value="A man" data-key="gender" data-value="m"> <input type="button" value="A woman" data-key="gender" data-value="f"><br><br>whom first name is<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
 			fr: 'Mon personnage est<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom est<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>'
 		},
@@ -95,7 +106,7 @@ var passages = [
 	{
 		id: 'wk11_3',
 		text: {
-			en: "I wake up.<br>Now I'm sure. This is not the first time. I DID wake up before. For at least once or twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
+			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
 		}
 	},
 	{
@@ -104,7 +115,9 @@ var passages = [
 			en: "Something pushed me. It was faint, but real."
 		},
 	},
+
 	//The cord
+	//The cord looks thinner and thinner as the foetus grows.
 	{
 		id: 'touched',
 		text: {
@@ -133,9 +146,10 @@ var passages = [
 		]
 	},
 	{
-		text: {en: "There are too many things I don't understand here. That's the most disorienting. The easiest way to have a hold on this is to name them. Yeah, this way, the unknown will be known."}
+		text: {en: "There are too many things I don't understand here. That's the most disorienting. The easiest way to have a grip on this is to name them. Yeah, this way, the unknown will be known."}
 	},
-	//1st vision
+
+	//1re vision (flash à travers les paupières)
 	{
 		id: 'floater1',
 		text: {
@@ -146,7 +160,7 @@ var passages = [
 			{text: {en: "I'd like to know"}},
 		]
 	},
-	//1st sound
+	//1er son, que les aigus au début. Les sons suivants gagnent en basses.
 	{
 		id: 'sound1',
 		text: {en: "There is something new. "},
@@ -154,11 +168,38 @@ var passages = [
 	//The wall touched me!
 	{
 		id: 'wallTouched',
-		text: {en: "I can feel a slight pressure"},
+		text: {en: "I can feel a slight pressure", fr: "J'ai été réveillé par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait me toucher à travers quelque chose d'épais."},
 		choices: [
-
+			{text: {fr: "Je dois trouver d'où cela vient"}, href: "wallTouchedExam"},
+			{text: {fr: "Je vais rester discret"}, href: "wallTouchedWait"},
+			{text: {en: "Seek protection", fr: "Je ne suis pas du tout rassuré"}, href: "wallTouchedRetreat"},
 		]
 	},
+	{
+		id: 'wallTouchedExam',
+		text: {fr: "Je tente de trouver avec mes mains ce qui est à l'origine de ces contacts, mais je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur qui cherche à me toucher !"},
+		choices: [
+			{text: {fr: "Repousser ces bosses"}, href:"wallTouchedPush"},
+			{text: {en: "Protect myself", fr: "Je dois me cacher !"}, href: "wallTouchedRetreat"},
+		]
+	},
+	{
+		id: 'wallTouchedWait',
+		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer ?"},
+		choices: [
+			{text: {fr: "Repousser ces bosses"}},
+			{text: {en: "Protect myself", fr: "Me protéger"}, href: "wallTouchedRetreat"},
+		]
+	},
+	{
+		id: 'wallTouchedRetreat',
+		text: {fr: "J'essaie d'aller dans la direction opposée, pour m'apercevoir qu'il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller, et me voici hors de portée !"},
+	},
+	{
+		id: 'wallTouchedPush',
+		text: {fr: "Contact !"},
+	},
+
 	//Wall getting closer. Kicking the wall
 	//Music
 	{
@@ -170,6 +211,7 @@ var passages = [
 	//Echographie (Medical ultrasound) : he or she?
 	//Cord is a friend
 	//Remember the taste has changed
+	//Eyes opened
 	//The wall is a light
 	//Wall too close, need for upside down
 	//Urge to go out
