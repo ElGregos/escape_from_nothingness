@@ -133,7 +133,7 @@ input[type=button].selected{
 	padding: 3%;
 	margin-top: 5%;
 	font-size: 1.5em;
-	min-height: 30%;
+	/*min-height: 30%;*/
 	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
 	border-radius: 2px;
 }

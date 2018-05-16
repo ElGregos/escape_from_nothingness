@@ -72,7 +72,7 @@ var passages = [
 		id: 'wk10',
 		text: {
 			en: "I wake up. How did I get here? Since how long?",
-			fr_f: "Je me réveille.<br><br>Où suis-je ?<br><br><br>Comment suis-je arrivée ici ?",
+			fr: "Je me réveille.<br><br>Où suis-je ?<br><br><br>Comment suis-je arrivé_fe_ ici ?",
 		},
 		choices: [
 			{text: 'wait', href: 'wk11'}
@@ -168,36 +168,53 @@ var passages = [
 	//The wall touched me!
 	{
 		id: 'wallTouched',
-		text: {en: "I can feel a slight pressure", fr: "J'ai été réveillé par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait me toucher à travers quelque chose d'épais."},
+		text: {fr: "J'ai été réveillé_fe_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait me palper à travers quelque chose d'épais."},
 		choices: [
-			{text: {fr: "Je dois trouver d'où cela vient"}, href: "wallTouchedExam"},
-			{text: {fr: "Je vais rester discret"}, href: "wallTouchedWait"},
-			{text: {en: "Seek protection", fr: "Je ne suis pas du tout rassuré"}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je dois trouver d'où cela vient !"}, href: "wallTouchedExam"},
+			{text: {fr: "Je vais rester discr_fète_."}, href: "wallTouchedWait"},
+			{text: {fr: "Je ne suis pas du tout rassuré_fe_."}, href: "wallTouchedRetreat"},
 		]
 	},
 	{
 		id: 'wallTouchedExam',
-		text: {fr: "Je tente de trouver avec mes mains ce qui est à l'origine de ces contacts, mais je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur qui cherche à me toucher !"},
+		text: {fr: "Je m'approche en balayant l'espace de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"},
 		choices: [
-			{text: {fr: "Repousser ces bosses"}, href:"wallTouchedPush"},
-			{text: {en: "Protect myself", fr: "Je dois me cacher !"}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je dois me cacher !"}, href: "wallTouchedRetreat"},
+            {text: {fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
+			{text: {fr: "La curiosité me pousse à toucher ces bosses."}, href:"wallTouchedPush"},
 		]
 	},
 	{
 		id: 'wallTouchedWait',
 		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer ?"},
 		choices: [
-			{text: {fr: "Repousser ces bosses"}},
-			{text: {en: "Protect myself", fr: "Me protéger"}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je devrais peut-être échanger ce contact."}, href:"wallTouchedPush"},
+			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat"},
 		]
 	},
 	{
 		id: 'wallTouchedRetreat',
-		text: {fr: "J'essaie d'aller dans la direction opposée, pour m'apercevoir qu'il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller, et me voici hors de portée !"},
+		text: {fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."},
+        choices:[
+            {text:{fr:"Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
+            {text:{fr:"Je suis quand même intrigué_fe_, je vais me rapprocher."}, href:"wallTouchedExam"},
+        ]
+	},
+	{
+		id: 'wallTouchedWaitBack',
+		text: {fr: "J'attend en espérant que mon inquiétude disparaisse. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir quand cet palpations vont s'arrêter. Tout ceci m'a fatigué_fe_."},
+        choices:[
+            {text:{fr:"Je devrais peut-être en profiter pour dormir."}, href: "wallTouchedSleep"},
+            {text:{fr:"Je vais quand même vérifier ce qu'il en est."}, href:"wallTouchedExam"},
+        ]
 	},
 	{
 		id: 'wallTouchedPush',
 		text: {fr: "Contact !"},
+        choices:[
+            {text:{fr:"J'appuie plus fort."}, href: "wallTouchedSleep"},
+            {text:{fr:"Je suis rassuré_fe_. Je pense que je vais dormir."}, href:"wallTouchedExam"},
+        ]
 	},
 
 	//Wall getting closer. Kicking the wall
