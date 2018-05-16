@@ -1,7 +1,54 @@
+/* Choices */
+.choices{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-family: 'Arvo';
+}
+.choices li{
+	/*	float: left;
+		clear: left;*/
+	display: inline-block;
+	margin-top: 1%;
+	padding: .5% 2%;
+    text-align: left;
+	border-radius: 10px;
+}
+.choices li:hover{
+	cursor: pointer;
+}
+
+#setup .choices{
+	text-align: right;
+}
+#setup .choices li{
+	/*width: auto;*/
+	background: hsla(32, 12%, 51%, .5);
+}
+#setup .choices li:hover{
+	background: hsla(32, 12%, 51%, 1);
+}
+
+#story .choices li{
+    width: 96%;
+	margin-right: 2%;
+	background: hsla(229, 100%, 72%, 0.5);
+	/*	text-align: right;*/
+}
+#story .choices li:hover{
+	background: hsla(229, 48%, 56%, 1);
+}
+
+
+
 /* Tags first */
 body{
 	margin: 0;
 	height: 100%;
+}
+
+h1{
+	font-family: 'Arvo';
 }
 
 html{
@@ -138,47 +185,11 @@ input[type=button].selected{
 	border-radius: 2px;
 }
 
-
-
-
-
-/* Choices */
-.choices{
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	font-family: 'Arvo';
+.titleCredits{
+	font-size: .6em;
 }
-.choices li{
-	/*	float: left;
-		clear: left;*/
-	display: inline-block;
-	margin-top: 1%;
-	padding: .5% 2%;
-    text-align: left;
-	border-radius: 10px;
-}
-.choices li:hover{
-	cursor: pointer;
-}
-
-#setup .choices{
-	text-align: right;
-}
-#setup .choices li{
-	/*width: auto;*/
-	background: hsla(32, 12%, 51%, .5);
-}
-#setup .choices li:hover{
-	background: hsla(32, 12%, 51%, 1);
-}
-
-#story .choices li{
-    width: 96%;
-	margin-right: 2%;
-	background: hsla(229, 100%, 72%, 0.5);
-	/*	text-align: right;*/
-}
-#story .choices li:hover{
-	background: hsla(229, 48%, 56%, 1);
+.titleCredits a{
+	font-weight: bold;
+	color: hsl(11, 56%, 51%);
+	text-decoration: none;
 }

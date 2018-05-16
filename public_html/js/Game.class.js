@@ -1,6 +1,5 @@
 var game = {
-    start: 'wallTouched',
-//	start: 'setup',
+    start: 'infos',
     vars: {
         gender: 'f',
         firstname: '',

@@ -10,13 +10,25 @@ var passages = [
 		state: ''
 	},
 	{
-		id: 'here',
+		id: 'infos',
+		interface: 'setup',
 		text: {
-			en: "For a better game experience, it is recommended to use headphones and dim the lights.",
-			fr: "Pour une meilleure expérience de ce jeu, il est recommandé d'utiliser un casque audio et d'atténuer les lumières."
+			en: "For a better game experience, it is recommended to dim the lights and use headphones.",
+			fr: "Pour une meilleure expérience, il est recommandé de jouer dans l'obscurité en utilisant un casque audio."
 		},
 		choices: [
-			{text: 'wait', href: 'wk8'},
+			{text: {en:"Continue", fr:"Continuer"}, href: 'title'},
+		]
+	},
+	{
+		id: 'title',
+		interface: 'setup',
+		text: {
+			en: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Made by Grégory Béal for the AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>",
+			fr: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Créé par Grégory Béal pour l'AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>"
+		},
+		choices: [
+			{text: {fr:"Continuer"}, href: 'setup'},
 		]
 	},
 	{
