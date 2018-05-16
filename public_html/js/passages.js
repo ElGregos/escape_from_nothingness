@@ -180,41 +180,41 @@ var passages = [
 		text: {fr: "Je m'approche en balayant l'espace de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"},
 		choices: [
 			{text: {fr: "Je dois me cacher !"}, href: "wallTouchedRetreat"},
-            {text: {fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
-			{text: {fr: "La curiosité me pousse à toucher ces bosses."}, href:"wallTouchedPush"},
+			{text: {fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
+			{text: {fr: "La curiosité me pousse à toucher ces bosses."}, href: "wallTouchedPush"},
 		]
 	},
 	{
 		id: 'wallTouchedWait',
 		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer ?"},
 		choices: [
-			{text: {fr: "Je devrais peut-être échanger ce contact."}, href:"wallTouchedPush"},
+			{text: {fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
 			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat"},
 		]
 	},
 	{
 		id: 'wallTouchedRetreat',
 		text: {fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."},
-        choices:[
-            {text:{fr:"Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
-            {text:{fr:"Je suis quand même intrigué_fe_, je vais me rapprocher."}, href:"wallTouchedExam"},
-        ]
+		choices: [
+			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
+			{text: {fr: "Je suis quand même intrigué_fe_, je vais me rapprocher."}, href: "wallTouchedExam"},
+		]
 	},
 	{
 		id: 'wallTouchedWaitBack',
 		text: {fr: "J'attend en espérant que mon inquiétude disparaisse. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir quand cet palpations vont s'arrêter. Tout ceci m'a fatigué_fe_."},
-        choices:[
-            {text:{fr:"Je devrais peut-être en profiter pour dormir."}, href: "wallTouchedSleep"},
-            {text:{fr:"Je vais quand même vérifier ce qu'il en est."}, href:"wallTouchedExam"},
-        ]
+		choices: [
+			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "wallTouchedSleep"},
+			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam"},
+		]
 	},
 	{
 		id: 'wallTouchedPush',
 		text: {fr: "Contact !"},
-        choices:[
-            {text:{fr:"J'appuie plus fort."}, href: "wallTouchedSleep"},
-            {text:{fr:"Je suis rassuré_fe_. Je pense que je vais dormir."}, href:"wallTouchedExam"},
-        ]
+		choices: [
+			{text: {fr: "J'appuie plus fort."}, href: "wallTouchedSleep"},
+			{text: {fr: "Je suis rassuré_fe_. Je pense que je vais dormir."}, href: "wallTouchedExam"},
+		]
 	},
 
 	//Wall getting closer. Kicking the wall
@@ -232,45 +232,64 @@ var passages = [
 	//Eyes opened
 	//The wall is a light
 	//Wall too close, need for upside down
-	
+
 	{
 		id: 'wallClosest',
 		text: {
-			fr: "J'avais déjà remarqué que le mur se rapprochait un peu plus à chaque réveil, devenant toujours un peu plus oppressant. Il m'entoure maintenant de toutes parts. Bientôt, je pourrai à peine bouger la tête. Le bas de mon corps semble un peu moins comprimé."
+			fr: "J'avais déjà remarqué que le mur se rapprochait légèrement à chaque réveil, devenant chaque fois un peu plus oppressant. Il m'entoure maintenant de toutes parts. Si cela continue, je pourrai bientôt à peine bouger la tête. Le bas de mon corps semble avoir un peu plus de place."
 		},
 		choices: [
-			{text: {fr:"Je vais tenter de trouver une meilleure position."}, href: 'wallClosestMove'},
-			{text: {fr:"Je vais me débattre pour dégager un peu d'espace."}, href: 'wallClosestPush'},
+			{text: {fr: "Je vais essayer de trouver une meilleure position."}, href: 'wallClosestMove'},
+			{text: {fr: "Je vais me débattre pour libérer un peu d'espace."}, href: 'wallClosestPush'},
 		]
 	},
 	{
 		id: 'wallClosestPush',
 		text: {
-			fr: "Je tente de repousser le mur de tout côté en m'aidant de chaque partie de mon corps, main, pied, dos, tête. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit."
+			fr: "En m'aidant de chaque partie de mon corps, main, pied, dos, tête, je tente de repousser le mur de tout côté. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit."
 		},
 		choices: [
-			{text: {fr:"Il se passe alors une chose curieuse."}, href: "wallClosestPush2"},
+			{text: {fr: "Il se passe alors une chose curieuse."}, href: "wallClosestPush2"},
 		]
 	},
 	{
 		id: 'wallClosestPush2',
 		text: {
-			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été agréable. Oui, je crois que c'était lié à une tentative de communication. Mais puisque je suis plaqué contre ce mur, cette bosse me déplace également."
+			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_fe_ contre ce mur, cette bosse me pousse également."
 		},
 		choices: [
-			{text: {fr:"Je vais à mon tour appuyer sur le mur."}, href: "wallClosestPush2"},
-			{text: {fr:"Je vais attendre de voir ce qui se passe."}, href: "wallClosestPush2"},
-			{text: {fr:"Je vais tenter de changer de position."}, href: "wallClosestMove"},
+			{text: {fr: "Je vais à mon tour appuyer sur le mur."}, href: ""},
+			{text: {fr: "Je vais attendre de voir ce qui se passe."}, href: "wallClosestPush3"},
+			{text: {fr: "Je vais tenter de changer de position."}, href: "wallClosestMove"},
+		]
+	},
+	{
+		id: 'wallClosestPush3',
+		text: {
+			fr: "Une deuxième bosse apparaît, opposée à la première, et déforme le mur dans un mouvement circulaire. La première bosse suit le même mouvement, comme si le mur avait décidé de me caresser doucement. Puis des séries de pressions plus fortes, et de mouvements circulaires plus amples, ont transformé ces caresses en un massage plus vigoureux. Je crois que le mur apprécie aussi peu que moi ma position et tente de soulager son propre inconfort."
+		},
+		choices: [
+			{text: {fr: "Je vais le laisser faire."}, href: "wallClosestPush4"},
+			{text: {fr: "Je vais l'aider."}, href: "wallClosestMove"},
+		]
+	},
+	{
+		id: 'wallClosestPush4',
+		text: {
+			fr: "À force de mouvements, "
+		},
+		choices: [
+			{text: {fr: "Je vais le laisser faire."}, href: "wallClosestPush4"},
 		]
 	},
 	{
 		id: 'wallClosestMove',
 		text: {
-			fr: "Je joins les mains sous mon menton, et joue des épaules pour essayer de me retourner. Le mur se tend, mais garde une souplesse étonnante, et la manœuvre se déroule sans trop de difficulté. Jusqu'à ce que ma tête et le bas de mon corps s'enfoncent chacun dans un creux. La tension du mur me bloque alors dans cette position, mon corps désagréablement comprimé de haut en bas."
+			fr: "Je joins les mains sous mon menton, et joue des épaules pour essayer de me retourner. Le mur se tend, mais garde une souplesse étonnante, et la manœuvre se déroule sans trop de difficulté. Jusqu'à ce que ma tête et le bas de mon corps viennent chacun s'enfoncer dans un creux. La tension du mur me bloque alors dans cette position, mon corps désagréablement comprimé de haut en bas."
 		},
 		choices: [
-			{text: {fr:"Je vais essayer de me recroqueviller."}, href: "wallClosestMove2"},
-			{text: {fr:"Je vais me tendre au maximum pour décomprimer mon corps."}, href: "wallClosestMove3"},
+			{text: {fr: "Je vais essayer de me recroqueviller."}, href: "wallClosestMove2"},
+			{text: {fr: "Je vais me tendre au maximum pour dégager mon corps."}, href: "wallClosestMove3"},
 		]
 	},
 	{
@@ -279,7 +298,16 @@ var passages = [
 			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux. Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une interminable caresse. Tant et si bien..."
 		},
 		choices: [
-			{text: {fr:"... que je me suis endormi."}, href: ""},
+			{text: {fr: "... que je me suis endormi_fe_."}, href: ""},
+		]
+	},
+	{
+		id: 'wallClosestMove3',
+		text: {
+			fr: ""
+		},
+		choices: [
+			{text: {fr: ""}, href: ""},
 		]
 	},
 	{
@@ -288,7 +316,7 @@ var passages = [
 			fr: ""
 		},
 		choices: [
-			{text: {fr:""}, href: ""},
+			{text: {fr: ""}, href: ""},
 		]
 	},
 	{
@@ -297,7 +325,7 @@ var passages = [
 			fr: ""
 		},
 		choices: [
-			{text: {fr:""}, href: ""},
+			{text: {fr: ""}, href: ""},
 		]
 	},
 	{
@@ -306,7 +334,7 @@ var passages = [
 			fr: ""
 		},
 		choices: [
-			{text: {fr:""}, href: ""},
+			{text: {fr: ""}, href: ""},
 		]
 	},
 	{
@@ -315,22 +343,19 @@ var passages = [
 			fr: ""
 		},
 		choices: [
-			{text: {fr:""}, href: ""},
+			{text: {fr: ""}, href: ""},
 		]
 	},
-	{
-		id: 'wallClosest',
-		text: {
-			fr: ""
-		},
-		choices: [
-			{text: {fr:""}, href: ""},
-		]
-	},
-
 
 	//Urge to go out
 	//Birth
+	/*
+	 * J'ai réussi à passer à travers le mur, mais ma joie ne dure pas : un autre mur se trouve derrière !
+	 * Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !
+	 * Je suis complètement sonné_fe_ par ces bouleversements.
+	 * Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge.
+	 * Par pitié, que quelqu'un m'aide !
+	 */
 	{
 		id: 'birth',
 		phase: 'birth',
@@ -355,7 +380,7 @@ var passages = [
 		id: 'birth3',
 		phase: 'birth',
 		text: {
-			en: "I'm forward 3."
+			en: "I'm pushed forward 3."
 		},
 		choices: [
 			{text: 'wait', href: 'birth4'}
@@ -365,7 +390,7 @@ var passages = [
 		id: 'birth4',
 		phase: 'birth',
 		text: {
-			en: "I'm forward 4."
+			en: "I'm pushed forward 4."
 		},
 		choices: [
 			{text: 'wait', href: 'postBirth'}

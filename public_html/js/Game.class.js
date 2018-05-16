@@ -24,7 +24,7 @@ var game = {
             passages: passages,
             passage: new Passage()
         };
-//		floaters.init();
+		floaters.init();
     },
 
     languageSet: function (lang) {
