@@ -3,11 +3,23 @@ var game = {
 	vars: {
 		gender: 'f',
 		firstname: '',
-		'fe': function () {
+		'/e': function () {
 			return game.vars.gender === 'f' ? 'e' : '';
 		},
-		'fète': function () {
+		'/ete': function () {
 			return game.vars.gender === 'f' ? 'ète' : 'et';
+		},
+		'/fille': function () {
+			return game.vars.gender === 'f' ? 'fille' : 'garçon';
+		},
+		'/elle': function () {
+			return game.vars.gender === 'f' ? 'elle' : 'il';
+		},
+		'/mere': function () {
+			return game.vars.gender === 'f' ? 'mère' : 'père';
+		},
+		'/sa': function () {
+			return game.vars.gender === 'f' ? 'sa' : 'son';
 		},
 	},
 	birth: 0,

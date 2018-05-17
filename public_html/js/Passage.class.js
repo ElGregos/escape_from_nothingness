@@ -90,6 +90,10 @@ Passage.prototype = {
                 ui.formUpdate();
                 break;
 
+            case 'theend':
+                $('html').attr('class', 'story theend');
+                break;
+
             default:
                 $('html').attr('class', 'story');
 

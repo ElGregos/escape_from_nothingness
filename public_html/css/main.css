@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.setup #choices{
+.setup #choices, .theend #choices{
     text-align: right;
 }
 .setup #choices li{
@@ -34,6 +34,10 @@
     margin-right: 2%;
     background: hsla(229, 100%, 72%, 0.5);
     /*	text-align: right;*/
+}
+.story.theend #choices li{
+    width: auto;
+    margin-right: 0;
 }
 .story #choices li:hover{
     background: hsla(229, 48%, 56%, 1);
@@ -63,7 +67,8 @@ html.setup{
     background: hsl(18, 20%, 27%);
 }
 html.story{
-    background: hsla(0, 0%, 28%, 1);
+    /*background: hsla(0, 0%, 28%, 1);*/
+    background: black;
 }
 
 input{
@@ -164,6 +169,21 @@ input[type=button].selected{
 /* Classes first */
 .button{
     cursor: pointer;
+}
+
+.dialogue li{
+	list-style-type: none;
+	/*font-family: 'Arvo';*/
+	/*font-style: italic;*/
+}
+.dialogue li::before{
+	content: "- ";
+}
+.dialogue li:first-of-type::before{
+	content: "«\a0";
+}
+.dialogue li:last-of-type::after{
+	content: "\a0»";
 }
 
 .floater{

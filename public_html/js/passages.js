@@ -3,22 +3,22 @@ var passages = [
 		id: 'infos',
 		phase: 'setup',
 		text: {
-			en: "This game uses your brower's cookies and history to save your progression.<br><br>For a better game experience, it is recommended to dim the lights and use headphones.",
-			fr: "Ce jeu utilise les cookies et l'historique du navigateur pour mémoriser votre progression.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans l'obscurité en utilisant un casque audio."
+			en: "This game uses your brower's cookies to save your progress.<br><br>For a better game experience, it is recommended to dim the lights and use headphones.",
+			fr: "Ce jeu utilise les cookies du navigateur pour mémoriser votre progression.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans la pénombre en utilisant un casque audio."
 		},
 		choices: [
-			{text: {en: "Continue", fr: "Continuer"}, href: 'title'},
+			{text: "continue", href: 'title'},
 		]
 	},
 	{
 		id: 'title',
 		phase: 'setup',
 		text: {
-			en: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Made by Grégory Béal for the AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>",
-			fr: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Créé par Grégory Béal pour l'AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>"
+			en: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Made by Grégory Béal for the AdventureJam&nbsp;2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>",
+			fr: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Créé par Grégory Béal pour l'AdventureJam&nbsp;2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>"
 		},
 		choices: [
-			{text: {fr: "Continuer"}, href: 'setup'},
+			{text: "continue", href: 'setup'},
 		]
 	},
 	{
@@ -68,7 +68,7 @@ var passages = [
 		id: 'wk9',
 		text: {
 			en: "I wake... up. Some... thing. Thoughts?",
-			fr: "je me<br><br>réveille quelque<br>chose<br><br>pensées ?"
+			fr: "je me<br><br>réveille quelque<br>chose<br><br>pensées&nbsp;?"
 		},
 		choices: [
 			{text: 'wait', href: 'wk10'}
@@ -78,7 +78,7 @@ var passages = [
 		id: 'wk10',
 		text: {
 			en: "I wake up. How did I get here? Since how long?",
-			fr: "Je me réveille.<br><br>Où suis-je ?<br><br><br>Comment suis-je arrivé_fe_ ici ?",
+			fr: "Je me réveille.<br><br>Où suis-je&nbsp;?<br><br><br>Comment suis-je arrivé_/e_ ici&nbsp;?",
 		},
 		choices: [
 			{text: 'wait', href: 'wk11'}
@@ -174,11 +174,11 @@ var passages = [
 	//The wall touched me!
 	{
 		id: 'wallTouched',
-		text: {fr: "J'ai été réveillé_fe_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."},
+		text: {fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."},
 		choices: [
-			{text: {fr: "Je dois trouver d'où cela vient !"}, href: "wallTouchedExam"},
-			{text: {fr: "Je vais rester discr_fète_."}, href: "wallTouchedWait"},
-			{text: {fr: "Je ne suis pas du tout rassuré_fe_."}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je vais chercher d'où cela vient."}, href: "wallTouchedExam"},
+			{text: {fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
+			{text: {fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat"},
 		]
 	},
 	{
@@ -192,7 +192,7 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedWait',
-		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer ?"},
+		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer&nbsp;?"},
 		choices: [
 			{text: {fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
 			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat"},
@@ -203,12 +203,12 @@ var passages = [
 		text: {fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."},
 		choices: [
 			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
-			{text: {fr: "Je suis quand même intrigué_fe_, je vais me rapprocher."}, href: "wallTouchedExam"},
+			{text: {fr: "Je suis quand même intrigué_/e_, je vais me rapprocher."}, href: "wallTouchedExam"},
 		]
 	},
 	{
 		id: 'wallTouchedWaitBack',
-		text: {fr: "J'attend en espérant que mon inquiétude disparaisse. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir quand cet palpations vont s'arrêter. Tout ceci m'a fatigué_fe_."},
+		text: {fr: "J'attend en espérant que mon inquiétude disparaisse. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir quand cet palpations vont s'arrêter. Tout ceci m'a fatigué_/e_."},
 		choices: [
 			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "wallTouchedSleep"},
 			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam"},
@@ -219,7 +219,7 @@ var passages = [
 		text: {fr: "Contact !"},
 		choices: [
 			{text: {fr: "J'appuie plus fort."}, href: "wallTouchedSleep"},
-			{text: {fr: "Je suis rassuré_fe_. Je pense que je vais dormir."}, href: "wallTouchedExam"},
+			{text: {fr: "Je suis rassuré_/e_. Je pense que je vais dormir."}, href: "wallTouchedExam"},
 		]
 	},
 
@@ -261,7 +261,7 @@ var passages = [
 	{
 		id: 'wallClosestPush2',
 		text: {
-			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_fe_ contre ce mur, cette bosse me pousse également."
+			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_/e_ contre ce mur, cette bosse me pousse également."
 		},
 		choices: [
 			{text: {fr: "Je vais à mon tour appuyer sur le mur."}, href: ""},
@@ -304,7 +304,7 @@ var passages = [
 			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux. Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une interminable caresse. Tant et si bien..."
 		},
 		choices: [
-			{text: {fr: "... que je me suis endormi_fe_."}, href: ""},
+			{text: {fr: "... que je me suis endormi_/e_."}, href: ""},
 		]
 	},
 	{
@@ -320,11 +320,11 @@ var passages = [
 	//Urge to go out
 	//Birth
 	/*
-	 * J'ai réussi à passer à travers le mur, mais ma joie ne dure pas : un autre mur se trouve derrière !
+	 * J'ai réussi à passer à travers le mur ! Mais ma joie ne dure pas : un autre mur se trouve derrière !
 	 * Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !
-	 * Je suis complètement sonné_fe_ par ces bouleversements.
-	 * Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge.
-	 * Par pitié, que quelqu'un m'aide !
+	 * Je suis complètement sonné_/e_ par ces bouleversements.
+	 * 
+	 * Par pitié, que quelqu'un m'aide !!
 	 */
 	{
 		id: 'birth',
@@ -360,23 +360,48 @@ var passages = [
 		id: 'birth4',
 		phase: 'birth',
 		text: {
-			en: "I'm pushed forward 4."
+			fr: "Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge."
 		},
 		choices: [
 			{text: 'wait', href: 'postBirth'}
 		]
 	},
+
+	//Post-birth
 	{
-		id: 'postBirth',
-		phase: 'birth',
+		id: "postBirth",
 		text: {
-			en: "I'm born!"
-		}
+			fr: "<ul class='dialogue'>\n\
+<li>Oh là là, quelle magnifique petit_/e_ _/fille_ ! Comment allez-vous l'appeler&nbsp;?</li>\n\
+<li>_firstname_... Son papa et moi... nous aimons beaucoup ce prénom.</li>\n\
+<li>_firstname_. quel prénom adorable. Bonjour, _firstname_ !</li>\n\
+</ul>Je souris. Je ne sais pas pourquoi. Je ne peux pas m'en empêcher."
+		},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "postBirth2"}
+		]
 	},
 	{
-		id: '',
+		id: "postBirth2",
 		text: {
-			en: ""
-		}
-	}
+			fr: "<ul class='dialogue'><li>Oh ! Regardez comme _/elle_ sourit ! On dirait que son prénom lui plaît.</li></ul>\n\
+Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m'amène à la créature allongée. Ses cheveux, son visage et ses yeux sont trempés, mais c'est son sourire que je remarque le plus. Son regard ne me quitte pas. Une autre créature se tient penchée derrière elle et me fixe avec la même expression.\n\
+<ul class='dialogue'><li>C'était le prénom de _/sa_ grand-_/mere_. Du moins, _/elle_ a toujours voulu qu'on l'appelle comme ça. J'aurais tellement aimé qu'_/elle_ soit là.</li></ul>\n\
+"
+		},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "postBirth3"}
+		]
+	},
+	{
+		id: "postBirth3",
+		phase: "theend",
+		text: {
+			fr: "J'atterris lentement sur cette créature, qui m'amène avec douceur contre sa peau.<br><br>Et je me souviens.<br><br>Je reconnais ces odeurs. Ces sons. Ils étaient là, partout à l'intérieur. Différents, mais c'étaient les mêmes. J'arrête de crier et me concentre sur ces sensations. Je suis épuisé_/e_. Mais il y a tellement à découvrir. Je n'ai plus envie de retrouver l'ancienne chaleur.\n\
+<ul class='dialogue'><li>Coucou, _firstname_. Bonjour, mon bébé. Je suis ta maman. Bienvenue dans ce monde.</li></ul><br><br><br><br>"
+		},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "title"}
+		]
+	},
 ];
