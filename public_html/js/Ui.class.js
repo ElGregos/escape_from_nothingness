@@ -9,13 +9,13 @@ var ui = {
 	},
 
 	fadein: function () {
-		var divId = game.story.passage.interface || 'story';
-		$('#' + divId).animate({opacity: 1}, {duration: game.story.passage.fadein});
+//		var divId = game.story.passage.interface || 'story';
+		$('#main').animate({opacity: 1}, {duration: game.story.passage.fadein});
 	},
 
 	formUpdate: function () {
 		//Init inputs so they reflect game.vars.
-		$('#setup .maintext input').each(function () {
+		$('.setup #maintext input').each(function () {
 			var key = this.getAttribute('data-key');
 			var value = this.getAttribute('data-value');
 			var gameValue = game.vars[key];

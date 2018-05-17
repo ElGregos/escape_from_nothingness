@@ -322,42 +322,7 @@ var passages = [
 			{text: {fr: ""}, href: ""},
 		]
 	},
-	{
-		id: 'wallClosest',
-		text: {
-			fr: ""
-		},
-		choices: [
-			{text: {fr: ""}, href: ""},
-		]
-	},
-	{
-		id: 'wallClosest',
-		text: {
-			fr: ""
-		},
-		choices: [
-			{text: {fr: ""}, href: ""},
-		]
-	},
-	{
-		id: 'wallClosest',
-		text: {
-			fr: ""
-		},
-		choices: [
-			{text: {fr: ""}, href: ""},
-		]
-	},
-	{
-		id: 'wallClosest',
-		text: {
-			fr: ""
-		},
-		choices: [
-			{text: {fr: ""}, href: ""},
-		]
-	},
+
 
 	//Urge to go out
 	//Birth

@@ -14,10 +14,6 @@ Choice.prototype = {
 			game.story.passage.change(href);
 //			document.getElementById('audio').play();
 		};
-		if (game.story.passage.interface === 'setup') {
-			$('#setup .choices').append(btn);
-		} else {
-			$('#story .choices').append(btn);
-		}
+        $('#choices').append(btn);
 	}
 };

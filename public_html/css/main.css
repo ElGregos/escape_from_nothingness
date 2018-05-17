@@ -1,101 +1,107 @@
 /* Choices */
-.choices{
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	font-family: 'Arvo';
+#choices{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arvo';
 }
-.choices li{
-	/*	float: left;
-		clear: left;*/
-	display: inline-block;
-	margin-top: 1%;
-	padding: .5% 2%;
+#choices li{
+    /*	float: left;
+        clear: left;*/
+    display: inline-block;
+    margin-top: 1%;
+    padding: .5% 2%;
     text-align: left;
-	border-radius: 10px;
+    border-radius: 10px;
 }
-.choices li:hover{
-	cursor: pointer;
-}
-
-#setup .choices{
-	text-align: right;
-}
-#setup .choices li{
-	/*width: auto;*/
-	background: hsla(32, 12%, 51%, .5);
-}
-#setup .choices li:hover{
-	background: hsla(32, 12%, 51%, 1);
+#choices li:hover{
+    cursor: pointer;
 }
 
-#story .choices li{
+.setup #choices{
+    text-align: right;
+}
+.setup #choices li{
+    /*width: auto;*/
+    background: hsla(32, 12%, 51%, .5);
+}
+.setup #choices li:hover{
+    background: hsla(32, 12%, 51%, 1);
+}
+
+.story #choices li{
     width: 96%;
-	margin-right: 2%;
-	background: hsla(229, 100%, 72%, 0.5);
-	/*	text-align: right;*/
+    margin-right: 2%;
+    background: hsla(229, 100%, 72%, 0.5);
+    /*	text-align: right;*/
 }
-#story .choices li:hover{
-	background: hsla(229, 48%, 56%, 1);
+.story #choices li:hover{
+    background: hsla(229, 48%, 56%, 1);
 }
 
 
 
 /* Tags first */
 body{
-	margin: 0;
-	height: 100%;
+    margin: 0;
+    height: 100%;
 }
 
 h1{
-	font-family: 'Arvo';
+    font-family: 'Arvo';
 }
 
 html{
-	height: 100%;
-	font-family: 'Quicksand';
-	font-size: 1.3em;
-	background: black;
-	color: white;
-	cursor: default;
+    height: 100%;
+    font-family: 'Quicksand';
+    font-size: 1.3em;
+    background: black;
+    color: white;
+    cursor: default;
+}
+html.setup{
+    background: hsl(18, 20%, 27%);
+}
+html.story{
+    background: black;
 }
 
 input{
-	font-family: 'Arvo';
-	padding: .5% 5%;
-	font-size: 0.8em;
-	margin-top: .4em;
-	border-radius: 100px;
-	border: none;
+    font-family: 'Arvo';
+    padding: .5% 5%;
+    font-size: 0.8em;
+    margin-top: .4em;
+    border-radius: 100px;
+    border: none;
     outline: none;
 }
 
 input[type=text]{
-	/*background: hsla(11, 56%, 100%, .5);*/
-	background: white;
-	opacity: .5;
-	color: hsl(11, 56%, 51%);
+    /*background: hsla(11, 56%, 100%, .5);*/
+    background: white;
+    opacity: .5;
+    color: hsl(11, 56%, 51%);
 }
 input[type=text]:hover{
-	/*background: hsla(11, 56%, 100%, 1);*/
-	opacity: 1;
+    /*background: hsla(11, 56%, 100%, 1);*/
+    opacity: 1;
 }
 
 input[type=button]{
-	/*background: hsl(36, 56%, 51%);*/
-	background: hsla(11, 56%, 51%, .5);
-	color: white;
+    /*background: hsl(36, 56%, 51%);*/
+    background: hsla(11, 56%, 51%, .5);
+    color: white;
     cursor: pointer;
-	/*border: solid 4px hsla(0,0%,0%,0);*/
-	margin: .2em;
-	margin-top: .2em;
+    /*border: solid 4px hsla(0,0%,0%,0);*/
+    margin: .2em;
+    margin-top: .2em;
 }
 input[type=button]:hover{
-	background: hsla(11, 56%, 51%, 1);
+    background: hsla(11, 56%, 51%, 1);
 }
 input[type=button].selected{
-	margin: 0;
-	margin-top: .2em;
+    margin: 0;
+    margin-top: .2em;
     border: solid .2em white;
 }
 
@@ -103,63 +109,53 @@ input[type=button].selected{
 
 /* IDS first */
 #background{
-	position: absolute;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 #container{
-	position: relative;
-	width: 80%;
-	max-width: 1200px;
-	margin: auto;
-	height: 100%
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    height: 100%
 }
 
 #description{
-	background: hsla(245, 40%, 56%, 0.4);
-	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
+    background: hsla(245, 40%, 56%, 0.4);
+    /*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
 }
 
 #language{
-	text-align: right;
-	padding: .5%;
-	background: hsla(0,0%,0%,.1);
-	/*font-family: 'Arvo';*/
+    text-align: right;
+    padding: .5%;
+    background: hsla(0,0%,0%,.1);
+    /*font-family: 'Arvo';*/
 }
 #language span{
-	padding: 0 .5%;
-	color: hsl(27, 7%, 56%);
-	opacity: .5;
+    padding: 0 .5%;
+    color: hsl(27, 7%, 56%);
+    opacity: .5;
 }
 #language span:hover{
-	/*font-weight: bold;*/
-	opacity: 1;
+    /*font-weight: bold;*/
+    opacity: 1;
 }
 #language span.selected{
-	background: hsla(27, 7%, 56%, .5);
-	color: white;
+    background: hsla(27, 7%, 56%, .5);
+    color: white;
 }
 
-#setup{
-	height: inherit;
-	width: 60%;
-	height: auto;
-	margin: auto;
-	display: none;
-}
-#setup .maintext{
-	background: hsla(17, 29%, 32%, 1);
-	padding: 8% 10% 12% 10%;
-}
-
-#story{
-	height: inherit;
-	display: none;
-}
-#story .maintext{
-	background: hsla(245, 40%, 56%, 0.4);
+#maintext{
+    color: white;
+    padding: 3%;
+    margin-top: 5%;
+    font-size: 1.5em;
+    /*min-height: 30%;*/
+    /*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
+    border-radius: 2px;
 }
 
 
@@ -167,29 +163,34 @@ input[type=button].selected{
 
 /* Classes first */
 .button{
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .floater{
-	position: absolute;
-	border-radius: 50%;
+    position: absolute;
+    border-radius: 50%;
 }
 
-.maintext{
-	color: white;
-	padding: 3%;
-	margin-top: 5%;
-	font-size: 1.5em;
-	/*min-height: 30%;*/
-	/*	box-shadow: 0 0 10px 5px hsla(245, 40%, 56%, 0.4);*/
-	border-radius: 2px;
+.setup #main{
+    height: inherit;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+.setup #maintext{
+    background: hsla(17, 29%, 32%, 1);
+    padding: 8% 10% 12% 10%;
+}
+
+.story #maintext{
+    background: hsla(245, 40%, 56%, 0.4);
 }
 
 .titleCredits{
-	font-size: .6em;
+    font-size: .6em;
 }
 .titleCredits a{
-	font-weight: bold;
-	color: hsl(11, 56%, 51%);
-	text-decoration: none;
+    font-weight: bold;
+    color: hsl(11, 56%, 51%);
+    text-decoration: none;
 }
