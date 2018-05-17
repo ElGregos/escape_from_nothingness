@@ -63,7 +63,8 @@ var ui = {
 		for (var key in game.vars) {
 //            console.log(v);
 //    		txt = txt.replace(/_cord_/g, 'ombilic');
-			var regex = new RegExp('_' + key + '_', 'g');
+//			var regex = new RegExp('_' + key + '_', 'g');
+			var regex = '_' + key + '_';
 			txt = txt.replace(regex, game.vars[key]);
 		}
 
