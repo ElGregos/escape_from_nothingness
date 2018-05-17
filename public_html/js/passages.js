@@ -7,7 +7,7 @@ var passages = [
 			fr: "Ce jeu utilise les cookies et l'historique du navigateur pour mémoriser votre progression.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans l'obscurité en utilisant un casque audio."
 		},
 		choices: [
-			{text: {en:"Continue", fr:"Continuer"}, href: 'title'},
+			{text: {en: "Continue", fr: "Continuer"}, href: 'title'},
 		]
 	},
 	{
@@ -18,18 +18,22 @@ var passages = [
 			fr: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Créé par Grégory Béal pour l'AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>"
 		},
 		choices: [
-			{text: {fr:"Continuer"}, href: 'setup'},
+			{text: {fr: "Continuer"}, href: 'setup'},
 		]
 	},
 	{
 		id: 'setup',
 		phase: 'setup',
 		text: {
-			en: 'I will play as<br><input type="button" value="a man" data-key="gender" data-value="m"> <input type="button" value="a woman" data-key="gender" data-value="f"><br><br>whom first name will be<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
-			fr: 'Je jouerai<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom sera<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>'
+			en: 'I will play as<br><input type="button" value="a man" data-key="gender" data-value="m"> <input type="button" value="a woman" data-key="gender" data-value="f"><br><br>whom first name will be<br><input name="firstname" type="text" maxlength="50" data-key="firstname" placeholder="mandatory"/>',
+			fr: 'Je jouerai<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom sera<br><input name="firstname" type="text" maxlength="50" data-key="firstname" placeholder="obligatoire"/>'
 		},
 		choices: [
-			{text: {en: "and my adventure may begin", fr: "et mon aventure peut commencer"}, href: 'startGame'}
+			{text: {en: "and my adventure may begin", fr: "et mon aventure peut commencer"}, href: 'startGame',
+				check: function () {
+					return game.vars.firstname;
+				}
+			}
 		]
 	},
 	{
@@ -312,7 +316,6 @@ var passages = [
 			{text: {fr: ""}, href: ""},
 		]
 	},
-
 
 	//Urge to go out
 	//Birth
