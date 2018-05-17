@@ -21,6 +21,9 @@ var game = {
 		'/sa': function () {
 			return game.vars.gender === 'f' ? 'sa' : 'son';
 		},
+		'/ure': function () {
+			return game.vars.gender === 'f' ? 'ûre' : 'ur';
+		},
 	},
 	birth: 0,
 	birthFrames: [

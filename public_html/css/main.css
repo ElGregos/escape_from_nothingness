@@ -36,7 +36,7 @@
     /*	text-align: right;*/
 }
 .story.theend #choices li{
-    width: auto;
+    width: 10%;
     margin-right: 0;
 }
 .story #choices li:hover{
@@ -169,6 +169,10 @@ input[type=button].selected{
 /* Classes first */
 .button{
     cursor: pointer;
+}
+
+.dialogue.far{
+	font-style: italic;
 }
 
 .dialogue li{

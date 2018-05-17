@@ -12,10 +12,11 @@ Passage.prototype = {
             var _this = this;
 			this.animate();
             $('#main').animate({opacity: 0}, {
-                duration: _this.fadeout,
+                duration: game.story.choice.fadeout || 500,
                 complete: function () {
                     _this.get(id);
                     _this.show();
+					game.story.choice.fadeout = null;
                     switch (_this.phase) {
 
                         case 'birth':
@@ -74,7 +75,7 @@ Passage.prototype = {
             this.get(game.start);//Nasty...
         }
         this.fadein = this.fadein || 500;
-        this.fadeout = this.fadeout || 500;
+//        this.fadeout = this.fadeout || 500;
     },
 
     show: function () {

@@ -1,3 +1,5 @@
+var sleepTimeout = 3500;
+
 var passages = [
 	{
 		id: 'infos',
@@ -113,21 +115,18 @@ var passages = [
 		id: 'wk11_3',
 		text: {
 			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
-		}
-	},
-	{
-		id: '',
-		text: {
-			en: "Something pushed me. It was faint, but real."
 		},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: 'cordTouched'},
+		],
 	},
 
 	//The cord
 	//The cord looks thinner and thinner as the foetus grows.
 	{
-		id: 'touched',
+		id: 'cordTouched',
 		text: {
-			en: "Something touched me! "
+			en: "Something touched me! It was faint, but real."
 		},
 		choices: [
 			{text: {en: "Try to catch it", fr: "Essayer de l'attraper"}, href: 'cordGrab'},
@@ -137,18 +136,41 @@ var passages = [
 	{
 		id: 'cordGrab',
 		text: {
-			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out."
+			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out.",
+			fr: "J'ai pu attraper la chose sans difficulté. Elle est aussi large que mon bras mais semble beaucoup plus longue. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. Je n'arrive pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
 		},
 		choices: [
-			{text: {en: "I should give it a name.", fr: "Je devrais lui donner un nom"}, href: 'cordInert'},
+			{text: {fr: "Je vais tirer dessus."}, href: 'cordPull'},
+			{text: {fr: "Je vais la repousser."}, href: 'cordPush'},
 		],
 	},
 	{
-		id: 'cordInert',
-		text: {en: "|cord| is quite surprising. It is absolutely inert, yet looks like it's filled with energy."},
+		id: 'cordPull',
+		text: {fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."},
 		choices: [
-			{text: {en: "I'll rename it"}},
-			{text: {en: "I need to test it more"}},
+			{text: {fr: "Je vais essayer de la récupérer."}, href:"cordGrab2"},
+			{text: {fr: "Bon, tant pis."}, href:"cordSleep", fadeout: sleepTimeout},
+		]
+	},
+	{
+		id: 'cordGrab2',
+		text: {fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."},
+		choices: [
+			{text: {fr: "Bon, tant pis."}, href:"cordSleep", fadeout: sleepTimeout},
+		]
+	},
+	{
+		id: 'cordSleep',
+		text: {fr: ""},
+		choices: [
+			{text: {fr: "&nbsp;"}, href:"cordSleep"},
+		]
+	},
+	{
+		id: 'cordGrab2',
+		text: {fr: ""},
+		choices: [
+			{text: {fr: ""}, href:""},
 		]
 	},
 	{
@@ -232,7 +254,59 @@ var passages = [
 	//Dream
 	//Skin is slippy (vernix)
 	//Echographie (Medical ultrasound) : he or she?
+	/*
+	 *  ...sûre... fille...
+	 */
+	{
+		id: 'echo',
+		text: {fr: "Quelque chose m'a réveillé_/e_. Ou plutôt, une impression. Le sentiment qu'on m'observait. Comme si j'étais surveillé_/e_."},
+		choices: [
+			{text: {fr: "Je vais examiner les environs."}, href: "echoCheck"},
+			{text: {fr: "Je vais attendre et essayer d'en apprendre plus."}, href: "echoWait"},
+			{text: {fr: "Je suis encore fatigué_/e_, je vais me rendormir."}, href: "echoSleep"},
+		]
+	},
+	{
+		id: 'echoWait',
+		text: {fr: "Je crois qu'il se passe bien quelque chose d'inhabituel. Je parviens à deviner quelques sons, sans pouvoir les identifier.\n\
+<ul class='dialogue far'><li>fille... savais... mois... dirait... observe...</li></ul>\n\
+Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'autant plus désagréable que c'est à sens unique."},
+		choices: [
+			{text: {fr: ""}, href: ""},
+			{text: {fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
+		]
+	},
+	{
+		id: 'echoCheck',
+		text: {fr: "Je tends les mains pour palper le mur. Il est légèrement déformé. Cela fait comme une petite vague qui repousse sa surface en mouvements circulaires, s'arrête subitement, puis repars en mouvements vifs. Je suis fasciné_/e_ par ces déplacements, tout en étant plongé_/e_ dans une certaine inquiétude."},
+		choices: [
+			{text: {fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
+		],
+	},
+	{
+		id: 'echoSleep',
+		text: {fr: "Je suis de toutes façons encore trop fatigué_/e_ pour être vraiment inqui_/ete_. Je suis à peu près s_/ure_ de me rendormir aussi facilement que j'ai été réveillé_/e_."},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "", fadeout: sleepTimeout},
+		],
+	},
+	{
+		id: 'echo',
+		text: {fr: ""},
+		choices: [
+			{text: {fr: ""}, href: ""},
+		]
+	},
+
 	//Cord is a friend
+	{
+		id: 'cord2Touched',
+		text: {fr: "Je "},
+		choices: [
+			{text: {fr: ""}, href: ""},
+		]
+	},
+
 	//Dream = memory
 	//Remember the taste has changed
 	//Eyes opened
@@ -321,7 +395,7 @@ var passages = [
 	//Birth
 	/*
 	 * J'ai réussi à passer à travers le mur ! Mais ma joie ne dure pas : un autre mur se trouve derrière !
-	 * Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !
+	 * 
 	 * Je suis complètement sonné_/e_ par ces bouleversements.
 	 * 
 	 * Par pitié, que quelqu'un m'aide !!
@@ -350,7 +424,7 @@ var passages = [
 		id: 'birth3',
 		phase: 'birth',
 		text: {
-			en: "I'm pushed forward 3."
+			fr: "Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !"
 		},
 		choices: [
 			{text: 'wait', href: 'birth4'}
