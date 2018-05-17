@@ -63,7 +63,7 @@ html.setup{
     background: hsl(18, 20%, 27%);
 }
 html.story{
-    background: black;
+    background: hsla(0, 0%, 28%, 1);
 }
 
 input{

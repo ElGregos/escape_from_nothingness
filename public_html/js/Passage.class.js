@@ -2,12 +2,15 @@ function Passage() {
 }
 
 Passage.prototype = {
+	animate: function(){
+		
+	},
+	
     change: function (id) {
-        console.log(id, this.id);
         if (id !== this.id) {
-            console.log('passage.change');
 //			window.history.pushState(this.id, this.id, "#" + this.id);
             var _this = this;
+			this.animate();
             $('#main').animate({opacity: 0}, {
                 duration: _this.fadeout,
                 complete: function () {
@@ -15,7 +18,7 @@ Passage.prototype = {
                     _this.show();
                     switch (_this.phase) {
 
-                        case '_birth':
+                        case 'birth':
                             var frame = game.birthFrames[game.birth];
                             var duration = frame.duration || 2;
                             d3.select('html').transition()
@@ -70,7 +73,6 @@ Passage.prototype = {
         if (!this.id) {
             this.get(game.start);//Nasty...
         }
-//        this.interface = this.interface || 'game';
         this.fadein = this.fadein || 500;
         this.fadeout = this.fadeout || 500;
     },
@@ -81,7 +83,7 @@ Passage.prototype = {
         }
         $('#maintext').html('<div>' + ui.txt(this.text) + '</div>');
         this.choicesShow();
-        switch (this.interface) {
+        switch (this.phase) {
 
             case 'setup':
                 $('html').attr('class', 'setup');

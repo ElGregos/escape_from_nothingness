@@ -1,20 +1,10 @@
 var passages = [
 	{
-		id: 'noSave',
-//		class:'systemUi',
-//		text: {en: "To automatically save your game progression, you must allow the use of your browser cookies.|OK|No way!", fr: "Pour enregistrer automatiquement votre progression dans le jeu, vous devez autoriser l'utilisation des cookies du navigateur.|D'accord|Non merci"},
-		text: {
-			en: "To automatically save your game progression, you must allow the use of your browser cookies.|OK|No way!",
-			fr: "Voulez-vous enregistrer automatiquement votre progression dans le jeu ?|Oui|Non"
-		},
-		state: ''
-	},
-	{
 		id: 'infos',
-		interface: 'setup',
+		phase: 'setup',
 		text: {
-			en: "For a better game experience, it is recommended to dim the lights and use headphones.",
-			fr: "Pour une meilleure expérience, il est recommandé de jouer dans l'obscurité en utilisant un casque audio."
+			en: "This game uses your brower's cookies and history to save your progression.<br><br>For a better game experience, it is recommended to dim the lights and use headphones.",
+			fr: "Ce jeu utilise les cookies et l'historique du navigateur pour mémoriser votre progression.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans l'obscurité en utilisant un casque audio."
 		},
 		choices: [
 			{text: {en:"Continue", fr:"Continuer"}, href: 'title'},
@@ -22,7 +12,7 @@ var passages = [
 	},
 	{
 		id: 'title',
-		interface: 'setup',
+		phase: 'setup',
 		text: {
 			en: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Made by Grégory Béal for the AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>",
 			fr: "<h1>Escape from Nothingness</h1><br><span class='titleCredits'>Créé par Grégory Béal pour l'AdventureJam 2018.<br>Twitter : <a href='https://twitter.com/GregosEl' target='_blank'>@GregosEl</a></span>"
@@ -33,9 +23,9 @@ var passages = [
 	},
 	{
 		id: 'setup',
-		interface: 'setup',
+		phase: 'setup',
 		text: {
-			en: 'I will play as<br><input type="button" value="A man" data-key="gender" data-value="m"> <input type="button" value="A woman" data-key="gender" data-value="f"><br><br>whom first name will be<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
+			en: 'I will play as<br><input type="button" value="a man" data-key="gender" data-value="m"> <input type="button" value="a woman" data-key="gender" data-value="f"><br><br>whom first name will be<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
 			fr: 'Je jouerai<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom sera<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>'
 		},
 		choices: [
@@ -44,7 +34,7 @@ var passages = [
 	},
 	{
 		id: 'setup2',
-		interface: 'setup',
+		phase: 'setup',
 		text: {
 			en: 'My character is<br><input type="button" value="A man" data-key="gender" data-value="m"> <input type="button" value="A woman" data-key="gender" data-value="f"><br><br>whom first name is<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>',
 			fr: 'Mon personnage est<br><input type="button" value="un homme" data-key="gender" data-value="m"> <input type="button" value="une femme" data-key="gender" data-value="f"><br><br>dont le prénom est<br><input name="firstname" type="text" maxlength="50" data-key="firstname"/>'

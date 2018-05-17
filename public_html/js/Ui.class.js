@@ -9,7 +9,6 @@ var ui = {
 	},
 
 	fadein: function () {
-//		var divId = game.story.passage.interface || 'story';
 		$('#main').animate({opacity: 1}, {duration: game.story.passage.fadein});
 	},
 
@@ -28,6 +27,7 @@ var ui = {
 						var key = this.getAttribute('data-key');
 						var value = this.getAttribute('data-value');
 						game.vars[key] = value;
+						game.save();
 						($('input[type=button][data-key=' + this.getAttribute('data-key') + ']')).each(function () {
 							if (this.getAttribute('data-value') == value) {
 								$(this).addClass('selected');
@@ -44,6 +44,7 @@ var ui = {
 					this.oninput = function () {
 						var name = this.value.trim();
 						game.vars[key] = name.charAt(0).toUpperCase() + name.slice(1);
+						game.save();
 					};
 					break;
 			}
