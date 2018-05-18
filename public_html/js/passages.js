@@ -195,7 +195,10 @@ var passages = [
 	//The wall touched me!
 	{
 		id: 'wallTouched',
-		text: {fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."},
+		text: {
+			en: "",
+			fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."
+		},
 		choices: [
 			{text: {fr: "Je veux savoir d'où cela vient."}, href: "wallTouchedExam"},
 			{text: {fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
@@ -318,86 +321,113 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	{
 		id: 'cord2Touched',
 		text: {
-			en: "The thing came and pet my cheek, which woke me up. I got used to its floating presence near me, pretending to ignore me, as if it was inviting me to play.",
+			en: "The thing came and pet my cheek, which woke me up. I got used to its floating presence near me, always pretending to ignore me, as if it was an invitation to play.",
 			fr: "La chose est venue caresser ma joue, ce qui m'a réveillé_/e_. Je me suis habitué_/e_ à sa présence, elle flotte en permanence près de moi en faisant mine de m'ignorer, comme si elle m'invitait à jouer."
 		},
 		choices: [
-			{text: {en:"", fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
-			{text: {fr: "Je vais la repousser pour pouvoir me rendormir."}, href: "cord2Sleep"},
+			{text: {en: "I'll try to catch and get to know it better.", fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
+			{text: {en: "I'll push it away so that I can go back to sleep.", fr: "Je vais la repousser pour pouvoir me rendormir."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Play',
-		text: {fr: "Je parviens à l'attirer à moi. Sa largeur a diminué : alors qu'avant je ne pouvais la déplacer qu'en l'entourant de mes bras, je parviens maintenant presque à la saisir des deux mains. Il semble aussi que je gagne en agilité.<br><br>Bon, que vais-je faire de la chose ?"},
+		text: {
+			en: "I manage to pull it to me. It got thinner: I once could move it only by placing my arms around, and now I can almost grab it with my both hands. I also seem to control my movements more easily. So, what will I do with the thing?",
+			fr: "Je parviens à l'attirer à moi. Sa largeur a diminué : alors qu'avant je ne pouvais la déplacer qu'en l'entourant de mes bras, je parviens maintenant presque à la saisir des deux mains. Il semble aussi que je gagne en agilité.<br><br>Bon, que vais-je faire de la chose ?"
+		},
 		choices: [
-			{text: {fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
-			{text: {fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
-			{text: {fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
-			{text: {en: "I'll nibble it.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
+			{text: {en: "I'll pull it down.", fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
+			{text: {en: "I'll pull it up.", fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
+			{text: {en: "I'll hug it.", fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
+			{text: {en: "I'll check its taste.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
 		]
 	},
 	{
 		id: 'cord2Down',
-		text: {fr: "Je l'entoure fermement de mes mains, que je tire vers le bas. Je comprends rapidement que ce mouvement demande une bonne dose de dextérité, car la chose est glissante et a vite fait de s'échapper. C'est un exercice qui demande énormément de concentration, mais que je trouve plutôt amusant, et je parviens à la faire glisser entre mes pieds un bon moment. Jusqu'à ce que quelque chose la retienne au-dessus de moi."},
+		text: {
+			en: "I firmly grab it with my both hands, which I pull down. I quickly figure this movement needs quite some dexterity, as the thing is slippy and could easily escape. This exercise requires a lot of focus, but I find it rather amusing, and manage to let it down between my feet for quite a moment. Until something holds it at a distance over me.",
+			fr: "Je l'entoure fermement de mes mains, que je tire vers le bas. Je comprends rapidement que ce mouvement nécessite une bonne dose de dextérité, car la chose est glissante et a vite fait de s'échapper. C'est un exercice qui demande énormément de concentration, mais que je trouve plutôt amusant, et je parviens à la faire glisser entre mes pieds un bon moment. Jusqu'à ce que quelque chose la retienne au-dessus de moi."
+		},
 		choices: [
-			{text: {fr: "Je vais tirer encore en insistant."}, href: "cord2Down2"},
-			{text: {fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
+			{text: {en: "I'll try to pull it harder.", fr: "Je vais tirer encore en insistant."}, href: "cord2Down2"},
+			{text: {en: "I'll let it go and try something else.", fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
 		]
 	},
 	{
 		id: 'cord2Down2',
-		text: {fr: "La chose semble fermement accrochée, et tirer dessus demande énormément d'énergie, en plus de l'agilité. Mais en y mettant toute ma force, j'arrive à la décrocher d'un seul coup !<br><br>Ah... non. Je crois que c'est moi-même que j'ai soulevé_/e_. Et maintenant que je suis sans appui, je n'ai plus qu'à me laisser glisser."},
+		text: {
+			en: "The thing seems securely hooked, and pulling it asks for a large deal of energy, besides agility. But by gathering all my strength, I finally unhook it at once!<br><br>Well... no. I rather think I pulled myself up. And now that I have no support, I just have to let myself slide down.",
+			fr: "La chose semble solidement accrochée, et tirer dessus demande énormément d'énergie, en plus de l'agilité. Mais en y mettant toute ma force, j'arrive à la décrocher d'un seul coup !<br><br>Ah... non. Je crois que c'est moi-même que j'ai soulevé_/e_. Et maintenant que je suis sans appui, je n'ai plus qu'à me laisser glisser."
+		},
 		choices: [
-			{text: {fr: "Je vais continuer mes expériences sur la chose."}, href: "cord2Play2"},
-			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+			{text: {en: "I'll keep experimenting on the thing.", fr: "Je vais continuer mes expériences sur la chose."}, href: "cord2Play2"},
+			{text: {en: "I'll leave it alone and rest.", fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Play2',
-		text: {fr: "J'ai toujours la chose entre les mains, je me demande à quelle sorte de recherche je vais passer maintenant."},
+		text: {
+			en: "I still hold the thing, and wonder about what kind of research to apply on it now.",
+			fr: "J'ai toujours la chose entre les mains, je me demande à quelle sorte de recherche je vais passer maintenant."
+		},
 		choices: [
-			{text: {fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
-			{text: {fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
-			{text: {fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
-			{text: {en: "I'll taste it.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
-			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+			{text: {en: "I'll pull it down.", fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
+			{text: {en: "I'll pull it up.", fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
+			{text: {en: "I'll hug it.", fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
+			{text: {en: "I'll check its taste.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
+			{text: {en: "I'll leave it alone and rest.", fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Up',
-		text: {fr: "Je l'attrape des deux mains et la soulève, ce qui me surprend aussitôt, car je l'imaginais beaucoup plus lourde. Je la soulève avec facilité, et ne la sens retomber qu'avec lenteur, comme si elle flottait. Je parviens ainsi à dérouler la chose quelques temps, jusqu'à ce qu'elle soit retenue par quelque chose."},
+		text: {
+			en: "I grab it with both hands and lift it, which instantly surprises me as I imagined it to be way heavier. Yet, I lift it easily, and let it fall with slowness, as if it was floating. I manage to unroll it for some time, until something holds it.",
+			fr: "Je l'attrape des deux mains et la soulève, ce qui me surprend aussitôt, car je l'imaginais beaucoup plus lourde. Pourtant, je la soulève avec facilité, et ne la sens retomber qu'avec lenteur, comme si elle flottait. Je parviens ainsi à dérouler la chose quelque temps, jusqu'à ce qu'elle soit retenue par quelque chose."
+		},
 		choices: [
-			{text: {fr: "Je vais tenter de tirer plus fort."}, href: "cord2Up2"},
-			{text: {fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
+			{text: {en: "I'll try to pull it harder.", fr: "Je vais tenter de tirer plus fort."}, href: "cord2Up2"},
+			{text: {en: "I'll drop it and try something else.", fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
 		]
 	},
 	{
 		id: 'cord2Up2',
-		text: {fr: "J'agrippe du mieux la chose et tire dessus de toutes mes forces, mais une sensation très désagréable parcourt alors mon ventre. Je refais une tentative, plus doucement, ce qui déclenche la même sensation déplaisante. C'est étrange. Est-ce sa façon de me faire comprendre qu'elle en a assez ? Je devrais peut-être montrer plus de délicatesse envers la chose. Il n'y a pas grand-chose d'autre ici, et je ne veux pas avoir à m'en méfier."},
+		text: {
+			en: "I grasp the thing the best I can and pull it with all my strength, but a very uncomfortable feeling then runs through my belly. I try again, more slowly, which triggers the same unpleasant feeling. It's strange. Is it its way of making me understand that it has enough? Maybe I should show more sensibility towards the thing. There is not much else here, and I don't want to be suspicious of it.",
+			fr: "J'agrippe du mieux la chose et tire dessus de toutes mes forces, mais une sensation très désagréable parcourt alors mon ventre. Je refais une tentative, plus doucement, ce qui déclenche la même sensation déplaisante. C'est étrange. Est-ce sa façon de me faire comprendre qu'elle en a assez ? Je devrais peut-être montrer plus de délicatesse envers la chose. Il n'y a pas grand-chose d'autre ici, et je ne veux pas avoir à m'en méfier."
+		},
 		choices: [
-			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
-			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+			{text: {en: "I'll try some other experiences.", fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {en: "I'll leave it alone and rest.", fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Hug',
-		text: {fr: "Je place mes bras autour de la chose et l'amène contre moi. Elle est souple, chaude et douce, et la serrer ainsi procure une sensation chaleureuse très agréable. Je me demande si elle apprécie aussi ce contact. En tout cas elle ne cherche pas à fuir. Nous restons ainsi un moment, puis je l'écarte doucement de moi."},
+		text: {
+			en: "I hug the thing and bring it against me. It is flexible, warm and soft, and to tighten it gives a very pleasant warm feeling. I wonder if it also likes this contact. Anyway, it does not try to flee. We stay like that for a moment, then I gently push it away from me.",
+			fr: "Je place mes bras autour de la chose et l'amène contre moi. Elle est souple, chaude et douce, et la serrer ainsi procure une sensation chaleureuse très agréable. Je me demande si elle apprécie aussi ce contact. En tout cas elle ne cherche pas à fuir. Nous restons ainsi un moment, puis je l'écarte doucement de moi."
+		},
 		choices: [
-			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
-			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+			{text: {en: "I'll try some other experiences.", fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {en: "I'll leave it alone and rest.", fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Taste',
-		text: {fr: "J'amène la chose à ma bouche, sans lui trouver de goût particulier. Ou plutôt, si : elle a un peu le même goût que mes mains, que je lèche parfois quand je suis inqui_/ete_, une méthode qui me rassure assez efficacement. Elle a aussi un peu le goût du vide qui m'entoure.<br><br>Sa texture, que je découvre en la mordillant, est plus particulière. À la fois douce, légèrement rugueuse, et glissante. Et l'énergie qui la parcourt est nettement sensible. Ce qui me fait opter pour définir la chose comme étant vivante."},
+		text: {
+			en: "I bring the thing to my mouth, without finding any particular taste for it. Or rather, yes: its taste is a bit like my hands, which I sometimes lick when I'm worried, a rather efficient method to help me not to worry. Somehow, it also has a taste of the emptiness around me. <br> <br>Its texture, which I discovered by nibbling it, is more peculiar. At once soft, slightly rough, and slippery. And the energy that runs through it is clearly noticeable. Which makes me choose to define the thing as alive.",
+			fr: "J'amène la chose à ma bouche, sans lui trouver de goût particulier. Ou plutôt, si : elle a un peu le même goût que mes mains, que je lèche parfois quand je suis inqui_/ete_, une méthode qui me rassure assez efficacement. Elle a aussi un peu le goût du vide qui m'entoure.<br><br>Sa texture, que je découvre en la mordillant, est plus particulière. À la fois douce, légèrement rugueuse, et glissante. Et l'énergie qui la parcourt est nettement sensible. Ce qui me fait opter pour définir la chose comme étant vivante."
+		},
 		choices: [
-			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
-			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+			{text: {en: "I'll try some other experiences.", fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {en: "I'll leave it alone and rest.", fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
 		]
 	},
 	{
 		id: 'cord2Sleep',
-		text: {fr: "Par ses glissements, je devine la chose qui s'éloigne lentement, tandis que je sens les muscles de mon corps fatigué se relâcher."},
+		text: {
+			en: "By the way it slips, I can guess the thing slowly moving away, while I feel the muscles of my tired body relax.",
+			fr: "Par ses glissements, je devine la chose qui s'éloigne lentement, tandis que je sens les muscles de mon corps fatigué se relâcher."
+		},
 		choices: [
 			{text: "next", href: "wallClosest", fadeout: sleepTimeout},
 		]
