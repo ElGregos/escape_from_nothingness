@@ -439,7 +439,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_/e_ contre ce mur, cette bosse me pousse également."
 		},
 		choices: [
-			{text: {fr: "Je vais à mon tour appuyer sur le mur."}, href: ""},
+//			{text: {fr: "Je vais à mon tour appuyer sur le mur."}, href: ""},
 			{text: {fr: "Je vais attendre de voir ce qui se passe."}, href: "wallClosestPush3"},
 			{text: {fr: "Je vais tenter de changer de position."}, href: "wallClosestMove"},
 		]
@@ -457,10 +457,10 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	{
 		id: 'wallClosestPush4',
 		text: {
-			fr: "À force de mouvements, "
+			fr: "À force de mouvements, je sens mon corps qui pivote, sans même que je le veuille."
 		},
 		choices: [
-			{text: {fr: "Je vais le laisser faire."}, href: ""},
+			{text: {fr: "..."}, href: "wallClosestFall"},
 		]
 	},
 	{
@@ -470,27 +470,37 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		},
 		choices: [
 			{text: {fr: "Je vais essayer de me recroqueviller."}, href: "wallClosestMove2"},
-			{text: {fr: "Je vais me tendre au maximum pour dégager mon corps."}, href: "wallClosestMove3"},
+			{text: {fr: "Je vais me raidir au maximum pour détendre le mur et dégager mon corps."}, href: "wallClosestMove3"},
 		]
 	},
 	{
 		id: 'wallClosestMove2',
 		text: {
-			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux. Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une interminable caresse. Tant et si bien..."
+			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux."
 		},
 		choices: [
-			{text: {fr: "... que je me suis endormi_/e_."}, href: ""},
+			{text: {fr: "&nbsp;"}, href: "wallClosestFall"},
 		]
 	},
 	{
 		id: 'wallClosestMove3',
 		text: {
-			fr: ""
+			fr: "Le mur lance un cri déchirant qui interrompt ma tentative. J'attends avec appréhension un court instant, me demandant ce qui va suivre, puis je me ressaisis pour me dégager avant que le mur ne me piège à nouveau. Je sors ma tête de son renfoncement, le mur reprend alors sa forme en expulsant mes pieds."
 		},
 		choices: [
-			{text: {fr: ""}, href: ""},
+			{text: {fr: "&nbsp;"}, href: "wallClosestFall"},
 		]
 	},
+	{
+		id: 'wallClosestFall',
+		text: {
+			fr: "Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une longue caresse. Tant et si bien que je m'endors doucement."
+		},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: ""},
+		]
+	},
+	
 
 	//Urge to go out (eaux, contractions)
 	{
@@ -512,7 +522,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		]
 	},
 	/*
-	 * Je sens un mouvement de glissement tout autour de mon visage, comme si le vide qui m'entoure était lentement aspiré vers une issue au-dessus de ma tête. Dans le même temps, je sens une irritation monter le long de mes jambes
+	 * Je sens un mouvement de glissement tout autour de mon visage, comme si le vide qui m'entoure était lentement aspiré vers une issue au-dessus de ma tête. Dans le même temps, je sens une irritation monter le long de mes jambes. On dirait que le vide autour de moi est remplacé par autre chose.
 	 */
 	/*
 	 * Je ne sais pas comment ça va finir. Je sais que je ne pourrai pas rester encore longtemps ici. Il faut absolument que je sorte de là, mais je ne crois pas pouvoir y arriver seul_/e_. Et je ne vois rien qui puisse m'aider. 
