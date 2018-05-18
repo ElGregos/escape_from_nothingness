@@ -119,13 +119,15 @@ var passages = [
 			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
 		},
 		choices: [
-			{text: "next", href: 'cordTouched'},
+			{text: "next", href: 'cordTouched', fadeout: sleepTimeout},
 		],
 	},
+
 	//The cord
 	//The cord looks thinner and thinner as the foetus grows.
 	{
 		id: 'cordTouched',
+		sound: 'phase2',
 		text: {
 			en: "Something touched me! It was faint, but real.",
 			fr: "Quelque chose m'a frôlé_/e_ ! C'était léger, mais bien réel."
@@ -137,6 +139,7 @@ var passages = [
 	},
 	{
 		id: 'cordGrab',
+		sound: 'phase2',
 		text: {
 			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out.",
 			fr: "J'ai pu toucher la chose, mais elle est beaucoup trop large et longue pour que je puisse l'agripper. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. En fait je ne parviens pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
@@ -148,6 +151,7 @@ var passages = [
 	},
 	{
 		id: 'cordPush',
+		sound: 'phase2',
 		text: {fr: "Je repousse la chose avec facilité, elle n'oppose absolument aucune résistance. Sa souplesse, malgré sa largeur, reste étonnante."},
 		choices: [
 			{text: {fr: "Finalement j'aimerais bien l'examiner davantage."}, href: "cordGrab2"},
@@ -156,6 +160,7 @@ var passages = [
 	},
 	{
 		id: 'cordPull',
+		sound: 'phase2',
 		text: {fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."},
 		choices: [
 			{text: {fr: "Je vais essayer de la récupérer."}, href: "cordGrab2"},
@@ -164,6 +169,7 @@ var passages = [
 	},
 	{
 		id: 'cordGrab2',
+		sound: 'phase2',
 		text: {fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."},
 		choices: [
 			{text: {fr: "Bon, tant pis."}, href: "floater1", fadeout: sleepTimeout},
@@ -196,22 +202,24 @@ var passages = [
 	{
 		id: 'wallTouched',
 		text: {
-			en: "",
+			en: "I was awakened by a series of contacts on my body. It began with almost imperceptible rustlings. Then these contacts became more insistent, as if someone wanted to catch me through something thick.",
 			fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."
 		},
 		choices: [
-			{text: {fr: "Je veux savoir d'où cela vient."}, href: "wallTouchedExam"},
-			{text: {fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
-			{text: {fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat1"},
+			{text: {en: "I want to know where it comes from.", fr: "Je veux savoir d'où cela vient."}, href: "wallTouchedExam"},
+			{text: {en: "I'll remain discreet.", fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
+			{text: {en: "I'll hide and protect myself.", fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat1"},
 		]
 	},
 	{
 		id: 'wallTouchedExam',
-		text: {fr: "Je m'approche en balayant l'espace de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"},
+		text: {en: "I approach, scanning the void with my hands to look for what is causing these contacts. I can not find anything more than the wall in front of me. It is perfectly smooth. Then a bump forms on it, followed by a second, and a third, which join in a wave deforming its surface. It is the whole wall that tries to touch me!",
+			fr: "Je m'approche en balayant le vide de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, suivie d'une deuxième, et d'une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"
+		},
 		choices: [
-			{text: {fr: "Je veux me cacher."}, href: "wallTouchedRetreat2"},
-			{text: {fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
-			{text: {fr: "La curiosité est plus forte, je vais toucher une de ces bosses."}, href: "wallTouchedPush"},
+			{text: {en: "I look for a place to hide.", fr: "Je chercher où me cacher."}, href: "wallTouchedRetreat2"},
+			{text: {en: "I don't move.", fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
+			{text: {en: "Curiosity pushes me to touch one of these bumps.", fr: "La curiosité me pousse à toucher une de ces bosses."}, href: "wallTouchedPush"},
 		]
 	},
 	{
@@ -224,7 +232,7 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedWait',
-		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je peux même deviner, dans leur délicatesse, une volonté de ne pas me blesser. Cherchent-ils à communiquer&nbsp;?"},
+		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je peux même deviner, dans leur délicatesse, une volonté de ne pas me blesser. Je me demande s'ils ne cherchent pas à communiquer."},
 		choices: [
 			{text: {fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
 			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat2"},
@@ -255,12 +263,19 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedPush',
-		text: {fr: "Contact !"},
+		text: {fr: "Les bosses et vagues vont et viennent lentement sur la surface du mur. J'essaie d'en toucher une mais elle a déjà disparu. En fait, toutes les bosses semblent avoir disparu à l'instant où ma main s'est posée. La surface du mur est de nouveau tendue, comme s'il était en attente de quelque chose.<br><br>Je laisse ma main glisser sur sa surface. Elle est incroyablement douce et moelleuse. Je sens ses plis se former et se retendre pendant que ma main dérive avec aisance. En m'attardant sur ces sensations, il me semble qu'il y a en fait deux murs l'un sur l'autre : l'un, fin, qui glisse sur le second, plus épais."},
 		choices: [
-			{text: {fr: "J'appuie plus fort."}, href: ""},
-			{text: {fr: "Je suis rassuré_/e_. Je pense que je vais dormir."}, href: "music1"},
+			{text: "next", href: "wallTouchedPush2"},
 		]
 	},
+	{
+		id: 'wallTouchedPush2',
+		text: {fr: "Lentement, j'appuie de plus en plus fort. Ma main disparaît presque dans le mur. Il est chaud. Puis le mur à cet endroit devient de plus en plus dur, repoussant ma main. C'est une bosse qui, doucement, apparaît juste en-dessous ! J'essaie de la repousser. Elle résiste, puis finit pas s'estomper, laissant le mur retourner à sa souplesse.<br><br>J'ai la forte impression que le mur a développé ces reliefs dans un but, peut-être d'entrer en contact avec moi. Quant à savoir si je dois m'en inquiéter... Comme pour la chose, je me demande s'il s'agit de quelque chose de vivant. Est-ce que le mur et la chose forment un tout ?"},
+		choices: [
+			{text: "next", href: "echo"},
+		]
+	},
+
 	//Wall getting closer. Kicking the wall
 	//Music
 	{
@@ -270,6 +285,7 @@ var passages = [
 			{text: {fr: ""}}
 		]
 	},
+
 	//Dream
 	//Skin is slippy (vernix)
 	//Echographie (Medical ultrasound) : he or she?
@@ -306,20 +322,14 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'echoSleep',
 		text: {fr: "Je suis de toutes façons encore trop fatigué_/e_ pour être vraiment inqui_/ete_. Je suis à peu près s_/ure_ de me rendormir aussi facilement que j'ai été réveillé_/e_."},
 		choices: [
-			{text: "next", href: "", fadeout: sleepTimeout},
+			{text: "next", href: "cord2Touched", fadeout: sleepTimeout},
 		],
-	},
-	{
-		id: 'echo',
-		text: {fr: ""},
-		choices: [
-			{text: {fr: ""}, href: ""},
-		]
 	},
 
 	//Cord is a friend
 	{
 		id: 'cord2Touched',
+		sound: 'mozart',
 		text: {
 			en: "The thing came and pet my cheek, which woke me up. I got used to its floating presence near me, always pretending to ignore me, as if it was an invitation to play.",
 			fr: "La chose est venue caresser ma joue, ce qui m'a réveillé_/e_. Je me suis habitué_/e_ à sa présence, elle flotte en permanence près de moi en faisant mine de m'ignorer, comme si elle m'invitait à jouer."
@@ -331,6 +341,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Play',
+		sound: 'mozart',
 		text: {
 			en: "I manage to pull it to me. It got thinner: I once could move it only by placing my arms around, and now I can almost grab it with my both hands. I also seem to control my movements more easily. So, what will I do with the thing?",
 			fr: "Je parviens à l'attirer à moi. Sa largeur a diminué : alors qu'avant je ne pouvais la déplacer qu'en l'entourant de mes bras, je parviens maintenant presque à la saisir des deux mains. Il semble aussi que je gagne en agilité.<br><br>Bon, que vais-je faire de la chose ?"
@@ -344,6 +355,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Down',
+		sound: 'mozart',
 		text: {
 			en: "I firmly grab it with my both hands, which I pull down. I quickly figure this movement needs quite some dexterity, as the thing is slippy and could easily escape. This exercise requires a lot of focus, but I find it rather amusing, and manage to let it down between my feet for quite a moment. Until something holds it at a distance over me.",
 			fr: "Je l'entoure fermement de mes mains, que je tire vers le bas. Je comprends rapidement que ce mouvement nécessite une bonne dose de dextérité, car la chose est glissante et a vite fait de s'échapper. C'est un exercice qui demande énormément de concentration, mais que je trouve plutôt amusant, et je parviens à la faire glisser entre mes pieds un bon moment. Jusqu'à ce que quelque chose la retienne au-dessus de moi."
@@ -355,6 +367,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Down2',
+		sound: 'mozart',
 		text: {
 			en: "The thing seems securely hooked, and pulling it asks for a large deal of energy, besides agility. But by gathering all my strength, I finally unhook it at once!<br><br>Well... no. I rather think I pulled myself up. And now that I have no support, I just have to let myself slide down.",
 			fr: "La chose semble solidement accrochée, et tirer dessus demande énormément d'énergie, en plus de l'agilité. Mais en y mettant toute ma force, j'arrive à la décrocher d'un seul coup !<br><br>Ah... non. Je crois que c'est moi-même que j'ai soulevé_/e_. Et maintenant que je suis sans appui, je n'ai plus qu'à me laisser glisser."
@@ -366,6 +379,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Play2',
+		sound: 'mozart',
 		text: {
 			en: "I still hold the thing, and wonder about what kind of research to apply on it now.",
 			fr: "J'ai toujours la chose entre les mains, je me demande à quelle sorte de recherche je vais passer maintenant."
@@ -380,6 +394,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Up',
+		sound: 'mozart',
 		text: {
 			en: "I grab it with both hands and lift it, which instantly surprises me as I imagined it to be way heavier. Yet, I lift it easily, and let it fall with slowness, as if it was floating. I manage to unroll it for some time, until something holds it.",
 			fr: "Je l'attrape des deux mains et la soulève, ce qui me surprend aussitôt, car je l'imaginais beaucoup plus lourde. Pourtant, je la soulève avec facilité, et ne la sens retomber qu'avec lenteur, comme si elle flottait. Je parviens ainsi à dérouler la chose quelque temps, jusqu'à ce qu'elle soit retenue par quelque chose."
@@ -391,6 +406,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Up2',
+		sound: 'mozart',
 		text: {
 			en: "I grasp the thing the best I can and pull it with all my strength, but a very uncomfortable feeling then runs through my belly. I try again, more slowly, which triggers the same unpleasant feeling. It's strange. Is it its way of making me understand that it has enough? Maybe I should show more sensibility towards the thing. There is not much else here, and I don't want to be suspicious of it.",
 			fr: "J'agrippe du mieux la chose et tire dessus de toutes mes forces, mais une sensation très désagréable parcourt alors mon ventre. Je refais une tentative, plus doucement, ce qui déclenche la même sensation déplaisante. C'est étrange. Est-ce sa façon de me faire comprendre qu'elle en a assez ? Je devrais peut-être montrer plus de délicatesse envers la chose. Il n'y a pas grand-chose d'autre ici, et je ne veux pas avoir à m'en méfier."
@@ -402,6 +418,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Hug',
+		sound: 'mozart',
 		text: {
 			en: "I hug the thing and bring it against me. It is flexible, warm and soft, and to tighten it gives a very pleasant warm feeling. I wonder if it also likes this contact. Anyway, it does not try to flee. We stay like that for a moment, then I gently push it away from me.",
 			fr: "Je place mes bras autour de la chose et l'amène contre moi. Elle est souple, chaude et douce, et la serrer ainsi procure une sensation chaleureuse très agréable. Je me demande si elle apprécie aussi ce contact. En tout cas elle ne cherche pas à fuir. Nous restons ainsi un moment, puis je l'écarte doucement de moi."
@@ -413,6 +430,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Taste',
+		sound: 'mozart',
 		text: {
 			en: "I bring the thing to my mouth, without finding any particular taste for it. Or rather, yes: its taste is a bit like my hands, which I sometimes lick when I'm worried, a rather efficient method to help me not to worry. Somehow, it also has a taste of the emptiness around me. <br> <br>Its texture, which I discovered by nibbling it, is more peculiar. At once soft, slightly rough, and slippery. And the energy that runs through it is clearly noticeable. Which makes me choose to define the thing as alive.",
 			fr: "J'amène la chose à ma bouche, sans lui trouver de goût particulier. Ou plutôt, si : elle a un peu le même goût que mes mains, que je lèche parfois quand je suis inqui_/ete_, une méthode qui me rassure assez efficacement. Elle a aussi un peu le goût du vide qui m'entoure.<br><br>Sa texture, que je découvre en la mordillant, est plus particulière. À la fois douce, légèrement rugueuse, et glissante. Et l'énergie qui la parcourt est nettement sensible. Ce qui me fait opter pour définir la chose comme étant vivante."
@@ -424,6 +442,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'cord2Sleep',
+		sound: 'mozart',
 		text: {
 			en: "By the way it slips, I can guess the thing slowly moving away, while I feel the muscles of my tired body relax.",
 			fr: "Par ses glissements, je devine la chose qui s'éloigne lentement, tandis que je sens les muscles de mon corps fatigué se relâcher."
@@ -581,7 +600,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			en: "I'm pushed forward 2."
 		},
 		choices: [
-			{text: 'wait', href: 'birth3'}
+			{text: 'next', href: 'birth3'}
 		]
 	},
 	{
@@ -591,7 +610,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !"
 		},
 		choices: [
-			{text: 'wait', href: 'birth4'}
+			{text: 'next', href: 'birth4'}
 		]
 	},
 	{
@@ -601,17 +620,24 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge."
 		},
 		choices: [
-			{text: 'wait', href: 'postBirth'}
+			{text: 'next', href: 'postBirth'}
 		]
 	},
+	
+	
 	//Post-birth
 	{
 		id: "postBirth",
 		text: {
+			en:"<ul class='dialogue'>\n\
+<li>Oh, what a beautiful little _/girl_! How are you going to call _/him_?</li>\n\
+<li>_firstname_... _/Her_ dad and I... we really like this name.</li>\n\
+<li>_firstname_. What an adorable name. Hello, _firstname_!</li>\n\
+</ul>I'm smiling. I don't know why. I can't help myself.",
 			fr: "<ul class='dialogue'>\n\
 <li>Oh là là, quelle magnifique petit_/e_ _/fille_ ! Comment allez-vous l'appeler&nbsp;?</li>\n\
 <li>_firstname_... Son papa et moi... nous aimons beaucoup ce prénom.</li>\n\
-<li>_firstname_. quel prénom adorable. Bonjour, _firstname_ !</li>\n\
+<li>_firstname_. Quel prénom adorable. Bonjour, _firstname_ !</li>\n\
 </ul>Je souris. Je ne sais pas pourquoi. Je ne peux pas m'en empêcher."
 		},
 		choices: [
@@ -621,10 +647,12 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	{
 		id: "postBirth2",
 		text: {
+			en: "<ul class='dialogue'><li>Oh! Look how _/she_'s smiling! It seems _/she_ really likes _/her_ name.</li></ul>\n\
+I'm flying again. I feel my body firmly held by something that brings me to the lying down creature. Her hair, her face and her eyes are soaked, but it's her smile that I really notice. Her eyes follow me. Another creature is leaning behind her and stares at me with the same expression.\n\
+<ul class='dialogue'><li>It was the name of _/her_ grand_/mother_. At least, _/she_ always wanted us to call _/him_ by that name. I would have liked so much that _/she_ be here.</li></ul>",
 			fr: "<ul class='dialogue'><li>Oh ! Regardez comme _/elle_ sourit ! On dirait que son prénom lui plaît.</li></ul>\n\
 Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m'amène à la créature allongée. Ses cheveux, son visage et ses yeux sont trempés, mais c'est son sourire que je remarque le plus. Son regard ne me quitte pas. Une autre créature se tient penchée derrière elle et me fixe avec la même expression.\n\
-<ul class='dialogue'><li>C'était le prénom de _/sa_ grand-_/mere_. Du moins, _/elle_ a toujours voulu qu'on l'appelle comme ça. J'aurais tellement aimé qu'_/elle_ soit là.</li></ul>\n\
-"
+<ul class='dialogue'><li>C'était le prénom de _/sa_ grand-_/mere_. Du moins, _/elle_ a toujours voulu qu'on l'appelle comme ça. J'aurais tellement aimé qu'_/elle_ soit là.</li></ul>"
 		},
 		choices: [
 			{text: "next", href: "postBirth3"}
@@ -634,8 +662,8 @@ Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m
 		id: "postBirth3",
 		phase: "theend",
 		text: {
-			fr: "J'atterris lentement sur cette créature, qui m'amène avec douceur contre sa peau.<br><br>Et je me souviens.<br><br>Je reconnais ces odeurs. Ces sons. Ils étaient là, partout à l'intérieur. Différents, mais c'étaient les mêmes. J'arrête de crier et me concentre sur ces sensations. Je suis épuisé_/e_. Mais il y a tellement à découvrir. Je n'ai plus envie de retrouver l'ancienne chaleur.\n\
-<ul class='dialogue'><li>Coucou, _firstname_. Bonjour, mon bébé. Je suis ta maman. Bienvenue dans ce monde.</li></ul><br><br><br><br>"
+			en: "I slowly land on this creature, which brings me gently against her skin.<br><br>And I remember.<br><br>I recognize these smells. These sounds. They were there, everywhere inside. Different, but they were the same. I stop crying and focus on these sensations. I'm exhausted. But there is so much to discover. I do not want to find the old warmth again.<ul class='dialogue'><li>Peep-Bo, _firstname_. Hello my baby. I am your mom. Welcome to this world.</li></ul><br><br><br><br>",
+			fr: "J'atterris lentement sur cette créature, qui m'amène avec douceur contre sa peau.<br><br>Et je me souviens.<br><br>Je reconnais ces odeurs. Ces sons. Ils étaient là, partout à l'intérieur. Différents, mais c'étaient les mêmes. J'arrête de crier et me concentre sur ces sensations. Je suis épuisé_/e_. Mais il y a tellement à découvrir. Je n'ai plus envie de retrouver l'ancienne chaleur.<ul class='dialogue'><li>Coucou, _firstname_. Bonjour, mon bébé. Je suis ta maman. Bienvenue dans ce monde.</li></ul><br><br><br><br>"
 		},
 		choices: [
 			{text: "next", href: "title"}

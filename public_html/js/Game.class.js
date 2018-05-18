@@ -24,6 +24,24 @@ var game = {
 		'/ure': function () {
 			return game.vars.gender === 'f' ? 'ûre' : 'ur';
 		},
+		'/she': function () {
+			return game.vars.gender === 'f' ? 'she' : 'he';
+		},
+		'/her': function () {
+			return game.vars.gender === 'f' ? 'her' : 'his';
+		},
+		'/Her': function () {
+			return game.vars.gender === 'f' ? 'Her' : 'His';
+		},
+		'/him': function () {
+			return game.vars.gender === 'f' ? 'her' : 'him';
+		},
+		'/mother': function () {
+			return game.vars.gender === 'f' ? 'mother' : 'father';
+		},
+		'/girl': function () {
+			return game.vars.gender === 'f' ? 'girl' : 'boy';
+		},
 	},
 	birth: 0,
 	birthFrames: [
