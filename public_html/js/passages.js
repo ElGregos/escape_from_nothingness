@@ -1,5 +1,4 @@
-var sleepTimeout = 3500;
-
+var sleepTimeout = 100;
 var passages = [
 	{
 		id: 'infos',
@@ -120,24 +119,24 @@ var passages = [
 			{text: {fr: "&nbsp;"}, href: 'cordTouched'},
 		],
 	},
-
 	//The cord
 	//The cord looks thinner and thinner as the foetus grows.
 	{
 		id: 'cordTouched',
 		text: {
-			en: "Something touched me! It was faint, but real."
+			en: "Something touched me! It was faint, but real.",
+			fr: "Quelque chose m'a frôlé_/e_ ! C'était léger, mais bien réel."
 		},
 		choices: [
-			{text: {en: "Try to catch it", fr: "Essayer de l'attraper"}, href: 'cordGrab'},
-			{text: 'ignore', href: 'cordGrab'},
+			{text: {en: "I'll try to catch it", fr: "Je vais essayer de l'attraper."}, href: 'cordGrab'},
+			{text: {en: "I'll ignore this.", fr: "Je n'y prête pas attention."}, href: 'floater1', fadeout: sleepTimeout},
 		],
 	},
 	{
 		id: 'cordGrab',
 		text: {
 			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out.",
-			fr: "J'ai pu attraper la chose sans difficulté. Elle est aussi large que mon bras mais semble beaucoup plus longue. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. Je n'arrive pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
+			fr: "J'ai attrapé la chose. Elle est aussi large que mon bras mais semble beaucoup plus longue. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. En fait je ne parviens pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
 		},
 		choices: [
 			{text: {fr: "Je vais tirer dessus."}, href: 'cordPull'},
@@ -145,83 +144,88 @@ var passages = [
 		],
 	},
 	{
+		id: 'cordPush',
+		text: {fr: "Je repousse la chose avec facilité, elle n'oppose absolument aucune résistance. Sa souplesse, malgré sa largeur, reste étonnante."},
+		choices: [
+			{text: {fr: "Finalement j'aimerais bien l'examiner davantage."}, href: "cordGrab2"},
+			{text: {fr: "Avec un peu de chance je la retrouverai plus tard."}, href: "floater1", fadeout: sleepTimeout},
+		]
+	},
+	{
 		id: 'cordPull',
 		text: {fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."},
 		choices: [
-			{text: {fr: "Je vais essayer de la récupérer."}, href:"cordGrab2"},
-			{text: {fr: "Bon, tant pis."}, href:"cordSleep", fadeout: sleepTimeout},
+			{text: {fr: "Je vais essayer de la récupérer."}, href: "cordGrab2"},
+			{text: {fr: "Bon, tant pis."}, href: "floater1", fadeout: sleepTimeout},
 		]
 	},
 	{
 		id: 'cordGrab2',
 		text: {fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."},
 		choices: [
-			{text: {fr: "Bon, tant pis."}, href:"cordSleep", fadeout: sleepTimeout},
+			{text: {fr: "Bon, tant pis."}, href: "floater1", fadeout: sleepTimeout},
 		]
 	},
-	{
-		id: 'cordSleep',
-		text: {fr: ""},
-		choices: [
-			{text: {fr: "&nbsp;"}, href:"cordSleep"},
-		]
-	},
-	{
-		id: 'cordGrab2',
-		text: {fr: ""},
-		choices: [
-			{text: {fr: ""}, href:""},
-		]
-	},
-	{
-		text: {en: "There are too many things I don't understand here. That's the most disorienting. The easiest way to have a grip on this is to name them. Yeah, this way, the unknown will be known."}
-	},
+//	{
+//		text: {en: "There are too many things I don't understand here. That's the most disorienting. The easiest way to have a grip on this is to name them. Yeah, this way, the unknown will be known."}
+//	},
 
 	//1re vision (flash à travers les paupières)
 	{
 		id: 'floater1',
 		text: {
-			en: "Wow! What was that?"
+			en: "Wow! What was that?", fr: "Hola, c'était quoi ça ?"
 		},
 		choices: [
-			{text: {en: "Nothing to fear"}},
-			{text: {en: "I'd like to know"}},
+			{text: {fr: "J'aimerais bien le savoir."}, href: ""},
+			{text: {fr: "&nbsp;"}, href: "sound1"},
 		]
 	},
-	//1er son, que les aigus au début. Les sons suivants gagnent en basses.
+	//1er son (cœur), que les aigus au début. Les sons suivants gagnent en basses.
 	{
 		id: 'sound1',
-		text: {en: "There is something new. "},
+		text: {fr: "Il y a quelque chose de nouveau."},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "wallTouched"},
+		]
 	},
 	//The wall touched me!
 	{
 		id: 'wallTouched',
 		text: {fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."},
 		choices: [
-			{text: {fr: "Je vais chercher d'où cela vient."}, href: "wallTouchedExam"},
+			{text: {fr: "Je veux savoir d'où cela vient."}, href: "wallTouchedExam"},
 			{text: {fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
-			{text: {fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat1"},
 		]
 	},
 	{
 		id: 'wallTouchedExam',
 		text: {fr: "Je m'approche en balayant l'espace de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, ainsi qu'une deuxième, une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"},
 		choices: [
-			{text: {fr: "Je dois me cacher !"}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je veux me cacher."}, href: "wallTouchedRetreat2"},
 			{text: {fr: "Je ne bouge plus."}, href: "wallTouchedWait"},
-			{text: {fr: "La curiosité me pousse à toucher ces bosses."}, href: "wallTouchedPush"},
+			{text: {fr: "La curiosité est plus forte, je vais toucher une de ces bosses."}, href: "wallTouchedPush"},
+		]
+	},
+	{
+		id: 'wallTouchedExam2',
+		text: {fr: "J'approche en tâtonnant le mur, plein_/e_ d'appréhension. J'y décèle encore les bosses qui tordent sa surface, mais maintenant que je les ai touchées, elles me font moins peur."},
+		choices: [
+			{text: {fr: "Je retourne me cacher."}, href: "wallTouchedRetreat2"},
+			{text: {fr: "Je rassemble mon courage et tente de presser une de ces bosses."}, href: "wallTouchedPush"},
 		]
 	},
 	{
 		id: 'wallTouchedWait',
-		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je vois même dans leur délicatesse une volonté de tester ma présence sans me blesser. Cherchent-ils à communiquer&nbsp;?"},
+		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je peux même deviner, dans leur délicatesse, une volonté de ne pas me blesser. Cherchent-ils à communiquer&nbsp;?"},
 		choices: [
 			{text: {fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
-			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat"},
+			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat2"},
 		]
 	},
 	{
-		id: 'wallTouchedRetreat',
+		id: 'wallTouchedRetreat1',
 		text: {fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."},
 		choices: [
 			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
@@ -229,27 +233,36 @@ var passages = [
 		]
 	},
 	{
-		id: 'wallTouchedWaitBack',
-		text: {fr: "J'attend en espérant que mon inquiétude disparaisse. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir quand cet palpations vont s'arrêter. Tout ceci m'a fatigué_/e_."},
+		id: 'wallTouchedRetreat2',
+		text: {fr: "Je parviens difficilement à reculer, mais me recroqueville assez pour être hors de portée."},
 		choices: [
-			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "wallTouchedSleep"},
-			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam"},
+			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
+		]
+	},
+	{
+		id: 'wallTouchedWaitBack',
+		text: {fr: "J'attend en espérant que mon angoisse s'estompe. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir si la chose à l'origine de ces palpations s'est éloignée. Tout ceci m'a fatigué_/e_."},
+		choices: [
+			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "music1", fadeout: sleepTimeout},
+			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam2"},
 		]
 	},
 	{
 		id: 'wallTouchedPush',
 		text: {fr: "Contact !"},
 		choices: [
-			{text: {fr: "J'appuie plus fort."}, href: "wallTouchedSleep"},
-			{text: {fr: "Je suis rassuré_/e_. Je pense que je vais dormir."}, href: "wallTouchedExam"},
+			{text: {fr: "J'appuie plus fort."}, href: ""},
+			{text: {fr: "Je suis rassuré_/e_. Je pense que je vais dormir."}, href: "music1"},
 		]
 	},
-
 	//Wall getting closer. Kicking the wall
 	//Music
 	{
 		id: 'music1',
-		text: {en: ""},
+		text: {fr: ""},
+		choices: [
+			{text: {fr: ""}}
+		]
 	},
 	//Dream
 	//Skin is slippy (vernix)
@@ -297,7 +310,6 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: {fr: ""}, href: ""},
 		]
 	},
-
 	//Cord is a friend
 	{
 		id: 'cord2Touched',
@@ -306,7 +318,6 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: {fr: ""}, href: ""},
 		]
 	},
-
 	//Dream = memory
 	//Remember the taste has changed
 	//Eyes opened
@@ -390,7 +401,6 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: {fr: ""}, href: ""},
 		]
 	},
-
 	//Urge to go out
 	//Birth
 	/*
@@ -440,7 +450,6 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: 'wait', href: 'postBirth'}
 		]
 	},
-
 	//Post-birth
 	{
 		id: "postBirth",

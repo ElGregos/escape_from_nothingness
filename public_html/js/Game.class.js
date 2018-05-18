@@ -37,7 +37,8 @@ var game = {
 		this.language = (navigator.language || navigator.userLanguage) === 'fr' ? 'fr' : 'en';
 		this.story = {
 			passages: passages,
-			passage: new Passage()
+			passage: new Passage(),
+			choice: {}
 		};
 		storage = localStorage;
 		floaters.init();

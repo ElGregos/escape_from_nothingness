@@ -61,7 +61,6 @@ var ui = {
 		} else {
 			txt = (txt[game.language] ? txt[game.language] : (txt.en ? txt.en : txt.fr));
 		}
-
 		for (var key in game.vars) {
 			var regex = new RegExp('_' + key + '_', 'g');
 //			var regex = '_' + key + '_';
