@@ -50,9 +50,7 @@ var game = {
 		this.language = lang;
 		this.save();
 		this.languageShow();
-		if (this.story) {
-			this.story.passage.show();
-		}
+		this.story.passage.show(false);
 	},
 
 	languageShow: function () {

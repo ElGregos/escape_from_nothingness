@@ -13,7 +13,7 @@ Passage.prototype = {
 		} else if (id !== this.id) {
 			var passageNext = new Passage();
 			passageNext.get(id);
-			if (this.phase !== passageNext.phase) {
+			if (this.sound !== passageNext.sound) {
 				$('#audio').animate({volume: 0}, {
 					duration: this.choice.fadeout,
 					complete: function () {
@@ -86,16 +86,17 @@ Passage.prototype = {
 		this.fadein = this.fadein || 500;
 	},
 
-	show: function () {
+	show: function ( checkSound) {
+		checkSound = typeof(checkSound) === 'undefined' ? true : checkSound;
 		if (history.state !== this.id) {
 			window.history.pushState(this.id, this.id, "#" + this.id);
 		}
 		$('#maintext').html('<div>' + ui.txt(this.text) + '</div>');
 		this.choicesShow();
 
-		if (this.phase != game.story.passagePrev.phase) {
-			if (this.phase === 'phase1') {
-				$('#audio').attr('src', "sounds/SubterfugeShuffle.ogg");
+		if (checkSound && this.sound != game.story.passagePrev.sound) {
+			if (this.sound) {
+				$('#audio').attr('src', "sounds/" + this.sound + ".ogg");
 				$('#audio')[0].volume = 0;
 				$('#audio')[0].play();
 				$('#audio').animate({volume: 1}, {duration: game.story.passage.fadein});

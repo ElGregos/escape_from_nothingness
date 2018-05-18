@@ -52,7 +52,7 @@ var passages = [
 	//phase1 : wake up
 	{
 		id: 'startGame',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I'm... waking... up...?",
 			fr: "Je suis...<br>en train...<br>de...<br><br>me réveiller...?"
@@ -60,11 +60,11 @@ var passages = [
 		choices: [
 			{text: 'wait', href: 'wk9'}
 		],
-		fadein: 4000
+		fadein: 5000
 	},
 	{
 		id: 'wk9',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake... up. Some... thing. Thoughts?",
 			fr: "je me<br><br>réveille quelque<br>chose<br><br>pensées&nbsp;?"
@@ -75,7 +75,7 @@ var passages = [
 	},
 	{
 		id: 'wk10',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake up. How did I get here? Since how long?",
 			fr: "Je me réveille.<br><br>Où suis-je&nbsp;?<br><br><br>Comment suis-je arrivé_/e_ ici&nbsp;?",
@@ -86,14 +86,14 @@ var passages = [
 	},
 	{
 		id: '',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake up, still dizzy. What's happening to me? What am I doing here?"
 		}
 	},
 	{
 		id: 'wk11',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake up, with... a curious feeling of déjà vu. As if something... already happened before.",
 			fr: "Je me réveille.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose... avait déjà eu lieu avant."
@@ -104,7 +104,7 @@ var passages = [
 	},
 	{
 		id: 'wk11_2',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake up.<br>This looks familiar. I think I already did that before.<br>Yes. I'm almost sure of that."
 		},
@@ -114,7 +114,7 @@ var passages = [
 	},
 	{
 		id: 'wk11_3',
-		phase: 'phase1',
+		sound: 'phase1',
 		text: {
 			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
 		},
