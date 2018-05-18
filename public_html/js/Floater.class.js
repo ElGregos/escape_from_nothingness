@@ -1,8 +1,8 @@
 var floaters = {
 	init: function () {
-		for (fln = 0; fln < 100; fln++) {
+		for (fln = 0; fln < 200; fln++) {
 			var data = {
-				x: rnd(100), y: rnd(100), radius: 25 + rnd(9), color: rnd(1),
+				x: rnd(100), y: rnd(100), radius: 9 + rnd(3), color: rnd(1),
 				angle: rnd(), speed: rnd(.03) + .01
 			};
 			var floater = new Floater(data);

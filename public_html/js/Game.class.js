@@ -61,7 +61,7 @@ var game = {
 		};
 		audio = new Audio();
 		storage = localStorage;
-		floaters.init();
+//		floaters.init();
 	},
 
 	languageSet: function (lang) {

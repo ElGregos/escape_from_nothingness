@@ -30,7 +30,7 @@ Passage.prototype = {
 					_this.show();
 					switch (_this.phase) {
 
-						case 'birth':
+						case '_birth':
 							//Animate floaters
 							var frame = game.birthFrames[game.birth];
 							var duration = frame.duration || 2;

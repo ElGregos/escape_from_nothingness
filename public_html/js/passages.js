@@ -1,4 +1,5 @@
 var sleepTimeout = 3000;
+var sleepTimein = 3000;
 var passages = [
 	{
 		id: 'infos',
@@ -54,11 +55,10 @@ var passages = [
 		id: 'startGame',
 		sound: 'phase1',
 		text: {
-			en: "I'm... waking... up...?",
-			fr: "Je suis...<br>en train...<br>de...<br><br>me réveiller...?"
+			fr: "Je suis... en train... de...<br>de me réveiller ?"
 		},
 		choices: [
-			{text: 'wait', href: 'wk9'}
+			{text: 'next', href: 'wk9'}
 		],
 		fadein: 5000
 	},
@@ -66,40 +66,31 @@ var passages = [
 		id: 'wk9',
 		sound: 'phase1',
 		text: {
-			en: "I wake... up. Some... thing. Thoughts?",
-			fr: "je me<br><br>réveille quelque<br>chose<br><br>pensées&nbsp;?"
+			fr: "Enfin, je crois."
 		},
 		choices: [
-			{text: 'wait', href: 'wk10'}
+			{text: 'next', href: 'wk10', fadeout: sleepTimeout}
 		]
 	},
 	{
 		id: 'wk10',
 		sound: 'phase1',
 		text: {
-			en: "I wake up. How did I get here? Since how long?",
 			fr: "Je me réveille.<br><br>Où suis-je&nbsp;?<br><br><br>Comment suis-je arrivé_/e_ ici&nbsp;?",
 		},
 		choices: [
-			{text: 'wait', href: 'wk11'}
-		]
-	},
-	{
-		id: '',
-		sound: 'phase1',
-		text: {
-			en: "I wake up, still dizzy. What's happening to me? What am I doing here?"
-		}
+			{text: 'next', href: 'wk11'}
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'wk11',
 		sound: 'phase1',
 		text: {
-			en: "I wake up, with... a curious feeling of déjà vu. As if something... already happened before.",
 			fr: "Je me réveille.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose... avait déjà eu lieu avant."
 		},
 		choices: [
-			{text: 'wait', href: 'wk11_2'}
+			{text: 'next', href: 'wk11_2'}
 		]
 	},
 	{
@@ -109,14 +100,14 @@ var passages = [
 			en: "I wake up.<br>This looks familiar. I think I already did that before.<br>Yes. I'm almost sure of that."
 		},
 		choices: [
-			{text: 'wait', href: 'wk11_3'}
+			{text: 'next', href: 'wk11_3'}
 		]
 	},
 	{
 		id: 'wk11_3',
 		sound: 'phase1',
 		text: {
-			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
+			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?",
 		},
 		choices: [
 			{text: "next", href: 'cordTouched', fadeout: sleepTimeout},
@@ -134,8 +125,9 @@ var passages = [
 		},
 		choices: [
 			{text: {en: "I'll try to catch it", fr: "Je vais essayer de l'attraper."}, href: 'cordGrab'},
-			{text: {en: "I'll ignore this.", fr: "Je n'y prête pas attention."}, href: 'floater1', fadeout: sleepTimeout},
+			{text: {en: "I'll ignore this.", fr: "Je n'y prête pas attention."}, href: 'wallTouched', fadeout: sleepTimeout},
 		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'cordGrab',
@@ -155,7 +147,7 @@ var passages = [
 		text: {fr: "Je repousse la chose avec facilité, elle n'oppose absolument aucune résistance. Sa souplesse, malgré sa largeur, reste étonnante."},
 		choices: [
 			{text: {fr: "Finalement j'aimerais bien l'examiner davantage."}, href: "cordGrab2"},
-			{text: {fr: "Avec un peu de chance je la retrouverai plus tard."}, href: "floater1", fadeout: sleepTimeout},
+			{text: {fr: "Avec un peu de chance je la retrouverai plus tard."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 	{
@@ -164,7 +156,7 @@ var passages = [
 		text: {fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."},
 		choices: [
 			{text: {fr: "Je vais essayer de la récupérer."}, href: "cordGrab2"},
-			{text: {fr: "Bon, tant pis."}, href: "floater1", fadeout: sleepTimeout},
+			{text: {fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 	{
@@ -172,7 +164,7 @@ var passages = [
 		sound: 'phase2',
 		text: {fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."},
 		choices: [
-			{text: {fr: "Bon, tant pis."}, href: "floater1", fadeout: sleepTimeout},
+			{text: {fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 //	{
@@ -181,7 +173,7 @@ var passages = [
 
 	//1re vision (flash à travers les paupières)
 	{
-		id: 'floater1',
+		id: '',
 		text: {
 			en: "Wow! What was that?", fr: "Hola, c'était quoi ça ?"
 		},
@@ -192,7 +184,7 @@ var passages = [
 	},
 	//1er son (cœur), que les aigus au début. Les sons suivants gagnent en basses.
 	{
-		id: 'sound1',
+		id: '',
 		text: {fr: "Il y a quelque chose de nouveau."},
 		choices: [
 			{text: "next", href: "wallTouched"},
@@ -209,7 +201,8 @@ var passages = [
 			{text: {en: "I want to know where it comes from.", fr: "Je veux savoir d'où cela vient."}, href: "wallTouchedExam"},
 			{text: {en: "I'll remain discreet.", fr: "Je vais rester discr_/ete_."}, href: "wallTouchedWait"},
 			{text: {en: "I'll hide and protect myself.", fr: "Je vais me mettre à l'abri."}, href: "wallTouchedRetreat1"},
-		]
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'wallTouchedExam',
@@ -257,7 +250,7 @@ var passages = [
 		id: 'wallTouchedWaitBack',
 		text: {fr: "J'attend en espérant que mon angoisse s'estompe. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir si la chose à l'origine de ces palpations s'est éloignée. Tout ceci m'a fatigué_/e_."},
 		choices: [
-			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "music1", fadeout: sleepTimeout},
+			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "echo", fadeout: sleepTimeout},
 			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam2"},
 		]
 	},
@@ -279,7 +272,7 @@ var passages = [
 	//Wall getting closer. Kicking the wall
 	//Music
 	{
-		id: 'music1',
+		id: '',
 		text: {fr: ""},
 		choices: [
 			{text: {fr: ""}}
@@ -299,7 +292,8 @@ var passages = [
 			{text: {fr: "Je vais examiner les environs."}, href: "echoCheck"},
 			{text: {fr: "Je vais attendre et essayer d'en apprendre plus."}, href: "echoWait"},
 			{text: {fr: "Je suis encore fatigué_/e_, je vais me rendormir."}, href: "echoSleep"},
-		]
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'echoWait',
@@ -337,7 +331,8 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		choices: [
 			{text: {en: "I'll try to catch and get to know it better.", fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
 			{text: {en: "I'll push it away so that I can go back to sleep.", fr: "Je vais la repousser pour pouvoir me rendormir."}, href: "cord2Sleep"},
-		]
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'cord2Play',
@@ -468,16 +463,19 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	// Going upside-down
 	{
 		id: 'wallClosest',
+		sound: 'mozart',
 		text: {
 			fr: "J'avais déjà remarqué que le mur se rapprochait légèrement à chaque réveil, devenant chaque fois un peu plus oppressant. Il m'entoure maintenant de toutes parts. Si cela continue, je pourrai bientôt à peine bouger la tête. Par contre, le bas de mon corps semble disposer d'un peu plus de place."
 		},
 		choices: [
 			{text: {fr: "Je vais essayer de trouver une meilleure position."}, href: 'wallClosestMove'},
 			{text: {fr: "Je vais me débattre pour libérer un peu d'espace."}, href: 'wallClosestPush'},
-		]
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'wallClosestPush',
+		sound: 'mozart',
 		text: {
 			fr: "En m'aidant de chaque partie de mon corps, main, pied, dos, tête, je tente de repousser le mur de tout côté. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit.<br><br>Il se passe alors une chose curieuse."
 		},
@@ -487,6 +485,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestPush2',
+		sound: 'mozart',
 		text: {
 			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_/e_ contre ce mur, cette bosse me pousse également."
 		},
@@ -498,6 +497,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestPush3',
+		sound: 'mozart',
 		text: {
 			fr: "Une deuxième bosse apparaît, opposée à la première, et déforme le mur dans un mouvement circulaire. La première bosse suit le même mouvement, comme si le mur avait décidé de me caresser doucement. Puis des séries de pressions plus fortes, et de mouvements circulaires plus amples, ont transformé ces caresses en un massage plus vigoureux. Je crois que le mur apprécie aussi peu que moi ma position et tente de soulager son propre inconfort."
 		},
@@ -508,6 +508,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestPush4',
+		sound: 'mozart',
 		text: {
 			fr: "À force de mouvements, je sens mon corps qui pivote, sans même que je le veuille."
 		},
@@ -517,6 +518,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestMove',
+		sound: 'mozart',
 		text: {
 			fr: "Je joins les mains sous mon menton, et joue des épaules pour essayer de me retourner. Le mur se tend, mais garde une souplesse étonnante, et la manœuvre se déroule sans trop de difficulté. Jusqu'à ce que ma tête et le bas de mon corps viennent chacun s'enfoncer dans un creux. La tension du mur me bloque alors dans cette position, mon corps désagréablement comprimé de haut en bas."
 		},
@@ -527,6 +529,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestMove2',
+		sound: 'mozart',
 		text: {
 			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux."
 		},
@@ -536,6 +539,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestMove3',
+		sound: 'mozart',
 		text: {
 			fr: "Le mur lance un cri déchirant qui interrompt ma tentative. J'attends avec appréhension un court instant, me demandant ce qui va suivre, puis je me ressaisis pour me dégager avant que le mur ne me piège à nouveau. Je sors ma tête de son renfoncement, le mur reprend alors sa forme en expulsant mes pieds."
 		},
@@ -545,6 +549,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'wallClosestFall',
+		sound: 'mozart',
 		text: {
 			fr: "Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une longue caresse. Tant et si bien que je m'endors doucement."
 		},
@@ -556,48 +561,56 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	//Urge to go out (eaux, contractions)
 	{
 		id: 'urge',
+		sound: "birth",
 		text: {
-			fr: "J'ai à peine dormi. Ma position est très inconfortable. Ma tête disposait encore d'un peu d'espace, mais maintenant le mur s'est rapproché à un point où je ne peux quasiment plus bouger la moindre partie de mon corps. Il me faut faire des efforts insensés ne serait-ce que pour jouer avec la chose, ce qui m'épuise, et justement cette position m'empêche de vraiment me reposer."
+			en: "I barely slept. My position is very uncomfortable. My head still had a little space, but now the wall has come closer to a point where I can hardly move any part of my body anymore. I have to make senseless efforts for the least displacement, which depletes me, and this precise position prevents me from really resting.",
+			fr: "J'ai à peine dormi. Ma position est très inconfortable. Ma tête disposait encore d'un peu d'espace, mais maintenant le mur s'est rapproché à un point où je ne peux quasiment plus bouger la moindre partie de mon corps. Il me faut faire des efforts insensés pour le moindre déplacement, ce qui m'épuise, et justement cette position m'empêche de vraiment me reposer."
 		},
 		choices: [
-			{text: {fr: ""}, href: ""},
-		]
+			{text: "next", href: "urge2", fadeout: sleepTimeout},
+		],
+		fadein: sleepTimein
 	},
 	{
-		id: 'urge',
+		id: 'urge2',
+		sound: "birth",
 		text: {
-			fr: "Ça ne va pas du tout. "
+			en: "This is not going well at all. As I woke up, I felt a sliding motion all around my face, as if the emptiness around me was slowly sucked into an issue over my head. At the same time, I feel irritation rising up my legs. It seems that the emptiness around me is being replaced by something else, for which I do not feel ready yet.",
+			fr: "Ça ne va pas du tout. En me réveillant, j'ai senti un mouvement de glissement tout autour de mon visage, comme si le vide qui m'entoure était lentement aspiré vers une issue au-dessus de ma tête. Dans le même temps, je sens une irritation monter le long de mes jambes. On dirait que le vide autour de moi est remplacé par autre chose, pour laquelle je ne me sens pas prêt_/e_."
 		},
 		choices: [
-			{text: {fr: ""}, href: ""},
-		]
+			{text: "next", href: "", fadeout: sleepTimeout},
+		],
+		fadein: sleepTimein
 	},
 	/*
-	 * Je sens un mouvement de glissement tout autour de mon visage, comme si le vide qui m'entoure était lentement aspiré vers une issue au-dessus de ma tête. Dans le même temps, je sens une irritation monter le long de mes jambes. On dirait que le vide autour de moi est remplacé par autre chose.
+	 * 
 	 */
 	/*
-	 * Je ne sais pas comment ça va finir. Je sais que je ne pourrai pas rester encore longtemps ici. Il faut absolument que je sorte de là, mais je ne crois pas pouvoir y arriver seul_/e_. Et je ne vois rien qui puisse m'aider. 
+	 *  
 	 */
 
 	//Birth
-	/*
-	 * Par pitié, que quelqu'un m'aide !!
-	 */
 	{
 		id: 'birth',
+		sound: "birth",
 		phase: 'birth',
 		text: {
-			en: "I'm pushed forward."
+			en: "I don't know how this is going to end. I know I will not be able to stay here any longer. I must go out of there, but I don't think I can do it alone. And I do not see anything that can help me.",
+			fr: "Je ne sais pas comment ça va finir. Je sais que je ne pourrai pas rester encore longtemps ici. Il faut absolument que je sorte de là, mais je ne crois pas pouvoir y arriver seul_/e_. Et je ne vois rien qui puisse m'aider."
 		},
 		choices: [
-			{text: 'wait', href: 'birth2'},
-		]
+			{text: 'next', href: 'birth2'},
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'birth2',
+		sound: "birth",
 		phase: 'birth',
 		text: {
-			en: "I'm pushed forward 2."
+			en: "I can't stand being here anymore. The wall around me is fraying and seems to reject me. For some time now, he has been shaking more and more strongly, as if he held me responsible for his condition.",
+			fr: "Je ne supporte plus d'être ici. Le mur autour de moi s'effiloche et semble me rejeter. Depuis quelques temps, il est secoué de vibrations, de plus en plus fortes, comme s'il me tenait pour responsable de son état."
 		},
 		choices: [
 			{text: 'next', href: 'birth3'}
@@ -605,9 +618,11 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'birth3',
+		sound: "birth",
 		phase: 'birth',
 		text: {
-			fr: "Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue !"
+			en: "The vibrations turned to violent shakes. I'll try to use them to get out of here, I absolutely have to run away from this crumbling world. The only possible exit seems to be above my head, I have no choice, I have to take advantage of the tremors of the wall to try to escape.",
+			fr: "Les vibrations sont devenues de violentes secousses. Je vais essayer de les utiliser pour sortir d'ici, je dois absolument fuir ce monde qui s'écroule. La seule issue possible semble être au-dessus de ma tête, je n'ai plus le choix, je dois profiter des tremblements du mur pour tenter de m'échapper."
 		},
 		choices: [
 			{text: 'next', href: 'birth4'}
@@ -615,21 +630,23 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	},
 	{
 		id: 'birth4',
+		sound: "birth",
 		phase: 'birth',
 		text: {
-			fr: "Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge."
+			en: "What did I do?! It was the worst idea I ever had! I feel something boiling in my chest, a dense ball of fear and anger that tries to escape my throat. I won't be able to contain it. I can not breathe, my skin is burning! PLEASE! SOMEONE! HELP ME!!",
+			fr: "Mais qu'est-ce que j'ai fait ?! C'était la pire idée que j'ai jamais eue ! Je sens bouillir quelque chose dans ma poitrine, une boule dense de peur et de colère qui tente de franchir ma gorge. Je ne vais pas pouvoir la contenir. Je ne peux plus respirer, ma peau est en train de brûler ! PAR PITIÉ ! QUE QUELQU'UN M'AIDE !!"
 		},
 		choices: [
-			{text: 'next', href: 'postBirth'}
+			{text: 'next', href: 'postBirth', fadeout: 5000}
 		]
 	},
-	
-	
+
 	//Post-birth
 	{
 		id: "postBirth",
+		sound: "birth",
 		text: {
-			en:"<ul class='dialogue'>\n\
+			en: "<ul class='dialogue'>\n\
 <li>Oh, what a beautiful little _/girl_! How are you going to call _/him_?</li>\n\
 <li>_firstname_... _/Her_ dad and I... we really like this name.</li>\n\
 <li>_firstname_. What an adorable name. Hello, _firstname_!</li>\n\
@@ -642,10 +659,12 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		},
 		choices: [
 			{text: "next", href: "postBirth2"}
-		]
+		],
+		fadein: 5000
 	},
 	{
 		id: "postBirth2",
+		sound: "birth",
 		text: {
 			en: "<ul class='dialogue'><li>Oh! Look how _/she_'s smiling! It seems _/she_ really likes _/her_ name.</li></ul>\n\
 I'm flying again. I feel my body firmly held by something that brings me to the lying down creature. Her hair, her face and her eyes are soaked, but it's her smile that I really notice. Her eyes follow me. Another creature is leaning behind her and stares at me with the same expression.\n\
@@ -660,13 +679,14 @@ Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m
 	},
 	{
 		id: "postBirth3",
+		sound: "birth",
 		phase: "theend",
 		text: {
 			en: "I slowly land on this creature, which brings me gently against her skin.<br><br>And I remember.<br><br>I recognize these smells. These sounds. They were there, everywhere inside. Different, but they were the same. I stop crying and focus on these sensations. I'm exhausted. But there is so much to discover. I do not want to find the old warmth again.<ul class='dialogue'><li>Peep-Bo, _firstname_. Hello my baby. I am your mom. Welcome to this world.</li></ul><br><br><br><br>",
 			fr: "J'atterris lentement sur cette créature, qui m'amène avec douceur contre sa peau.<br><br>Et je me souviens.<br><br>Je reconnais ces odeurs. Ces sons. Ils étaient là, partout à l'intérieur. Différents, mais c'étaient les mêmes. J'arrête de crier et me concentre sur ces sensations. Je suis épuisé_/e_. Mais il y a tellement à découvrir. Je n'ai plus envie de retrouver l'ancienne chaleur.<ul class='dialogue'><li>Coucou, _firstname_. Bonjour, mon bébé. Je suis ta maman. Bienvenue dans ce monde.</li></ul><br><br><br><br>"
 		},
 		choices: [
-			{text: "next", href: "title"}
+			{text: "next", href: "title", fadeout: 5000}
 		]
 	},
 ];
