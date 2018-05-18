@@ -11,7 +11,7 @@ Choice.prototype = {
 		btn.innerHTML = ui.txt(this.text);
 		var _this = this;
 		btn.onclick = function () {
-			game.story.choice = _this;
+			objectClone( _this, game.story.passage.choice);
 			var href = this.getAttribute('data-href');
 			if (typeof (_this.check) === 'function') {
 				if (_this.check()) {

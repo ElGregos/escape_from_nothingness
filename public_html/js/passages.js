@@ -48,25 +48,23 @@ var passages = [
 			{text: {en: "and my adventure begins", fr: "et mon aventure commence"}, href: 'startGame'}
 		]
 	},
-	{
-		id: '',
-		text: {
-			en: "I have no memories. I don't even have words.",
-		}
-	},
+
+	//phase1 : wake up
 	{
 		id: 'startGame',
+		phase: 'phase1',
 		text: {
 			en: "I'm... waking... up...?",
-			fr: "Je suis...<br>en train...<br>de....<br><br>me réveiller...?"
+			fr: "Je suis...<br>en train...<br>de...<br><br>me réveiller...?"
 		},
 		choices: [
 			{text: 'wait', href: 'wk9'}
 		],
-		fadein: 2000
+		fadein: 4000
 	},
 	{
 		id: 'wk9',
+		phase: 'phase1',
 		text: {
 			en: "I wake... up. Some... thing. Thoughts?",
 			fr: "je me<br><br>réveille quelque<br>chose<br><br>pensées&nbsp;?"
@@ -77,6 +75,7 @@ var passages = [
 	},
 	{
 		id: 'wk10',
+		phase: 'phase1',
 		text: {
 			en: "I wake up. How did I get here? Since how long?",
 			fr: "Je me réveille.<br><br>Où suis-je&nbsp;?<br><br><br>Comment suis-je arrivé_/e_ ici&nbsp;?",
@@ -87,12 +86,14 @@ var passages = [
 	},
 	{
 		id: '',
+		phase: 'phase1',
 		text: {
 			en: "I wake up, still dizzy. What's happening to me? What am I doing here?"
 		}
 	},
 	{
 		id: 'wk11',
+		phase: 'phase1',
 		text: {
 			en: "I wake up, with... a curious feeling of déjà vu. As if something... already happened before.",
 			fr: "Je me réveille.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose... avait déjà eu lieu avant."
@@ -103,6 +104,7 @@ var passages = [
 	},
 	{
 		id: 'wk11_2',
+		phase: 'phase1',
 		text: {
 			en: "I wake up.<br>This looks familiar. I think I already did that before.<br>Yes. I'm almost sure of that."
 		},
@@ -112,6 +114,7 @@ var passages = [
 	},
 	{
 		id: 'wk11_3',
+		phase: 'phase1',
 		text: {
 			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
 		},
@@ -210,7 +213,7 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedExam2',
-		text: {fr: "J'approche en tâtonnant le mur, plein_/e_ d'appréhension. J'y décèle encore les bosses qui tordent sa surface, mais maintenant que je les ai touchées, elles me font moins peur."},
+		text: {fr: "J'approche en tâtonnant le mur, plein_/e_ d'appréhension. J'y décèle encore les bosses qui tordent sa surface, mais maintenant que j'ai pu les toucher, elles me font moins peur."},
 		choices: [
 			{text: {fr: "Je retourne me cacher."}, href: "wallTouchedRetreat2"},
 			{text: {fr: "Je rassemble mon courage et tente de presser une de ces bosses."}, href: "wallTouchedPush"},

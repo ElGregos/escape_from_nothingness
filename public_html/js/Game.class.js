@@ -38,8 +38,10 @@ var game = {
 		this.story = {
 			passages: passages,
 			passage: new Passage(),
+			passagePrev: new Passage(),
 			choice: {}
 		};
+		audio = new Audio();
 		storage = localStorage;
 		floaters.init();
 	},
