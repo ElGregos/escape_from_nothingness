@@ -3,7 +3,7 @@ var ui = {
 		continue: {en: "Continue", fr: "Continuer"},
 		explore: {en: "Explore", fr: "Examiner"},
 		ignore: {en: "Ignore", fr: "Ignorer"},
-		next: {en: "Next", fr: "Suivant"},
+		next: {en: "...", fr: "..."},
 		ok: {en: "Ok", fr: "D'accord"},
 		pick: {en: "Pick", fr: "Attraper"},
 		wait: {en: "Wait", fr: "Attendre"},

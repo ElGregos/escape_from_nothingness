@@ -119,7 +119,7 @@ var passages = [
 			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?"
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: 'cordTouched'},
+			{text: "next", href: 'cordTouched'},
 		],
 	},
 	//The cord
@@ -181,7 +181,7 @@ var passages = [
 		},
 		choices: [
 			{text: {fr: "J'aimerais bien le savoir."}, href: ""},
-			{text: {fr: "&nbsp;"}, href: "sound1"},
+			{text: "next", href: "sound1"},
 		]
 	},
 	//1er son (cœur), que les aigus au début. Les sons suivants gagnent en basses.
@@ -189,7 +189,7 @@ var passages = [
 		id: 'sound1',
 		text: {fr: "Il y a quelque chose de nouveau."},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "wallTouched"},
+			{text: "next", href: "wallTouched"},
 		]
 	},
 	//The wall touched me!
@@ -303,7 +303,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'echoSleep',
 		text: {fr: "Je suis de toutes façons encore trop fatigué_/e_ pour être vraiment inqui_/ete_. Je suis à peu près s_/ure_ de me rendormir aussi facilement que j'ai été réveillé_/e_."},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "", fadeout: sleepTimeout},
+			{text: "next", href: "", fadeout: sleepTimeout},
 		],
 	},
 	{
@@ -317,9 +317,12 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	//Cord is a friend
 	{
 		id: 'cord2Touched',
-		text: {fr: "La chose est venue caresser ma joue, ce qui m'a réveillé_/e_. Je me suis habitué_/e_ à sa présence, elle flotte en permanence près de moi en faisant mine de m'ignorer, comme si elle m'invitait à jouer."},
+		text: {
+			en: "The thing came and pet my cheek, which woke me up. I got used to its floating presence near me, pretending to ignore me, as if it was inviting me to play.",
+			fr: "La chose est venue caresser ma joue, ce qui m'a réveillé_/e_. Je me suis habitué_/e_ à sa présence, elle flotte en permanence près de moi en faisant mine de m'ignorer, comme si elle m'invitait à jouer."
+		},
 		choices: [
-			{text: {fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
+			{text: {en:"", fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
 			{text: {fr: "Je vais la repousser pour pouvoir me rendormir."}, href: "cord2Sleep"},
 		]
 	},
@@ -396,7 +399,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'cord2Sleep',
 		text: {fr: "Par ses glissements, je devine la chose qui s'éloigne lentement, tandis que je sens les muscles de mon corps fatigué se relâcher."},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "wallClosest", fadeout: sleepTimeout},
+			{text: "next", href: "wallClosest", fadeout: sleepTimeout},
 		]
 	},
 
@@ -427,10 +430,10 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 	{
 		id: 'wallClosestPush',
 		text: {
-			fr: "En m'aidant de chaque partie de mon corps, main, pied, dos, tête, je tente de repousser le mur de tout côté. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit."
+			fr: "En m'aidant de chaque partie de mon corps, main, pied, dos, tête, je tente de repousser le mur de tout côté. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit.<br><br>Il se passe alors une chose curieuse."
 		},
 		choices: [
-			{text: {fr: "Il se passe alors une chose curieuse."}, href: "wallClosestPush2"},
+			{text: "next", href: "wallClosestPush2"},
 		]
 	},
 	{
@@ -460,7 +463,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "À force de mouvements, je sens mon corps qui pivote, sans même que je le veuille."
 		},
 		choices: [
-			{text: {fr: "..."}, href: "wallClosestFall"},
+			{text: "next", href: "wallClosestFall"},
 		]
 	},
 	{
@@ -479,7 +482,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux."
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "wallClosestFall"},
+			{text: "next", href: "wallClosestFall"},
 		]
 	},
 	{
@@ -488,7 +491,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Le mur lance un cri déchirant qui interrompt ma tentative. J'attends avec appréhension un court instant, me demandant ce qui va suivre, puis je me ressaisis pour me dégager avant que le mur ne me piège à nouveau. Je sors ma tête de son renfoncement, le mur reprend alors sa forme en expulsant mes pieds."
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "wallClosestFall"},
+			{text: "next", href: "wallClosestFall"},
 		]
 	},
 	{
@@ -497,10 +500,9 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une longue caresse. Tant et si bien que je m'endors doucement."
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: ""},
+			{text: "next", href: "urge", fadeout: sleepTimeout},
 		]
 	},
-	
 
 	//Urge to go out (eaux, contractions)
 	{
@@ -583,7 +585,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 </ul>Je souris. Je ne sais pas pourquoi. Je ne peux pas m'en empêcher."
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "postBirth2"}
+			{text: "next", href: "postBirth2"}
 		]
 	},
 	{
@@ -595,7 +597,7 @@ Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m
 "
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "postBirth3"}
+			{text: "next", href: "postBirth3"}
 		]
 	},
 	{
@@ -606,7 +608,7 @@ Je m'envole à nouveau. Je sens mon corps fermement tenu par quelque chose qui m
 <ul class='dialogue'><li>Coucou, _firstname_. Bonjour, mon bébé. Je suis ta maman. Bienvenue dans ce monde.</li></ul><br><br><br><br>"
 		},
 		choices: [
-			{text: {fr: "&nbsp;"}, href: "title"}
+			{text: "next", href: "title"}
 		]
 	},
 ];
