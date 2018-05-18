@@ -1,11 +1,11 @@
-var sleepTimeout = 100;
+var sleepTimeout = 3000;
 var passages = [
 	{
 		id: 'infos',
 		phase: 'setup',
 		text: {
-			en: "This game uses your brower's cookies to save your progress.<br><br>For a better game experience, it is recommended to dim the lights and use headphones.",
-			fr: "Ce jeu utilise les cookies du navigateur pour mémoriser votre progression.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans la pénombre en utilisant un casque audio."
+			en: "This game uses your brower's cookies to save your character.<br><br>For a better game experience, it is recommended to dim the lights and use headphones.",
+			fr: "Ce jeu utilise les cookies du navigateur pour mémoriser votre personnage.<br><br>Pour une meilleure expérience, il est recommandé de jouer dans la pénombre en utilisant un casque audio."
 		},
 		choices: [
 			{text: "continue", href: 'title'},
@@ -139,7 +139,7 @@ var passages = [
 		id: 'cordGrab',
 		text: {
 			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out.",
-			fr: "J'ai attrapé la chose. Elle est aussi large que mon bras mais semble beaucoup plus longue. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. En fait je ne parviens pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
+			fr: "J'ai pu toucher la chose, mais elle est beaucoup trop large et longue pour que je puisse l'agripper. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. En fait je ne parviens pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
 		},
 		choices: [
 			{text: {fr: "Je vais tirer dessus."}, href: 'cordPull'},
@@ -313,24 +313,111 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: {fr: ""}, href: ""},
 		]
 	},
+
 	//Cord is a friend
 	{
 		id: 'cord2Touched',
-		text: {fr: "Je "},
+		text: {fr: "La chose est venue caresser ma joue, ce qui m'a réveillé_/e_. Je me suis habitué_/e_ à sa présence, elle flotte en permanence près de moi en faisant mine de m'ignorer, comme si elle m'invitait à jouer."},
 		choices: [
-			{text: {fr: ""}, href: ""},
+			{text: {fr: "Je vais l'attraper pour mieux la connaître."}, href: "cord2Play"},
+			{text: {fr: "Je vais la repousser pour pouvoir me rendormir."}, href: "cord2Sleep"},
 		]
 	},
-	//Dream = memory
-	//Remember the taste has changed
-	//Eyes opened
-	//The wall is a light
-	//Wall too close, need for upside down
+	{
+		id: 'cord2Play',
+		text: {fr: "Je parviens à l'attirer à moi. Sa largeur a diminué : alors qu'avant je ne pouvais la déplacer qu'en l'entourant de mes bras, je parviens maintenant presque à la saisir des deux mains. Il semble aussi que je gagne en agilité.<br><br>Bon, que vais-je faire de la chose ?"},
+		choices: [
+			{text: {fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
+			{text: {fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
+			{text: {fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
+			{text: {en: "I'll nibble it.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
+		]
+	},
+	{
+		id: 'cord2Down',
+		text: {fr: "Je l'entoure fermement de mes mains, que je tire vers le bas. Je comprends rapidement que ce mouvement demande une bonne dose de dextérité, car la chose est glissante et a vite fait de s'échapper. C'est un exercice qui demande énormément de concentration, mais que je trouve plutôt amusant, et je parviens à la faire glisser entre mes pieds un bon moment. Jusqu'à ce que quelque chose la retienne au-dessus de moi."},
+		choices: [
+			{text: {fr: "Je vais tirer encore en insistant."}, href: "cord2Down2"},
+			{text: {fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
+		]
+	},
+	{
+		id: 'cord2Down2',
+		text: {fr: "La chose semble fermement accrochée, et tirer dessus demande énormément d'énergie, en plus de l'agilité. Mais en y mettant toute ma force, j'arrive à la décrocher d'un seul coup !<br><br>Ah... non. Je crois que c'est moi-même que j'ai soulevé_/e_. Et maintenant que je suis sans appui, je n'ai plus qu'à me laisser glisser."},
+		choices: [
+			{text: {fr: "Je vais continuer mes expériences sur la chose."}, href: "cord2Play2"},
+			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+		]
+	},
+	{
+		id: 'cord2Play2',
+		text: {fr: "J'ai toujours la chose entre les mains, je me demande à quelle sorte de recherche je vais passer maintenant."},
+		choices: [
+			{text: {fr: "Je vais la tirer vers le bas."}, href: "cord2Down"},
+			{text: {fr: "Je vais la tirer vers le haut."}, href: "cord2Up"},
+			{text: {fr: "Je vais l'entourer de mes bras."}, href: "cord2Hug"},
+			{text: {en: "I'll taste it.", fr: "Je vais voir quel goût elle a."}, href: "cord2Taste"},
+			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+		]
+	},
+	{
+		id: 'cord2Up',
+		text: {fr: "Je l'attrape des deux mains et la soulève, ce qui me surprend aussitôt, car je l'imaginais beaucoup plus lourde. Je la soulève avec facilité, et ne la sens retomber qu'avec lenteur, comme si elle flottait. Je parviens ainsi à dérouler la chose quelques temps, jusqu'à ce qu'elle soit retenue par quelque chose."},
+		choices: [
+			{text: {fr: "Je vais tenter de tirer plus fort."}, href: "cord2Up2"},
+			{text: {fr: "Je vais la lâcher et essayer autre chose."}, href: "cord2Play2"},
+		]
+	},
+	{
+		id: 'cord2Up2',
+		text: {fr: "J'agrippe du mieux la chose et tire dessus de toutes mes forces, mais une sensation très désagréable parcourt alors mon ventre. Je refais une tentative, plus doucement, ce qui déclenche la même sensation déplaisante. C'est étrange. Est-ce sa façon de me faire comprendre qu'elle en a assez ? Je devrais peut-être montrer plus de délicatesse envers la chose. Il n'y a pas grand-chose d'autre ici, et je ne veux pas avoir à m'en méfier."},
+		choices: [
+			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+		]
+	},
+	{
+		id: 'cord2Hug',
+		text: {fr: "Je place mes bras autour de la chose et l'amène contre moi. Elle est souple, chaude et douce, et la serrer ainsi procure une sensation chaleureuse très agréable. Je me demande si elle apprécie aussi ce contact. En tout cas elle ne cherche pas à fuir. Nous restons ainsi un moment, puis je l'écarte doucement de moi."},
+		choices: [
+			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+		]
+	},
+	{
+		id: 'cord2Taste',
+		text: {fr: "J'amène la chose à ma bouche, sans lui trouver de goût particulier. Ou plutôt, si : elle a un peu le même goût que mes mains, que je lèche parfois quand je suis inqui_/ete_, une méthode qui me rassure assez efficacement. Elle a aussi un peu le goût du vide qui m'entoure.<br><br>Sa texture, que je découvre en la mordillant, est plus particulière. À la fois douce, légèrement rugueuse, et glissante. Et l'énergie qui la parcourt est nettement sensible. Ce qui me fait opter pour définir la chose comme étant vivante."},
+		choices: [
+			{text: {fr: "Je vais tenter d'autres expériences."}, href: "cord2Play2"},
+			{text: {fr: "Je vais la laisser tranquille et me reposer."}, href: "cord2Sleep"},
+		]
+	},
+	{
+		id: 'cord2Sleep',
+		text: {fr: "Par ses glissements, je devine la chose qui s'éloigne lentement, tandis que je sens les muscles de mon corps fatigué se relâcher."},
+		choices: [
+			{text: {fr: "&nbsp;"}, href: "wallClosest", fadeout: sleepTimeout},
+		]
+	},
 
+	//Dream = memory
+
+	//Remember the taste has changed
+
+	//Eyes opened
+
+	//The wall is a light
+
+	//Cord 3
+	/*
+	 * La chose a perdu beaucoup de sa largeur. Je la sens lovée sur mon ventre, alors qu'auparavant elle flottait librement, suivant son désir. Maintenant, j'ai le sentiment qu'elle n'a plus envie de jouer. Peut-être a-t-elle aussi besoin de se reposer.
+	 */
+
+	// Going upside-down
 	{
 		id: 'wallClosest',
 		text: {
-			fr: "J'avais déjà remarqué que le mur se rapprochait légèrement à chaque réveil, devenant chaque fois un peu plus oppressant. Il m'entoure maintenant de toutes parts. Si cela continue, je pourrai bientôt à peine bouger la tête. Le bas de mon corps semble avoir un peu plus de place."
+			fr: "J'avais déjà remarqué que le mur se rapprochait légèrement à chaque réveil, devenant chaque fois un peu plus oppressant. Il m'entoure maintenant de toutes parts. Si cela continue, je pourrai bientôt à peine bouger la tête. Par contre, le bas de mon corps semble disposer d'un peu plus de place."
 		},
 		choices: [
 			{text: {fr: "Je vais essayer de trouver une meilleure position."}, href: 'wallClosestMove'},
@@ -373,7 +460,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			fr: "À force de mouvements, "
 		},
 		choices: [
-			{text: {fr: "Je vais le laisser faire."}, href: "wallClosestPush4"},
+			{text: {fr: "Je vais le laisser faire."}, href: ""},
 		]
 	},
 	{
@@ -404,13 +491,35 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 			{text: {fr: ""}, href: ""},
 		]
 	},
-	//Urge to go out
+
+	//Urge to go out (eaux, contractions)
+	{
+		id: 'urge',
+		text: {
+			fr: "J'ai à peine dormi. Ma position est très inconfortable. Ma tête disposait encore d'un peu d'espace, mais maintenant le mur s'est rapproché à un point où je ne peux quasiment plus bouger la moindre partie de mon corps. Il me faut faire des efforts insensés ne serait-ce que pour jouer avec la chose, ce qui m'épuise, et justement cette position m'empêche de vraiment me reposer."
+		},
+		choices: [
+			{text: {fr: ""}, href: ""},
+		]
+	},
+	{
+		id: 'urge',
+		text: {
+			fr: "Ça ne va pas du tout. "
+		},
+		choices: [
+			{text: {fr: ""}, href: ""},
+		]
+	},
+	/*
+	 * Je sens un mouvement de glissement tout autour de mon visage, comme si le vide qui m'entoure était lentement aspiré vers une issue au-dessus de ma tête. Dans le même temps, je sens une irritation monter le long de mes jambes
+	 */
+	/*
+	 * Je ne sais pas comment ça va finir. Je sais que je ne pourrai pas rester encore longtemps ici. Il faut absolument que je sorte de là, mais je ne crois pas pouvoir y arriver seul_/e_. Et je ne vois rien qui puisse m'aider. 
+	 */
+
 	//Birth
 	/*
-	 * J'ai réussi à passer à travers le mur ! Mais ma joie ne dure pas : un autre mur se trouve derrière !
-	 * 
-	 * Je suis complètement sonné_/e_ par ces bouleversements.
-	 * 
 	 * Par pitié, que quelqu'un m'aide !!
 	 */
 	{
