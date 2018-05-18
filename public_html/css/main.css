@@ -153,6 +153,10 @@ input[type=button].selected{
     color: white;
 }
 
+#main{
+	opacity: 0;
+}
+
 #maintext{
     color: white;
     padding: 3%;

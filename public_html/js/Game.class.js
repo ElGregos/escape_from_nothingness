@@ -64,8 +64,10 @@ var game = {
 		this.init();
 		this.load();
 		var url = window.location.hash.substr(1).trim();
-		this.story.passage.get(url);
-		this.story.passage.show();
+		this.story.passage.change(url);
+//		this.story.passage.get(url);
+//		this.story.passage.show();
+//		ui.fadein();
 		requestAnimationFrame(refresh);
 	},
 

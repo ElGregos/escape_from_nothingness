@@ -1,4 +1,5 @@
 function Choice(btn) {
+	this.fadeout = 500;
 	for (var prop in btn) {
 		this[prop] = btn[prop];
 	}

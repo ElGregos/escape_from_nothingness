@@ -3,21 +3,31 @@ function Passage() {
 }
 
 Passage.prototype = {
-	animate: function () {
-
-	},
 
 	change: function (id) {
-		if (id !== this.id) {
-			objectClone(this, game.story.passagePrev);
+		objectClone(this, game.story.passagePrev);
+		if (!this.id) {
+			this.get(id);
+			this.show();
+			ui.fadein();
+		} else if (id !== this.id) {
+			var passageNext = new Passage();
+			passageNext.get(id);
+			if (this.phase !== passageNext.phase) {
+				$('#audio').animate({volume: 0}, {
+					duration: this.choice.fadeout,
+					complete: function () {
+						$('#audio')[0].pause();
+					}
+				});
+			}
 			var _this = this;
-			this.animate();
+
 			$('#main').animate({opacity: 0}, {
-				duration: game.story.passage.choice.fadeout || 500,
+				duration: this.choice.fadeout,
 				complete: function () {
 					_this.get(id);
 					_this.show();
-					game.story.passage.choice.fadeout = null;
 					switch (_this.phase) {
 
 						case 'birth':
@@ -82,13 +92,16 @@ Passage.prototype = {
 		}
 		$('#maintext').html('<div>' + ui.txt(this.text) + '</div>');
 		this.choicesShow();
-		if (this.audio) {
-			audio = new Audio('sounds/' + this.audio);
-			audio.volume = 0;
-			audio.play();
-		} else {
-			audio.pause();
+
+		if (this.phase != game.story.passagePrev.phase) {
+			if (this.phase === 'phase1') {
+				$('#audio').attr('src', "sounds/SubterfugeShuffle.ogg");
+				$('#audio')[0].volume = 0;
+				$('#audio')[0].play();
+				$('#audio').animate({volume: 1}, {duration: game.story.passage.fadein});
+			}
 		}
+
 		switch (this.phase) {
 
 			case 'setup':
@@ -104,6 +117,6 @@ Passage.prototype = {
 				$('html').attr('class', 'story');
 
 		}
-	}
-}
-;
+	},
+
+};
