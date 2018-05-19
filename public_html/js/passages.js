@@ -55,6 +55,7 @@ var passages = [
 		id: 'startGame',
 		sound: 'phase1',
 		text: {
+			en: "I'm... waking...<br>waking up?",
 			fr: "Je suis... en train... de...<br>de me réveiller ?"
 		},
 		choices: [
@@ -66,14 +67,15 @@ var passages = [
 		id: 'wk9',
 		sound: 'phase1',
 		text: {
+			en: "At least, I think so.",
 			fr: "Enfin, je crois."
 		},
 		choices: [
-			{text: 'next', href: 'wk10', fadeout: sleepTimeout}
+			{text: 'next', href: 'wk11', fadeout: sleepTimeout}
 		]
 	},
 	{
-		id: 'wk10',
+		id: '',
 		sound: 'phase1',
 		text: {
 			fr: "Je me réveille.<br><br>Où suis-je&nbsp;?<br><br><br>Comment suis-je arrivé_/e_ ici&nbsp;?",
@@ -87,27 +89,43 @@ var passages = [
 		id: 'wk11',
 		sound: 'phase1',
 		text: {
-			fr: "Je me réveille.<br><br>Une étrange sensation<br>de déjà vu.<br><br>Comme si quelque chose... avait déjà eu lieu avant."
+			en:"I wake up.<br><br>A curious feeling...<br>of déjà vu.<br><br>As if something... already happened before.",
+			fr: "Je me réveille.<br><br>Une étrange sensation...<br>de déjà vu.<br><br>Comme si quelque chose... avait déjà eu lieu avant."
 		},
 		choices: [
 			{text: 'next', href: 'wk11_2'}
-		]
+		],
+		fadein: sleepTimein
 	},
 	{
 		id: 'wk11_2',
 		sound: 'phase1',
 		text: {
-			en: "I wake up.<br>This looks familiar. I think I already did that before.<br>Yes. I'm almost sure of that."
+			en: "Yes. This looks familiar. I think I already did that before.<br><br>I'm almost sure of that.",
+			fr: "Oui. Ça me semble familier. Je pense que j'ai déjà fait ça avant.<br><br>J'en suis presque certain_/e_.",
 		},
 		choices: [
-			{text: 'next', href: 'wk11_3'}
+			{text: 'next', href: 'wk11_3', fadeout: sleepTimeout}
 		]
 	},
 	{
 		id: 'wk11_3',
 		sound: 'phase1',
 		text: {
-			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.<br><br>I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a life? Or did every awakening meant a new life, as I couldn't recall the last one?",
+			en: "I wake up. Now I'm sure. This is not the first time. I DID wake up before. At least once. Maybe twice.",
+			fr: "Je me réveille. Maintenant j'en suis s_/ure_. Ce n'est pas la première fois. Je me suis DÉJÀ réveillé_/e_. Au moins une fois. Peut-être deux."
+		},
+		choices: [
+			{text: "next", href: 'wk11_4'},
+		],
+		fadein: sleepTimein
+	},
+	{
+		id: 'wk11_4',
+		sound: 'phase1',
+		text: {
+			en: "I don't have any other memories though. But now that I have a few of them, I wonder what happened before that. Was there a \"before\"? Or did every awakening meant a new life, as I couldn't recall the last one?",
+			fr: "Pourtant, je n'ai aucun autre souvenir. Mais maintenant que j'en ai un peu, je me demande ce qui s'est passé avant. Il y avait un \"avant\" ? Ou bien chaque réveil signifiait une nouvelle vie, puisque je n'avais aucun souvenir de la précédente ?"
 		},
 		choices: [
 			{text: "next", href: 'cordTouched', fadeout: sleepTimeout},
@@ -118,53 +136,62 @@ var passages = [
 	//The cord looks thinner and thinner as the foetus grows.
 	{
 		id: 'cordTouched',
-		sound: 'phase2',
+		sound: 'phase1',
 		text: {
 			en: "Something touched me! It was faint, but real.",
 			fr: "Quelque chose m'a frôlé_/e_ ! C'était léger, mais bien réel."
 		},
 		choices: [
 			{text: {en: "I'll try to catch it", fr: "Je vais essayer de l'attraper."}, href: 'cordGrab'},
-			{text: {en: "I'll ignore this.", fr: "Je n'y prête pas attention."}, href: 'wallTouched', fadeout: sleepTimeout},
+//			{text: {en: "I'll ignore this.", fr: "Je n'y prête pas attention."}, href: 'wallTouched', fadeout: sleepTimeout},
 		],
-		fadein: sleepTimein
+		fadein: 200
 	},
 	{
 		id: 'cordGrab',
-		sound: 'phase2',
+		sound: 'phase1',
 		text: {
-			en: "I managed to grab the thing. It's rather thin, warm and soft but firm. It is kind of pulsating. It doesn't seem to have any will of its own though. I can't decide whether it's alive or not.<br><br>At least it doesn't seem harmful. Maybe I can use it to get out.",
+			en: "I could touch the thing, but it's way too wide and long for me to grab it. Touching its smooth surface, I feel warmth and a kind of pulsation, as if it were traversed by a stream of energy. However, it does not seem to have its own will. In fact I do not know whether it is alive or not. <br> <br> In any case, it does not seem to pose any danger. Maybe I can use it to get out of here.",
 			fr: "J'ai pu toucher la chose, mais elle est beaucoup trop large et longue pour que je puisse l'agripper. En touchant sa surface lisse, je ressens de la chaleur et une sorte de pulsation, comme si elle était parcourue par un flot d'énergie. Elle ne paraît pourtant pas posséder de volonté propre. En fait je ne parviens pas à savoir si elle est vivante ou pas.<br><br>En tout cas, elle ne semble pas poser de danger. Peut-être pourrai-je l'utiliser pour sortir d'ici."
 		},
 		choices: [
-			{text: {fr: "Je vais tirer dessus."}, href: 'cordPull'},
-			{text: {fr: "Je vais la repousser."}, href: 'cordPush'},
+			{text: {en: "I'll pull it.", fr: "Je vais tirer dessus."}, href: 'cordPull'},
+			{text: {en: "I'll push it back.", fr: "Je vais la repousser."}, href: 'cordPush'},
 		],
 	},
 	{
 		id: 'cordPush',
-		sound: 'phase2',
-		text: {fr: "Je repousse la chose avec facilité, elle n'oppose absolument aucune résistance. Sa souplesse, malgré sa largeur, reste étonnante."},
+		sound: 'phase1',
+		text: {
+			en: "I easily push the thing back, it poses absolutely no resistance. Its flexibility, despite its width, remains amazing.",
+			fr: "Je repousse la chose avec facilité, elle n'oppose absolument aucune résistance. Sa souplesse, malgré sa largeur, reste étonnante."
+		},
 		choices: [
-			{text: {fr: "Finalement j'aimerais bien l'examiner davantage."}, href: "cordGrab2"},
-			{text: {fr: "Avec un peu de chance je la retrouverai plus tard."}, href: "wallTouched", fadeout: sleepTimeout},
+			{text: {en: "On second thought, I'd like to examine it further.", fr: "Finalement j'aimerais bien l'examiner davantage."}, href: "cordGrab2"},
+			{text: {en: "Hopefully I'll find it later.", fr: "Avec un peu de chance je la retrouverai plus tard."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 	{
 		id: 'cordPull',
-		sound: 'phase2',
-		text: {fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."},
+		sound: 'phase1',
+		text: {
+			en: "I manage to pull the thing for a moment, but I have trouble coordinating my limbs and she escapes me before I could reach its end.",
+			fr: "Je parviens à tirer la chose un instant, mais j'ai du mal à coordonner mes membres et elle m'échappe avant que je puisse en atteindre le bout."
+		},
 		choices: [
-			{text: {fr: "Je vais essayer de la récupérer."}, href: "cordGrab2"},
-			{text: {fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
+			{text: {en: "I'll try to get it back.", fr: "Je vais essayer de la récupérer."}, href: "cordGrab2"},
+			{text: {en: "Nevermind.", fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 	{
 		id: 'cordGrab2',
-		sound: 'phase2',
-		text: {fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."},
+		sound: 'phase1',
+		text: {
+			en: "I try to catch the nearest loop, but I have awkward movements that push the thing even further. It must be completely out of reach now.",
+			fr: "Je tente d'attraper sa boucle la plus proche, mais j'ai des gestes maladroits qui repoussent la chose encore plus loin. Elle doit être complètement hors de portée maintenant."
+		},
 		choices: [
-			{text: {fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
+			{text: {en: "Nevermind.", fr: "Bon, tant pis."}, href: "wallTouched", fadeout: sleepTimeout},
 		]
 	},
 //	{
@@ -193,6 +220,7 @@ var passages = [
 	//The wall touched me!
 	{
 		id: 'wallTouched',
+		sound: 'phase2',
 		text: {
 			en: "I was awakened by a series of contacts on my body. It began with almost imperceptible rustlings. Then these contacts became more insistent, as if someone wanted to catch me through something thick.",
 			fr: "J'ai été réveillé_/e_ par une série de contacts sur mon corps. Cela a commencé par des frôlements presque imperceptibles. Puis ces contacts sont devenus plus insistants, comme si quelqu'un voulait m'attraper à travers quelque chose d'épais."
@@ -206,7 +234,9 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedExam',
-		text: {en: "I approach, scanning the void with my hands to look for what is causing these contacts. I can not find anything more than the wall in front of me. It is perfectly smooth. Then a bump forms on it, followed by a second, and a third, which join in a wave deforming its surface. It is the whole wall that tries to touch me!",
+		sound: 'phase2',
+		text: {
+			en: "I approach, scanning the void with my hands to look for what is causing these contacts. I can not find anything more than the wall in front of me. It is perfectly smooth. Then a bump forms on it, followed by a second, and a third, which join in a wave deforming its surface. It is the whole wall that tries to touch me!",
 			fr: "Je m'approche en balayant le vide de mes mains pour chercher ce qui est à l'origine de ces contacts. Je ne trouve rien de plus que le mur en face de moi. Il est parfaitement lisse. Puis une bosse se forme dessus, suivie d'une deuxième, et d'une troisième, qui se rejoignent en une vague déformant sa surface. C'est le mur tout entier qui cherche à me toucher !"
 		},
 		choices: [
@@ -217,53 +247,81 @@ var passages = [
 	},
 	{
 		id: 'wallTouchedExam2',
-		text: {fr: "J'approche en tâtonnant le mur, plein_/e_ d'appréhension. J'y décèle encore les bosses qui tordent sa surface, mais maintenant que j'ai pu les toucher, elles me font moins peur."},
+		sound: 'phase2',
+		text: {
+			en: "I grope around the wall, full of apprehension. I can still see the bumps that twist its surface, but now that I could touch them, they are less scary.",
+			fr: "J'approche en tâtonnant le mur, plein_/e_ d'appréhension. J'y décèle encore les bosses qui tordent sa surface, mais maintenant que j'ai pu les toucher, elles me font moins peur."
+		},
 		choices: [
-			{text: {fr: "Je retourne me cacher."}, href: "wallTouchedRetreat2"},
-			{text: {fr: "Je rassemble mon courage et tente de presser une de ces bosses."}, href: "wallTouchedPush"},
+			{text: {en: "I'm going back to hide.", fr: "Je retourne me cacher."}, href: "wallTouchedRetreat2"},
+			{text: {en: "I gather my courage and try to squeeze one of these bumps.", fr: "Je rassemble mon courage et tente de presser une de ces bosses."}, href: "wallTouchedPush"},
 		]
 	},
 	{
 		id: 'wallTouchedWait',
-		text: {fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je peux même deviner, dans leur délicatesse, une volonté de ne pas me blesser. Je me demande s'ils ne cherchent pas à communiquer."},
+		sound: 'phase2',
+		text: {
+			en: "I wait, trying not to react to these contacts. They end up feeling benevolent to me. I can even guess, in their tact, a desire not to hurt me. I wonder if they are not trying to communicate.",
+			fr: "J'attend en m'efforçant de ne pas réagir à ces contacts. Ils finissent par me sembler bienveillants. Je peux même deviner, dans leur délicatesse, une volonté de ne pas me blesser. Je me demande s'ils ne cherchent pas à communiquer."
+		},
 		choices: [
-			{text: {fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
-			{text: {fr: "Je préfère me protéger."}, href: "wallTouchedRetreat2"},
+			{text: {en: "Maybe I should exchange this contact.", fr: "Je devrais peut-être échanger ce contact."}, href: "wallTouchedPush"},
+			{text: {en: "I prefer to protect myself.", fr: "Je préfère me protéger."}, href: "wallTouchedRetreat2"},
 		]
 	},
 	{
 		id: 'wallTouchedRetreat1',
-		text: {fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."},
+		sound: 'phase2',
+		text: {
+			en: "I try to go in the opposite direction, but it's almost impossible for me to move. However, I manage to curl up enough to be out of reach.",
+			fr: "J'essaie d'aller dans la direction opposée, mais il m'est presque impossible de me déplacer. Je parviens toutefois à me recroqueviller assez pour être hors de portée."
+		},
 		choices: [
-			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
-			{text: {fr: "Je suis quand même intrigué_/e_, je vais me rapprocher."}, href: "wallTouchedExam"},
+			{text: {en: "I'll stay away.", fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
+			{text: {en: "I'm still intrigued, I'll get closer.", fr: "Je suis quand même intrigué_/e_, je vais me rapprocher."}, href: "wallTouchedExam"},
 		]
 	},
 	{
 		id: 'wallTouchedRetreat2',
-		text: {fr: "Je parviens difficilement à reculer, mais me recroqueville assez pour être hors de portée."},
+		sound: 'phase2',
+		text: {
+			en: "I can hardly go back, but curl up enough to be out of reach.",
+			fr: "Je parviens difficilement à reculer, mais me recroqueville assez pour être hors de portée."
+		},
 		choices: [
-			{text: {fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
+			{text: {en: "I'll stay away.", fr: "Je vais rester à l'écart."}, href: "wallTouchedWaitBack"},
 		]
 	},
 	{
 		id: 'wallTouchedWaitBack',
-		text: {fr: "J'attend en espérant que mon angoisse s'estompe. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir si la chose à l'origine de ces palpations s'est éloignée. Tout ceci m'a fatigué_/e_."},
+		sound: 'phase2',
+		text: {
+			en: "I wait, hoping that my anguish fades. I will have to wait anyway, because I have no way of knowing if the thing at the origin of these palpations has moved away. All this tired me.",
+			fr: "J'attend en espérant que mon angoisse s'estompe. De toutes façons il va falloir que je patiente, car je n'ai aucun moyen de savoir si la chose à l'origine de ces palpations s'est éloignée. Tout ceci m'a fatigué_/e_."
+		},
 		choices: [
-			{text: {fr: "Je devrais peut-être en profiter pour dormir."}, href: "echo", fadeout: sleepTimeout},
-			{text: {fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam2"},
+			{text: {en: "Maybe I should take the opportunity to sleep.", fr: "Je devrais peut-être en profiter pour dormir."}, href: "echo", fadeout: sleepTimeout},
+			{text: {en: "I'll still check what it is about.", fr: "Je vais quand même vérifier ce qu'il en est."}, href: "wallTouchedExam2"},
 		]
 	},
 	{
 		id: 'wallTouchedPush',
-		text: {fr: "Les bosses et vagues vont et viennent lentement sur la surface du mur. J'essaie d'en toucher une mais elle a déjà disparu. En fait, toutes les bosses semblent avoir disparu à l'instant où ma main s'est posée. La surface du mur est de nouveau tendue, comme s'il était en attente de quelque chose.<br><br>Je laisse ma main glisser sur sa surface. Elle est incroyablement douce et moelleuse. Je sens ses plis se former et se retendre pendant que ma main dérive avec aisance. En m'attardant sur ces sensations, il me semble qu'il y a en fait deux murs l'un sur l'autre : l'un, fin, qui glisse sur le second, plus épais."},
+		sound: 'phase2',
+		text: {
+			en: "The bumps and waves come and go slowly on the surface of the wall. I try to touch one but it has already disappeared. In fact, all the bumps seem to have disappeared the moment my hand landed. The surface of the wall is tense again, as if it were waiting for something. <br> <br> I let my hand slide on its surface. It is incredibly sweet and mellow. I feel its folds forming and stretching while my hand drifts with ease. Lingering on these sensations, it seems to me that there are in fact two walls one on the other: one thin which slips on the second, thicker.",
+			fr: "Les bosses et vagues vont et viennent lentement sur la surface du mur. J'essaie d'en toucher une mais elle a déjà disparu. En fait, toutes les bosses semblent avoir disparu à l'instant où ma main s'est posée. La surface du mur est de nouveau tendue, comme s'il était en attente de quelque chose.<br><br>Je laisse ma main glisser sur sa surface. Elle est incroyablement douce et moelleuse. Je sens ses plis se former et se retendre pendant que ma main dérive avec aisance. En m'attardant sur ces sensations, il me semble qu'il y a en fait deux murs l'un sur l'autre : l'un, fin, qui glisse sur le second, plus épais."
+		},
 		choices: [
 			{text: "next", href: "wallTouchedPush2"},
 		]
 	},
 	{
 		id: 'wallTouchedPush2',
-		text: {fr: "Lentement, j'appuie de plus en plus fort. Ma main disparaît presque dans le mur. Il est chaud. Puis le mur à cet endroit devient de plus en plus dur, repoussant ma main. C'est une bosse qui, doucement, apparaît juste en-dessous ! J'essaie de la repousser. Elle résiste, puis finit pas s'estomper, laissant le mur retourner à sa souplesse.<br><br>J'ai la forte impression que le mur a développé ces reliefs dans un but, peut-être d'entrer en contact avec moi. Quant à savoir si je dois m'en inquiéter... Comme pour la chose, je me demande s'il s'agit de quelque chose de vivant. Est-ce que le mur et la chose forment un tout ?"},
+		sound: 'phase2',
+		text: {
+			en: "Slowly, I press more and more. My hand almost disappears into the wall. It is hot. Then the wall, at this place, gets harder and harder, pushing my hand away. It is a hump that, slowly, appears just below! I try to push it away. It resists, then finally disappear, leaving the wall back to its flexibility.<br><br> I have the strong feeling that the wall has developed these reliefs for a purpose, maybe to get in contact with me. As to whether I should worry about it... As for the thing, I wonder if it's something alive. Does the wall and the thing form a whole?",
+			fr: "Lentement, j'appuie de plus en plus fort. Ma main disparaît presque dans le mur. Il est chaud. Puis le mur à cet endroit devient de plus en plus dur, repoussant ma main. C'est une bosse qui, doucement, apparaît juste en-dessous ! J'essaie de la repousser. Elle résiste, puis finit pas s'estomper, laissant le mur retourner à sa souplesse.<br><br>J'ai la forte impression que le mur a développé ces reliefs dans un but, peut-être d'entrer en contact avec moi. Quant à savoir si je dois m'en inquiéter... Comme pour la chose, je me demande s'il s'agit de quelque chose de vivant. Est-ce que le mur et la chose forment un tout ?"
+		},
 		choices: [
 			{text: "next", href: "echo"},
 		]
@@ -287,34 +345,52 @@ var passages = [
 	 */
 	{
 		id: 'echo',
-		text: {fr: "Quelque chose m'a réveillé_/e_. Ou plutôt, une impression. Le sentiment qu'on m'observait. Comme si j'étais surveillé_/e_."},
+		sound: 'phase2',
+		text: {
+			en: "Something woke me up. Or rather, an impression. The feeling that someone was watching me.",
+			fr: "Quelque chose m'a réveillé_/e_. Ou plutôt, une impression. Le sentiment qu'on m'observait. Comme si j'étais surveillé_/e_."
+		},
 		choices: [
-			{text: {fr: "Je vais examiner les environs."}, href: "echoCheck"},
-			{text: {fr: "Je vais attendre et essayer d'en apprendre plus."}, href: "echoWait"},
-			{text: {fr: "Je suis encore fatigué_/e_, je vais me rendormir."}, href: "echoSleep"},
+			{text: {en: "I'll examine the surroundings.", fr: "Je vais examiner les environs."}, href: "echoCheck"},
+			{text: {en: "I'll wait and try to learn more about this.", fr: "Je vais essayer d'en apprendre plus."}, href: "echoWait"},
 		],
 		fadein: sleepTimein
 	},
 	{
 		id: 'echoWait',
-		text: {fr: "Je crois qu'il se passe bien quelque chose d'inhabituel. Je parviens à deviner quelques sons, sans pouvoir les identifier.\n\
+		sound: 'phase2',
+		text: {
+			en: "I think something unusual is happening. I manage to get some sounds, but I can not identify them.\n\
+<ul class='dialogue far'><li>girl... knew... months... looks like... observe...</li></ul>\n\
+But that persuades me that indeed, some are really examining myself. And what is even more unpleasant is that it is one way only.",
+			fr: "Je crois qu'il se passe bien quelque chose d'inhabituel. Je parviens à deviner quelques sons, sans pouvoir les identifier.\n\
 <ul class='dialogue far'><li>fille... savais... mois... dirait... observe...</li></ul>\n\
-Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'autant plus désagréable que c'est à sens unique."},
+Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'autant plus désagréable que c'est à sens unique."
+		},
 		choices: [
-			{text: {fr: ""}, href: ""},
-			{text: {fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
+			{text: {en: "I'll examine the surroundings.", fr: "Je vais examiner les environs."}, href: "echoCheck"},
+			{text: {en: "I'll wait for it to pass, and go back to sleep.", fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
 		]
 	},
 	{
 		id: 'echoCheck',
-		text: {fr: "Je tends les mains pour palper le mur. Il est légèrement déformé. Cela fait comme une petite vague qui repousse sa surface en mouvements circulaires, s'arrête subitement, puis repars en mouvements vifs. Je suis fasciné_/e_ par ces déplacements, tout en étant plongé_/e_ dans une certaine inquiétude."},
+		sound: 'phase2',
+		text: {
+			en: "I extend my hands to feel the wall. It is slightly distorted. It's like a little wave that repels its surface in circular motions, stops suddenly, and then leaves again in quick movements. I am fascinated by these movements, while being plunged into some anxiety.",
+			fr: "Je tends les mains pour palper le mur. Il est légèrement déformé. Cela fait comme une petite vague qui repousse sa surface en mouvements circulaires, s'arrête subitement, puis repars en mouvements vifs. Je suis fasciné_/e_ par ces déplacements, tout en étant plongé_/e_ dans une certaine inquiétude."
+		},
 		choices: [
-			{text: {fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
+			{text: {en: "I'll try to learn more about this.", fr: "Je vais essayer d'en apprendre plus."}, href: "echoWait"},
+			{text: {en: "I'll wait for it to pass, and go back to sleep.", fr: "Je vais attendre que ça passe, et me rendormir."}, href: "echoSleep"},
 		],
 	},
 	{
 		id: 'echoSleep',
-		text: {fr: "Je suis de toutes façons encore trop fatigué_/e_ pour être vraiment inqui_/ete_. Je suis à peu près s_/ure_ de me rendormir aussi facilement que j'ai été réveillé_/e_."},
+		sound: 'phase2',
+		text: {
+			en: "I am still too tired to be really worried anyway. I'm just about to go back to sleep as easily as I was awake.",
+			fr: "Je suis de toutes façons encore trop fatigué_/e_ pour être vraiment inqui_/ete_. Je suis à peu près s_/ure_ de me rendormir aussi facilement que j'ai été réveillé_/e_."
+		},
 		choices: [
 			{text: "next", href: "cord2Touched", fadeout: sleepTimeout},
 		],
@@ -465,11 +541,12 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosest',
 		sound: 'mozart',
 		text: {
+			en: "I already noticed that the wall was getting closer to each waking up, each time becoming a little more oppressive. It surrounds me now from all sides. If this continues, I will soon barely be able to move my head. On the other hand, the bottom of my body seems to have a little more space.",
 			fr: "J'avais déjà remarqué que le mur se rapprochait légèrement à chaque réveil, devenant chaque fois un peu plus oppressant. Il m'entoure maintenant de toutes parts. Si cela continue, je pourrai bientôt à peine bouger la tête. Par contre, le bas de mon corps semble disposer d'un peu plus de place."
 		},
 		choices: [
-			{text: {fr: "Je vais essayer de trouver une meilleure position."}, href: 'wallClosestMove'},
-			{text: {fr: "Je vais me débattre pour libérer un peu d'espace."}, href: 'wallClosestPush'},
+			{text: {en: "I'll try to find a better position.", fr: "Je vais essayer de trouver une meilleure position."}, href: 'wallClosestMove'},
+			{text: {en: "I'll wrestle to free up some space.", fr: "Je vais me débattre pour libérer un peu d'espace."}, href: 'wallClosestPush'},
 		],
 		fadein: sleepTimein
 	},
@@ -477,6 +554,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosestPush',
 		sound: 'mozart',
 		text: {
+			en: "Helping myself with every part of my body, hand, foot, back, head, I try to push the wall on all sides. That's enough to push it away for a short time, before it comes back quickly to flatten itself against me. But in the maneuver, I feel my body rotating little by little.<br><br>Something curious then happens.",
 			fr: "En m'aidant de chaque partie de mon corps, main, pied, dos, tête, je tente de repousser le mur de tout côté. Cela suffit à l'éloigner un court instant, avant qu'il revienne rapidement se plaquer contre moi. Mais dans la manœuvre, je sens mon corps pivoter petit à petit.<br><br>Il se passe alors une chose curieuse."
 		},
 		choices: [
@@ -487,29 +565,32 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosestPush2',
 		sound: 'mozart',
 		text: {
+			en: "A bump suddenly deforms the wall, as if something pushed it from the other side. I feel that I have already experienced this, and that this experience has been interesting. I think it was linked to an attempt at communication. In the meantime, since I am tackled against this wall, this bump pushes me too.",
 			fr: "Une bosse déforme subitement le mur, comme si quelque chose le poussait depuis l'autre côté. J'ai l'impression d'avoir déjà vécu cela, et que cette expérience a été intéressante. Je crois que c'était lié à une tentative de communication. En attendant, puisque je suis plaqué_/e_ contre ce mur, cette bosse me pousse également."
 		},
 		choices: [
 //			{text: {fr: "Je vais à mon tour appuyer sur le mur."}, href: ""},
-			{text: {fr: "Je vais attendre de voir ce qui se passe."}, href: "wallClosestPush3"},
-			{text: {fr: "Je vais tenter de changer de position."}, href: "wallClosestMove"},
+			{text: {en: "I'll wait and see what's going on.", fr: "Je vais attendre de voir ce qui se passe."}, href: "wallClosestPush3"},
+			{text: {en: "I'll try to change my position.", fr: "Je vais tenter de changer de position."}, href: "wallClosestMove"},
 		]
 	},
 	{
 		id: 'wallClosestPush3',
 		sound: 'mozart',
 		text: {
+			en: "A second bump appears, opposite to the first, and deforms the wall in a circular motion. The first hump follows the same movement, as if the wall had decided to caress me gently. Then a series of stronger pressures, and wider circular motions, transformed these caresses into a more vigorous massage. I think the wall likes my position as little as I do and tries to relieve his own discomfort.",
 			fr: "Une deuxième bosse apparaît, opposée à la première, et déforme le mur dans un mouvement circulaire. La première bosse suit le même mouvement, comme si le mur avait décidé de me caresser doucement. Puis des séries de pressions plus fortes, et de mouvements circulaires plus amples, ont transformé ces caresses en un massage plus vigoureux. Je crois que le mur apprécie aussi peu que moi ma position et tente de soulager son propre inconfort."
 		},
 		choices: [
-			{text: {fr: "Je vais le laisser faire."}, href: "wallClosestPush4"},
-			{text: {fr: "Je vais l'aider."}, href: "wallClosestMove"},
+			{text: {en: "I'll let it do.", fr: "Je vais le laisser faire."}, href: "wallClosestPush4"},
+			{text: {en: "I'll help it.", fr: "Je vais l'aider."}, href: "wallClosestMove"},
 		]
 	},
 	{
 		id: 'wallClosestPush4',
 		sound: 'mozart',
 		text: {
+			en: "By dint of movement, I feel my body that rotates, without me even wanting it.",
 			fr: "À force de mouvements, je sens mon corps qui pivote, sans même que je le veuille."
 		},
 		choices: [
@@ -520,17 +601,19 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosestMove',
 		sound: 'mozart',
 		text: {
+			en: "I gather my hands under my chin, and try to turn around by moving my shoulders. The wall stretches, but keeps a surprising flexibility, and the maneuver proceeds without too much difficulty. Until my head and the bottom of my body are each sinking into a hollow. The tension of the wall then blocks me in this position, my body uncomfortably compressed from top to bottom.",
 			fr: "Je joins les mains sous mon menton, et joue des épaules pour essayer de me retourner. Le mur se tend, mais garde une souplesse étonnante, et la manœuvre se déroule sans trop de difficulté. Jusqu'à ce que ma tête et le bas de mon corps viennent chacun s'enfoncer dans un creux. La tension du mur me bloque alors dans cette position, mon corps désagréablement comprimé de haut en bas."
 		},
 		choices: [
-			{text: {fr: "Je vais essayer de me recroqueviller."}, href: "wallClosestMove2"},
-			{text: {fr: "Je vais me raidir au maximum pour détendre le mur et dégager mon corps."}, href: "wallClosestMove3"},
+			{text: {en: "I'll try to curl up.", fr: "Je vais essayer de me recroqueviller."}, href: "wallClosestMove2"},
+			{text: {en: "I will stiffen to relax the wall and release my body.", fr: "Je vais me raidir pour détendre le mur et dégager mon corps."}, href: "wallClosestMove3"},
 		]
 	},
 	{
 		id: 'wallClosestMove2',
 		sound: 'mozart',
 		text: {
+			en: "I fold back on myself, allowing my head, then my feet, to come out of their hollow.",
 			fr: "Je me replie sur moi-même, permettant à ma tête, puis mes pieds, de sortir de leur creux."
 		},
 		choices: [
@@ -541,6 +624,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosestMove3',
 		sound: 'mozart',
 		text: {
+			en: "The wall utters a heartbreaking cry that stops my attempt. I wait anxiously for a moment, wondering what will follow, then I pull myself together to free myself before the wall traps me again. I take my head out of its recess, the wall then takes its shape back by expelling my feet.",
 			fr: "Le mur lance un cri déchirant qui interrompt ma tentative. J'attends avec appréhension un court instant, me demandant ce qui va suivre, puis je me ressaisis pour me dégager avant que le mur ne me piège à nouveau. Je sors ma tête de son renfoncement, le mur reprend alors sa forme en expulsant mes pieds."
 		},
 		choices: [
@@ -551,6 +635,7 @@ Mais cela me persuade que oui, on est bien en train de m'examiner. Et c'est d'au
 		id: 'wallClosestFall',
 		sound: 'mozart',
 		text: {
+			en: "I feel my body slowly sliding along the wall, which turns this fall into a long caress. So much so that I slowly fall asleep.",
 			fr: "Je sens alors mon corps glisser lentement le long du mur, ce qui fait de cette chute une longue caresse. Tant et si bien que je m'endors doucement."
 		},
 		choices: [
